@@ -327,17 +327,17 @@
         <div class="container mx-auto px-4 md:px-8">
             <h2 class="text-4xl font-bold text-center mb-12 text-white">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="project-egyptian-landmarks.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                <a href="#" class="project-card block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="1">
                     <img src="https://placehold.co/300x200" alt="Egyptian Landmarks App" class="rounded-md mx-auto mb-4">
                     <h3 class="text-2xl font-bold text-white">EGYPTIAN LANDMARKS APP | GRADUATION PROJECT</h3>
                     <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Nest.js, Next.js, MongoDB, TensorFlow</p>
                 </a>
-                <a href="project-dynamic-asset.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                <a href="#" class="project-card block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="2">
                     <img src="https://placehold.co/300x200" alt="Dynamic Asset Serving System" class="rounded-md mx-auto mb-4">
                     <h3 class="text-2xl font-bold text-white">DYNAMIC ASSET SERVING SYSTEM</h3>
                     <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: PHP 8.4+, JavaScript, Google Maps API</p>
                 </a>
-                <a href="project-microservice-ecommerce.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                <a href="#" class="project-card block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="3">
                     <img src="https://placehold.co/300x200" alt="Microservice E-commerce Platform" class="rounded-md mx-auto mb-4">
                     <h3 class="text-2xl font-bold text-white">MICROSERVICE E-COMMERCE PLATFORM</h3>
                     <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Nest.js, RabbitMQ, Redis, Docker</p>
@@ -384,6 +384,18 @@
             <p id="modal-job-dates" class="text-sm font-medium text-blue-600 mb-4"></p>
             <div id="modal-job-details" class="text-gray-300">
                 <!-- Job details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Details Modal -->
+    <div id="project-details-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50">
+        <div class="bg-gray-800 rounded-lg shadow-xl p-6 m-4 max-w-md w-full relative">
+            <button id="close-project-modal-btn" class="absolute top-3 right-3 text-gray-400 hover:text-white text-2xl">&times;</button>
+            <h3 id="modal-project-title" class="font-bold text-2xl text-white mb-2"></h3>
+            <p id="modal-project-tech-stack" class="text-base font-semibold text-blue-500 mb-1"></p>
+            <div id="modal-project-description" class="text-gray-300">
+                <!-- Project description will be loaded here -->
             </div>
         </div>
     </div>
