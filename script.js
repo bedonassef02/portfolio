@@ -39,12 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.getElementById('nav-links');
 
-    if (menuButton && mobileMenu && navLinks) {
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            navLinks.classList.toggle('hidden'); // Hide desktop links when mobile menu is open
-        });
-
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
         // Close mobile menu when a link is clicked
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
