@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Misr</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes slideIn {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slideIn {
+            animation: slideIn 1s ease-in-out;
+        }
+        details[open] summary i.fa-chevron-down {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans bg-gradient-dark">
+    <header class="bg-gray-800 shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center px-4 md:px-8 py-4">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">My Portfolio</a>
+            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <ul id="nav-links" class="hidden md:flex space-x-8 items-center">
+                <li><a href="index.html#about" class="hover:text-blue-600">About</a></li>
+                <li><a href="index.html#overview" class="hover:text-blue-600">Overview</a></li>
+                <li><a href="index.html#work-experience" class="hover:text-blue-600">Work Experience</a></li>
+                <li><a href="index.html#skills" class="hover:text-blue-600">Skills</a></li>
+                <li><a href="index.html#projects" class="hover:text-blue-600">Projects</a></li>
+                <li><a href="index.html#contact" class="hover:text-blue-600">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800 pb-4">
+            <ul class="flex flex-col items-center space-y-4">
+                <li><a href="index.html#about" class="block text-white hover:text-blue-600">About</a></li>
+                <li><a href="index.html#overview" class="block text-white hover:text-blue-600">Overview</a></li>
+                <li><a href="index.html#work-experience" class="block text-white hover:text-blue-600">Work Experience</a></li>
+                <li><a href="index.html#skills" class="block text-white hover:text-blue-600">Skills</a></li>
+                <li><a href="index.html#projects" class="block text-white hover:text-blue-600">Projects</a></li>
+                <li><a href="index.html#contact" class="block text-white hover:text-blue-600">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8 px-4 md:px-8 animate-slideIn">
+        <h1 class="text-5xl font-bold my-4 text-center text-gray-800 dark:text-white">PANEL MISR</h1>
+        <div class="flex flex-col md:flex-row md:space-x-8 mt-8">
+            <div class="md:w-1/2">
+                <img src="https://placehold.co/600x400" alt="Panel Misr" class="rounded-lg shadow-xl mx-auto mb-4">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">Project Details</h2>
+                <p class="text-lg text-gray-600 mb-4 dark:text-gray-300">Engineered the Panel Misr website, delivering a robust and scalable solution</p>
+                <p class="text-lg text-gray-600 mb-4 dark:text-gray-300">Delivered full-stack solution for enterprise client</p>
+                <p class="text-lg text-gray-600 mb-4 dark:text-gray-300">Optimized database queries reducing load time</p>
+                <p class="text-lg text-gray-600 mb-4 dark:text-gray-300">Built responsive admin panel with advanced reporting features</p>
+                <h3 class="text-2xl font-bold mb-2 text-gray-800 dark:text-white">Technologies Used</h3>
+                <ul class="list-disc list-inside text-lg text-gray-600 dark:text-gray-300">
+                    <li>Laravel</li>
+                    <li>MySQL</li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <a href="index.html#projects" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full mt-4 hover:bg-blue-700">&larr; Back to Projects</a>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+        <p>&copy; 2025 ABDELRAHMAN MAHMOUD</p>
+    </footer>
+    <script>
+        // Navbar responsiveness
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
