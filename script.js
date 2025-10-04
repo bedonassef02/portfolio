@@ -60,4 +60,28 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // "Show More" functionality for skills
+    const skillsContainer = document.getElementById('all-skills-container');
+    const skills = Array.from(skillsContainer.children);
+    const skillsPerLine = 5; // As per user's request
+    const maxVisibleSkills = skillsPerLine * 2; // Show 2 lines initially
+
+    if (skills.length > maxVisibleSkills) {
+        for (let i = maxVisibleSkills; i < skills.length; i++) {
+            skills[i].classList.add('hidden');
+        }
+
+        const showMoreButton = document.createElement('button');
+        showMoreButton.textContent = 'Show More';
+        showMoreButton.classList.add('mt-8', 'px-6', 'py-2', 'rounded-full', 'bg-blue-600', 'text-white', 'font-semibold', 'hover:bg-blue-700', 'focus:outline-none');
+        skillsContainer.parentNode.appendChild(showMoreButton);
+
+        showMoreButton.addEventListener('click', () => {
+            skills.forEach(skill => {
+                skill.classList.remove('hidden');
+            });
+            showMoreButton.classList.add('hidden'); // Hide the "Show More" button after clicking
+        });
+    }
 });
