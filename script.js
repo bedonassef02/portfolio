@@ -142,6 +142,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Projects Carousel functionality
+    const projectsCarousel = document.getElementById('projects-carousel');
+    const prevProjectBtn = document.getElementById('prev-project');
+    const nextProjectBtn = document.getElementById('next-project');
+    const projectCards = Array.from(projectsCarousel.children);
+    let currentIndex = 0;
+
+    function showProject(index) {
+        projectsCarousel.scrollLeft = projectCards[index].offsetLeft;
+    }
+
+    function showNextProject() {
+        currentIndex = (currentIndex + 1) % projectCards.length;
+        showProject(currentIndex);
+    }
+
+    function showPrevProject() {
+        currentIndex = (currentIndex - 1 + projectCards.length) % projectCards.length;
+        showProject(currentIndex);
+    }
+
+    if (prevProjectBtn && nextProjectBtn && projectsCarousel && projectCards.length > 0) {
+        prevProjectBtn.addEventListener('click', showPrevProject);
+        nextProjectBtn.addEventListener('click', showNextProject);
+
+        // Initialize carousel to show the first project
+        showProject(currentIndex);
+    }
+
     const categoryButtons = document.querySelectorAll('.skill-category-btn');
     const skillItems = document.querySelectorAll('.skill-item');
 

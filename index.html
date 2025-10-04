@@ -325,47 +325,46 @@
     <section id="projects" class="py-20 animate-slideIn">
         <div class="container mx-auto px-4 md:px-8">
             <h2 class="text-4xl font-bold text-center mb-12 text-white">Projects</h2>
-            <div class="flex space-x-8 overflow-x-auto pb-4">
-                <a href="project-egyptian-landmarks.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex-shrink-0 w-80">
-                    <img src="https://placehold.co/300x200" alt="Egyptian Landmarks App" class="rounded-md mx-auto mb-4">
-                    <h3 class="text-2xl font-bold text-white">EGYPTIAN LANDMARKS APP | GRADUATION PROJECT</h3>
-                    <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Nest.js, Next.js, MongoDB, TensorFlow</p>
-                </a>
-                <a href="project-dynamic-asset.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex-shrink-0 w-80">
-                    <img src="https://placehold.co/300x200" alt="Dynamic Asset Serving System" class="rounded-md mx-auto mb-4">
-                    <h3 class="text-2xl font-bold text-white">DYNAMIC ASSET SERVING SYSTEM</h3>
-                    <p class="text-sm font-medium text-blue-600 mt-2">Tech Stack: PHP 8.4+, JavaScript, Google Maps API</p>
-                </a>
-                <a href="project-microservice-ecommerce.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex-shrink-0 w-80">
-                    <img src="https://placehold.co/300x200" alt="Microservice E-commerce Platform" class="rounded-md mx-auto mb-4">
-                    <h3 class="text-2xl font-bold text-white">MICROSERVICE E-COMMERCE PLATFORM</h3>
-                    <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Nest.js, RabbitMQ, Redis, Docker</p>
-                </a>
-                <a href="project-mobile-store.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex-shrink-0 w-80">
-                    <img src="https://placehold.co/300x200" alt="Mobile-Store" class="rounded-md mx-auto mb-4">
-                    <h3 class="text-2xl font-bold text-white">MOBILE-STORE</h3>
-                    <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Express.js, TypeScript, MySQL, Redis, Stripe API, Docker</p>
-                </a>
-                <a href="project-panel-misr.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex-shrink-0 w-80">
-                    <img src="https://placehold.co/300x200" alt="Panel Misr" class="rounded-md mx-auto mb-4">
-                    <h3 class="text-2xl font-bold text-white">PANEL MISR</h3>
-                    <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Laravel, MySQL</p>
-                </a>
-                <a href="project-mi-music.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex-shrink-0 w-80">
-                    <img src="https://placehold.co/300x200" alt="MI-MUSIC" class="rounded-md mx-auto mb-4">
-                    <h3 class="text-2xl font-bold text-white">MI-MUSIC</h3>
-                    <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Nest.js, MongoDB, Google OAuth</p>
-                </a>
-                <div class="bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                    <h3 class="text-2xl font-bold text-white">MOBILE-STORE</h3>
-                    <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Express.js, TypeScript, MySQL, Redis, Stripe API, Docker</p>
-                    <p class="text-gray-300 mt-2">Created an e-commerce platform for mobile devices with a focus on security and user experience.</p>
-                    <p class="text-gray-300">Built high-performance REST API</p>
-                    <p class="text-gray-300">Integrated Stripe payment gateway</p>
-                    <p class="text-gray-300">Implemented Redis caching layer improving performance</p>
-                    <p class="text-gray-300">Developed OAuth authentication supporting Google and GitHub</p>
-                    <p class="text-gray-300">Created comprehensive cart and wishlist system</p>
+            <div class="relative">
+                <div id="projects-carousel" class="flex overflow-hidden">
+                    <a href="project-egyptian-landmarks.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-full flex-shrink-0">
+                        <img src="https://placehold.co/300x200" alt="Egyptian Landmarks App" class="rounded-md mx-auto mb-4">
+                        <h3 class="text-2xl font-bold text-white">EGYPTIAN LANDMARKS APP | GRADUATION PROJECT</h3>
+                        <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Nest.js, Next.js, MongoDB, TensorFlow</p>
+                    </a>
+                    <a href="project-dynamic-asset.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-full flex-shrink-0">
+                        <img src="https://placehold.co/300x200" alt="Dynamic Asset Serving System" class="rounded-md mx-auto mb-4">
+                        <h3 class="text-2xl font-bold text-white">DYNAMIC ASSET SERVING SYSTEM</h3>
+                        <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: PHP 8.4+, JavaScript, Google Maps API</p>
+                    </a>
+                    <a href="project-microservice-ecommerce.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-full flex-shrink-0">
+                        <img src="https://placehold.co/300x200" alt="Microservice E-commerce Platform" class="rounded-md mx-auto mb-4">
+                        <h3 class="text-2xl font-bold text-white">MICROSERVICE E-COMMERCE PLATFORM</h3>
+                        <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Nest.js, RabbitMQ, Redis, Docker</p>
+                    </a>
+                    <a href="project-mobile-store.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-full flex-shrink-0">
+                        <img src="https://placehold.co/300x200" alt="Mobile-Store" class="rounded-md mx-auto mb-4">
+                        <h3 class="text-2xl font-bold text-white">MOBILE-STORE</h3>
+                        <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Express.js, TypeScript, MySQL, Redis, Stripe API, Docker</p>
+                    </a>
+                    <a href="project-panel-misr.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-full flex-shrink-0">
+                        <img src="https://placehold.co/300x200" alt="Panel Misr" class="rounded-md mx-auto mb-4">
+                        <h3 class="text-2xl font-bold text-white">PANEL MISR</h3>
+                        <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Laravel, MySQL</p>
+                    </a>
+                    <a href="project-mi-music.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-full flex-shrink-0">
+                        <img src="https://placehold.co/300x200" alt="MI-MUSIC" class="rounded-md mx-auto mb-4">
+                        <h3 class="text-2xl font-bold text-white">MI-MUSIC</h3>
+                        <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Nest.js, MongoDB, Google OAuth</p>
+                    </a>
                 </div>
+                <!-- Navigation buttons -->
+                <button id="prev-project" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full shadow-lg hover:bg-gray-600 focus:outline-none">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="next-project" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full shadow-lg hover:bg-gray-600 focus:outline-none">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
