@@ -32,18 +32,18 @@ sections.forEach(section => {
 });
 
 const themeToggle = document.getElementById('theme-toggle');
-const html = document.querySelector('html');
+const html = document.documentElement;
 
 const moonIcon = '<i class="fas fa-moon"></i>';
 const sunIcon = '<i class="fas fa-sun"></i>';
 
 // Check for saved theme preference
-if (localStorage.getItem('theme') === 'dark') {
-    html.classList.add('dark');
-    themeToggle.innerHTML = sunIcon;
+if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  html.classList.add('dark');
+  themeToggle.innerHTML = sunIcon;
 } else {
-    html.classList.remove('dark');
-    themeToggle.innerHTML = moonIcon;
+  html.classList.remove('dark');
+  themeToggle.innerHTML = moonIcon;
 }
 
 themeToggle.addEventListener('click', () => {
