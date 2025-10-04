@@ -31,14 +31,7 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('mouseenter', () => {
-        img.classList.add('animate-outline');
-    });
-    img.addEventListener('animationend', () => {
-        img.classList.remove('animate-outline');
-    });
-});
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const categoryButtons = document.querySelectorAll('.skill-category-btn');
