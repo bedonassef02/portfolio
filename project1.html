@@ -7,28 +7,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="tailwind.config.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes slideIn {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slideIn {
+            animation: slideIn 1s ease-in-out;
+        }
+    </style>
 </head>
-<body class="bg-light text-dark font-sans">
-    <header class="bg-white shadow-md sticky top-0 z-50">
+<body class="bg-gray-100 text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-100">
+    <header class="bg-white shadow-md sticky top-0 z-50 dark:bg-gray-800">
         <nav class="container mx-auto flex justify-between items-center p-4">
-            <a href="index.html" class="text-2xl font-bold text-primary">My Portfolio</a>
-            <a href="index.html#projects" class="hover:text-primary">&larr; Back to Projects</a>
+            <a href="index.html" class="text-2xl font-bold text-blue-600">My Portfolio</a>
+            <a href="index.html#projects" class="hover:text-blue-600 dark:hover:text-blue-400">&larr; Back to Projects</a>
         </nav>
     </header>
 
-    <main class="container mx-auto p-8 animate-fadeIn">
-        <h1 class="text-5xl font-bold my-4 text-center">Project 1</h1>
+    <main class="container mx-auto p-8 animate-slideIn">
+        <h1 class="text-5xl font-bold my-4 text-center text-gray-800 dark:text-white">Project 1</h1>
         <div class="flex flex-col md:flex-row md:space-x-8 mt-8">
             <div class="md:w-1/2">
                 <img src="https://placehold.co/600x400" alt="Project 1" class="rounded-lg shadow-xl mx-auto mb-4">
             </div>
             <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold mb-4">Project Details</h2>
-                <p class="text-lg text-gray-600 mb-4">This is a detailed description of Project 1. Here you can talk about the project's goals, the technologies you used, the challenges you faced, and the outcomes you achieved. Be as detailed as you like!</p>
-                <h3 class="text-2xl font-bold mb-2">Technologies Used</h3>
-                <ul class="list-disc list-inside text-lg text-gray-600">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">Project Details</h2>
+                <p class="text-lg text-gray-600 mb-4 dark:text-gray-300">This is a detailed description of Project 1. Here you can talk about the project's goals, the technologies you used, the challenges you faced, and the outcomes you achieved. Be as detailed as you like!</p>
+                <h3 class="text-2xl font-bold mb-2 text-gray-800 dark:text-white">Technologies Used</h3>
+                <ul class="list-disc list-inside text-lg text-gray-600 dark:text-gray-300">
                     <li>HTML</li>
                     <li>CSS</li>
                     <li>JavaScript</li>
@@ -38,8 +46,9 @@
         </div>
     </main>
 
-    <footer class="bg-dark text-white text-center p-4 mt-8">
+    <footer class="bg-gray-800 text-white text-center p-4 mt-8">
         <p>&copy; 2025 John Doe</p>
     </footer>
 </body>
+</html>
 </html>
