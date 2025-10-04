@@ -31,32 +31,7 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-const themeToggle = document.getElementById('theme-toggle');
-const html = document.documentElement;
 
-const moonIcon = '<i class="fas fa-moon"></i>';
-const sunIcon = '<i class="fas fa-sun"></i>';
-
-// Check for saved theme preference
-if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-  html.classList.add('dark');
-  themeToggle.innerHTML = sunIcon;
-} else {
-  html.classList.remove('dark');
-  themeToggle.innerHTML = moonIcon;
-}
-
-themeToggle.addEventListener('click', () => {
-    if (html.classList.contains('dark')) {
-        html.classList.remove('dark');
-        themeToggle.innerHTML = moonIcon;
-        localStorage.setItem('theme', 'light');
-    } else {
-        html.classList.add('dark');
-        themeToggle.innerHTML = sunIcon;
-        localStorage.setItem('theme', 'dark');
-    }
-});
 
 document.querySelectorAll('img').forEach(img => {
     img.addEventListener('mouseenter', () => {
