@@ -102,11 +102,23 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             imageUrl: "https://placehold.co/600x400",
             description: `
-                <ul class="list-disc list-inside text-lg text-gray-300 space-y-1">
-                    <li>Implemented AI-powered image recognition for landmark identification</li>
-                    <li>Built comprehensive admin dashboard with content management</li>
-                    <li>Integrated intelligent chatbot using LLM for interactive user engagement</li>
-                    <li>Remotly /bedonassef02</li>
+                <ul class="list-none text-gray-300 mt-2 space-y-2">
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Implemented AI-powered image recognition for landmark identification</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Built comprehensive admin dashboard with content management</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Integrated intelligent chatbot using LLM for interactive user engagement</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Remotly /bedonassef02</span>
+                    </li>
                 </ul>
             `
         },
@@ -120,10 +132,19 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             imageUrl: "https://placehold.co/600x400",
             description: `
-                <ul class="list-disc list-inside text-lg text-gray-300 space-y-1">
-                    <li>Built real-time asset processing system for dynamic delivery of JavaScript and CSS files</li>
-                    <li>Integrated Google Maps API for advanced direction services and route visualization</li>
-                    <li>Implemented intelligent caching strategies for optimized performance</li>
+                <ul class="list-none text-gray-300 mt-2 space-y-2">
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Built real-time asset processing system for dynamic delivery of JavaScript and CSS files</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Integrated Google Maps API for advanced direction services and route visualization</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Implemented intelligent caching strategies for optimized performance</span>
+                    </li>
                 </ul>
             `
         },
@@ -138,12 +159,27 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             imageUrl: "https://placehold.co/600x400",
             description: `
-                <ul class="list-disc list-inside text-lg text-gray-300 space-y-1">
-                    <li>Designed and implemented distributed microservices architecture</li>
-                    <li>Built event-driven communication system using RabbitMQ for inter-service messaging</li>
-                    <li>Implemented CQRS pattern improving query performance</li>
-                    <li>Developed comprehensive authentication service with 2FA and OAuth2 integration</li>
-                    <li>Created automated backup system ensuring data availability</li>
+                <ul class="list-none text-gray-300 mt-2 space-y-2">
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Designed and implemented distributed microservices architecture</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Built event-driven communication system using RabbitMQ for inter-service messaging</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Implemented CQRS pattern improving query performance</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Developed comprehensive authentication service with 2FA and OAuth2 integration</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Created automated backup system ensuring data availability</span>
+                    </li>
                 </ul>
             `
         },
@@ -160,13 +196,31 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             imageUrl: "https://placehold.co/600x400",
             description: `
-                <ul class="list-disc list-inside text-lg text-gray-300 space-y-1">
-                    <li>Created an e-commerce platform for mobile devices with a focus on security and user experience.</li>
-                    <li>Built high-performance REST API</li>
-                    <li>Integrated Stripe payment gateway</li>
-                    <li>Implemented Redis caching layer improving performance</li>
-                    <li>Developed OAuth authentication supporting Google and GitHub</li>
-                    <li>Created comprehensive cart and wishlist system</li>
+                <ul class="list-none text-gray-300 mt-2 space-y-2">
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Created an e-commerce platform for mobile devices with a focus on security and user experience.</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Built high-performance REST API</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Integrated Stripe payment gateway</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Implemented Redis caching layer improving performance</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Developed OAuth authentication supporting Google and GitHub</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Created comprehensive cart and wishlist system</span>
+                    </li>
                 </ul>
             `
         },
@@ -179,11 +233,23 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             imageUrl: "https://placehold.co/600x400",
             description: `
-                <ul class="list-disc list-inside text-lg text-gray-300 space-y-1">
-                    <li>Engineered the Panel Misr website, delivering a robust and scalable solution</li>
-                    <li>Delivered full-stack solution for enterprise client</li>
-                    <li>Optimized database queries reducing load time</li>
-                    <li>Built responsive admin panel with advanced reporting features</li>
+                <ul class="list-none text-gray-300 mt-2 space-y-2">
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Engineered the Panel Misr website, delivering a robust and scalable solution</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Delivered full-stack solution for enterprise client</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Optimized database queries reducing load time</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Built responsive admin panel with advanced reporting features</span>
+                    </li>
                 </ul>
             `
         },
@@ -197,9 +263,15 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             imageUrl: "https://placehold.co/600x400",
             description: `
-                <ul class="list-disc list-inside text-lg text-gray-300 space-y-1">
-                    <li>Designed a music streaming application with a focus on performance and security, using Nest.js and MongoDB.</li>
-                    <li>Integrated Google OAuth and email notifications for enhanced user interactio</li>
+                <ul class="list-none text-gray-300 mt-2 space-y-2">
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Designed a music streaming application with a focus on performance and security, using Nest.js and MongoDB.</span>
+                    </li>
+                    <li class="flex items-baseline relative pl-6">
+                        <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
+                        <span>Integrated Google OAuth and email notifications for enhanced user interactio</span>
+                    </li>
                 </ul>
             `
         }
