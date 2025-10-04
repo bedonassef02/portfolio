@@ -118,18 +118,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.view-details-btn').forEach(button => {
         button.addEventListener('click', () => {
-            // Check if it's a mobile device (you might want a more robust check)
-            if (window.innerWidth < 768) { // Tailwind's 'md' breakpoint is 768px
-                const jobId = parseInt(button.dataset.jobId);
-                const job = jobDetailsData.find(item => item.id === jobId);
+            const jobId = parseInt(button.dataset.jobId);
+            const job = jobDetailsData.find(item => item.id === jobId);
 
-                if (job) {
-                    modalJobTitle.textContent = job.title;
-                    modalCompanyName.textContent = job.company;
-                    modalJobDates.textContent = job.dates;
-                    modalJobDetails.innerHTML = job.details;
-                    jobDetailsModal.classList.remove('hidden');
-                }
+            if (job) {
+                modalJobTitle.textContent = job.title;
+                modalCompanyName.textContent = job.company;
+                modalJobDates.textContent = job.dates;
+                modalJobDetails.innerHTML = job.details;
+                jobDetailsModal.classList.remove('hidden');
             }
         });
     });
