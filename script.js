@@ -157,10 +157,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showNextProject() {
-        if (currentIndex < projectCards.length - projectsToShow) {
+        const maxIndex = projectCards.length - projectsToShow;
+
+        if (currentIndex < maxIndex) {
             currentIndex++;
         } else {
-            currentIndex = 0; // Loop back to the beginning
+            currentIndex = 0; // Loop back to the very first project (index 0)
         }
         showProject(currentIndex);
     }
@@ -169,7 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentIndex > 0) {
             currentIndex--;
         } else {
-            currentIndex = projectCards.length - projectsToShow; // Loop to the end
+            // Loop to the last possible starting position for a full set
+            currentIndex = projectCards.length - projectsToShow;
         }
         showProject(currentIndex);
     }
