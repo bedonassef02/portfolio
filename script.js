@@ -146,34 +146,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectsCarousel = document.getElementById('projects-carousel');
     const prevProjectBtn = document.getElementById('prev-project');
     const nextProjectBtn = document.getElementById('next-project');
-    const projectCards = Array.from(projectsCarousel.children);
-    let currentIndex = 0;
-    let autoSwipeInterval;
+    const allProjectCards = Array.from(projectsCarousel.children); // All cards including clones
+    const realProjectCount = 6; // Total number of original projects
     const projectsToShow = 3; // Number of projects to show at once
+    const clonedStart = projectsToShow; // Index where real projects start
+    const clonedEnd = projectsToShow + realProjectCount; // Index where real projects end
+    let currentIndex = clonedStart; // Start at the first real project
+    let autoSwipeInterval;
 
-    function showProject(index) {
-        const cardWidth = projectCards[0].offsetWidth + 32; // card width + gap-8 (32px)
+    function getCardWidth() {
+        // Calculate card width dynamically, including gap
+        const firstCard = allProjectCards[0];
+        if (firstCard) {
+            const style = window.getComputedStyle(firstCard);
+            const marginRight = parseFloat(style.marginRight) || 0; // Assuming gap is implemented as margin-right
+            return firstCard.offsetWidth + marginRight;
+        }
+        return 0;
+    }
+
+    function showProject(index, smooth = true) {
+        const cardWidth = getCardWidth();
         projectsCarousel.scrollLeft = index * cardWidth;
+
+        // Teleportation logic
+        if (index >= clonedEnd) {
+            projectsCarousel.scrollLeft = clonedStart * cardWidth;
+            currentIndex = clonedStart;
+        } else if (index < clonedStart) {
+            projectsCarousel.scrollLeft = (clonedEnd - 1) * cardWidth;
+            currentIndex = clonedEnd - 1;
+        }
     }
 
     function showNextProject() {
-        const maxIndex = projectCards.length - projectsToShow;
-
-        if (currentIndex < maxIndex) {
-            currentIndex++;
-        } else {
-            currentIndex = 0; // Loop back to the very first project (index 0)
-        }
+        currentIndex++;
         showProject(currentIndex);
     }
 
     function showPrevProject() {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            // Loop to the last possible starting position for a full set
-            currentIndex = projectCards.length - projectsToShow;
-        }
+        currentIndex--;
         showProject(currentIndex);
     }
 
@@ -185,7 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(autoSwipeInterval);
     }
 
-    if (prevProjectBtn && nextProjectBtn && projectsCarousel && projectCards.length > 0) {
+    if (prevProjectBtn && nextProjectBtn && projectsCarousel && allProjectCards.length > 0) {
+        // Initialize carousel to show the first real project without animation
+        projectsCarousel.scrollLeft = clonedStart * getCardWidth();
+
         prevProjectBtn.addEventListener('click', () => {
             stopAutoSwipe();
             showPrevProject();
@@ -200,8 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
         projectsCarousel.addEventListener('mouseenter', stopAutoSwipe);
         projectsCarousel.addEventListener('mouseleave', startAutoSwipe);
 
-        // Initialize carousel to show the first project
-        showProject(currentIndex);
         startAutoSwipe(); // Start auto-swipe on load
     }
 

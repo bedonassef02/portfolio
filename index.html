@@ -319,6 +319,7 @@
                     <i class="fas fa-cubes text-6xl text-blue-500 mb-4"></i>
                     <h4 class="text-xl font-bold text-white">Xano</h4>
                 </div>
+            </div>
         </div>
     </section>
 
@@ -326,7 +327,25 @@
         <div class="container mx-auto px-4 md:px-8">
             <h2 class="text-4xl font-bold text-center mb-12 text-white">Projects</h2>
             <div class="relative px-12">
-                <div id="projects-carousel" class="flex gap-8 overflow-hidden">
+                <div id="projects-carousel" class="flex gap-8 overflow-hidden scroll-smooth">
+                    <!-- Cloned last 3 projects -->
+                    <a href="project-mobile-store.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
+                        <img src="https://placehold.co/300x200" alt="Mobile-Store" class="rounded-md mx-auto mb-4">
+                        <h3 class="text-2xl font-bold text-white">MOBILE-STORE</h3>
+                        <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Express.js, TypeScript, MySQL, Redis, Stripe API, Docker</p>
+                    </a>
+                    <a href="project-panel-misr.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
+                        <img src="https://placehold.co/300x200" alt="Panel Misr" class="rounded-md mx-auto mb-4">
+                        <h3 class="text-2xl font-bold text-white">PANEL MISR</h3>
+                        <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Laravel, MySQL</p>
+                    </a>
+                    <a href="project-mi-music.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
+                        <img src="https://placehold.co/300x200" alt="MI-MUSIC" class="rounded-md mx-auto mb-4">
+                        <h3 class="text-2xl font-bold text-white">MI-MUSIC</h3>
+                        <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Nest.js, MongoDB, Google OAuth</p>
+                    </a>
+
+                    <!-- Original projects -->
                     <a href="project-egyptian-landmarks.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
                         <img src="https://placehold.co/300x200" alt="Egyptian Landmarks App" class="rounded-md mx-auto mb-4">
                         <h3 class="text-2xl font-bold text-white">EGYPTIAN LANDMARKS APP | GRADUATION PROJECT</h3>
@@ -357,21 +376,30 @@
                         <h3 class="text-2xl font-bold text-white">MI-MUSIC</h3>
                         <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Nest.js, MongoDB, Google OAuth</p>
                     </a>
+
+                    <!-- Cloned first 3 projects -->
+                    <a href="project-egyptian-landmarks.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
+                        <img src="https://placehold.co/300x200" alt="Egyptian Landmarks App" class="rounded-md mx-auto mb-4">
+                        <h3 class="text-2xl font-bold text-white">EGYPTIAN LANDMARKS APP | GRADUATION PROJECT</h3>
+                        <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Nest.js, Next.js, MongoDB, TensorFlow</p>
+                    </a>
+                    <a href="project-dynamic-asset.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
+                        <img src="https://placehold.co/300x200" alt="Dynamic Asset Serving System" class="rounded-md mx-auto mb-4">
+                        <h3 class="text-2xl font-bold text-white">DYNAMIC ASSET SERVING SYSTEM</h3>
+                        <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: PHP 8.4+, JavaScript, Google Maps API</p>
+                    </a>
+                    <a href="project-microservice-ecommerce.html" class="block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
+                        <img src="https://placehold.co/300x200" alt="Microservice E-commerce Platform" class="rounded-md mx-auto mb-4">
+                        <h3 class="text-2xl font-bold text-white">MICROSERVICE E-COMMERCE PLATFORM</h3>
+                        <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Nest.js, RabbitMQ, Redis, Docker</p>
+                    </a>
                 </div>
                 <!-- Navigation buttons -->
                 <button id="prev-project" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none z-10">
                     <i class="fas fa-chevron-left text-3xl"></i>
                 </button>
-                    <i class="fas fa-chevron-left text-3xl"></i>
-                </button>
-                    <i class="fas fa-chevron-left"></i>
-                </button>
                 <button id="next-project" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none z-10">
                     <i class="fas fa-chevron-right text-3xl"></i>
-                </button>
-                    <i class="fas fa-chevron-right text-3xl"></i>
-                </button>
-                    <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
         </div>
