@@ -38,19 +38,49 @@
         .animate-outline {
             animation: outline 0.5s ease-in-out forwards;
         }
+
+        /* Dark Mode Styles */
+        html.dark {
+            background-color: #0D1B2A;
+            color: #E0E1DD;
+        }
+        html.dark .bg-white {
+            background-color: #1F2937;
+        }
+        html.dark .text-gray-800 {
+            color: #E0E1DD;
+        }
+        html.dark .text-gray-600 {
+            color: #A0AEC0;
+        }
+        html.dark .bg-gray-100 {
+            background-color: #0D1B2A;
+        }
+        html.dark .hover\:text-blue-400:hover {
+            color: #60A5FA;
+        }
+        html.dark .text-gray-300 {
+            color: #CBD5E0;
+        }
+        html.dark .bg-gray-800 {
+            background-color: #1F2937;
+        }
+        html.dark .text-white {
+            color: #E0E1DD;
+        }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-100">
-    <header class="bg-white shadow-md sticky top-0 z-50 dark:bg-gray-800">
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto flex justify-between items-center px-4 md:px-8 py-4">
             <a href="#" class="text-2xl font-bold text-blue-600">My Portfolio</a>
             <ul class="flex space-x-8 items-center">
-                <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400">About</a></li>
-                <li><a href="#work-experience" class="hover:text-blue-600 dark:hover:text-blue-400">Work Experience</a></li>
-                <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a></li>
-                <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400">Contact</a></li>
+                <li><a href="#about" class="hover:text-blue-600">About</a></li>
+                <li><a href="#work-experience" class="hover:text-blue-600">Work Experience</a></li>
+                <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+                <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
                 <li>
-                    <button id="theme-toggle" class="text-2xl focus:outline-none text-gray-800 dark:text-gray-100">
+                    <button id="theme-toggle" class="text-2xl focus:outline-none text-gray-800">
                         <i class="fas fa-moon"></i>
                     </button>
                 </li>
@@ -61,15 +91,15 @@
     <section id="about" class="text-center py-20 animate-slideIn">
         <div class="container mx-auto px-4 md:px-8">
             <img src="https://placehold.co/150" alt="Profile Picture" class="rounded-full mx-auto mb-4 animate-breathe">
-            <h1 class="text-5xl font-bold text-gray-800 dark:text-white">John Doe</h1>
+            <h1 class="text-5xl font-bold text-gray-800">John Doe</h1>
             <p class="text-2xl text-blue-600">Software Developer</p>
-            <p class="max-w-3xl mx-auto mt-4 text-lg text-gray-600 dark:text-gray-300">Hi, I'm John Doe, a passionate software developer with experience in creating web applications. I love to learn new technologies and build cool things.</p>
+            <p class="max-w-3xl mx-auto mt-4 text-lg text-gray-600">Hi, I'm John Doe, a passionate software developer with experience in creating web applications. I love to learn new technologies and build cool things.</p>
         </div>
     </section>
 
-    <section id="work-experience" class="py-20 bg-gray-100 dark:bg-gray-900 animate-slideIn">
+    <section id="work-experience" class="py-20 bg-gray-100 animate-slideIn">
         <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">Work Experience</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Work Experience</h2>
             <div class="relative">
                 <div class="border-l-4 border-blue-600 absolute h-full top-0 left-1/2 transform -translate-x-1/2"></div>
                 <div class="mb-8 flex justify-between items-center w-full right-timeline">
@@ -77,13 +107,13 @@
                     <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full">
                         <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
                     </div>
-                    <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl dark:bg-gray-800">
-                        <h3 class="font-bold text-2xl text-gray-800 dark:text-white">Senior Developer</h3>
+                    <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                        <h3 class="font-bold text-2xl text-gray-800">Senior Developer</h3>
                         <p class="text-sm font-medium text-blue-600">2020 - Present</p>
-                        <p class="mt-2 text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         <button class="text-sm text-blue-500 hover:underline focus:outline-none">View Details</button>
                         <div class="mt-2 hidden">
-                            <p class="text-gray-600 dark:text-gray-400">More detailed information about the Senior Developer role. You can include responsibilities, achievements, and technologies used.</p>
+                            <p class="text-gray-600">More detailed information about the Senior Developer role. You can include responsibilities, achievements, and technologies used.</p>
                         </div>
                     </div>
                 </div>
@@ -93,13 +123,13 @@
                     <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full">
                         <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
                     </div>
-                    <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl dark:bg-gray-800">
-                        <h3 class="font-bold text-2xl text-gray-800 dark:text-white">Junior Developer</h3>
+                    <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                        <h3 class="font-bold text-2xl text-gray-800">Junior Developer</h3>
                         <p class="text-sm font-medium text-blue-600">2018 - 2020</p>
-                        <p class="mt-2 text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         <button class="text-sm text-blue-500 hover:underline focus:outline-none">View Details</button>
                         <div class="mt-2 hidden">
-                            <p class="text-gray-600 dark:text-gray-400">More detailed information about the Junior Developer role. You can include responsibilities, achievements, and technologies used.</p>
+                            <p class="text-gray-600">More detailed information about the Junior Developer role. You can include responsibilities, achievements, and technologies used.</p>
                         </div>
                     </div>
                 </div>
@@ -109,34 +139,34 @@
 
     <section id="projects" class="py-20 animate-slideIn">
         <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">Projects</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl dark:bg-gray-800">
+                <div class="bg-white rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                     <img src="https://placehold.co/300x200" alt="Project 1" class="rounded-md mx-auto mb-4">
-                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Project 1</h3>
-                    <p class="text-gray-600 mt-2 dark:text-gray-300">A brief description of your project.</p>
+                    <h3 class="text-2xl font-bold text-gray-800">Project 1</h3>
+                    <p class="text-gray-600 mt-2">A brief description of your project.</p>
                     <a href="project1.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full mt-4 hover:bg-blue-700 animate-pulse">View Project</a>
                 </div>
-                <div class="bg-white rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl dark:bg-gray-800">
+                <div class="bg-white rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                     <img src="https://placehold.co/300x200" alt="Project 2" class="rounded-md mx-auto mb-4">
-                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Project 2</h3>
-                    <p class="text-gray-600 mt-2 dark:text-gray-300">A brief description of your project.</p>
+                    <h3 class="text-2xl font-bold text-gray-800">Project 2</h3>
+                    <p class="text-gray-600 mt-2">A brief description of your project.</p>
                     <a href="project2.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full mt-4 hover:bg-blue-700 animate-pulse">View Project</a>
                 </div>
-                <div class="bg-white rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl dark:bg-gray-800">
+                <div class="bg-white rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                     <img src="https://placehold.co/300x200" alt="Project 3" class="rounded-md mx-auto mb-4">
-                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Project 3</h3>
-                    <p class="text-gray-600 mt-2 dark:text-gray-300">A brief description of your project.</p>
+                    <h3 class="text-2xl font-bold text-gray-800">Project 3</h3>
+                    <p class="text-gray-600 mt-2">A brief description of your project.</p>
                     <a href="project3.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full mt-4 hover:bg-blue-700 animate-pulse">View Project</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-900 animate-slideIn">
+    <section id="contact" class="py-20 bg-gray-100 animate-slideIn">
         <div class="container mx-auto px-4 md:px-8 text-center">
-            <h2 class="text-4xl font-bold mb-4 text-gray-800 dark:text-white">Contact Me</h2>
-            <p class="text-lg text-gray-600 dark:text-gray-300">Feel free to reach out to me on any of the following platforms:</p>
+            <h2 class="text-4xl font-bold mb-4 text-gray-800">Contact Me</h2>
+            <p class="text-lg text-gray-600">Feel free to reach out to me on any of the following platforms:</p>
             <div class="flex justify-center space-x-8 mt-8">
                 <a href="#" class="text-blue-600 hover:text-blue-700 text-4xl">
                     <i class="fas fa-envelope"></i>
@@ -151,9 +181,7 @@
         </div>
     </section>
 
-    <footer class="bg-dark text-white text-center p-4">
+    <footer class="bg-gray-800 text-white text-center p-4">
         <p>&copy; 2025 John Doe</p>
     </footer>
-    <script src="script.js"></script>
 </body>
-</html>
