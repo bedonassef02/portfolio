@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: "Nest.js", iconClass: "devicon-nestjs-plain text-red-500" },
                 { name: "Next.js", iconClass: "devicon-nextjs-plain text-white" },
                 { name: "MongoDB", iconClass: "devicon-mongodb-plain text-green-500" },
-                { name: "TensorFlow", iconClass: "devicon-tensorflow-plain text-orange-500" }
+                { name: "TensorFlow", iconClass: "fas fa-brain text-orange-500" }
             ],
             imageUrl: "https://placehold.co/600x400",
             description: `
