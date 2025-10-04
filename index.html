@@ -134,35 +134,9 @@
                     </div>
                     <div class="order-1 bg-gray-800 rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                         <h3 class="font-bold text-2xl text-white">Backend Developer</h3>
-                        <p class="text-sm font-medium text-blue-600">Corporate Synergy Solutions</p>
+                        <p class="text-base font-semibold text-blue-500">Corporate Synergy Solutions</p>
                         <p class="text-sm font-medium text-blue-600">August 2025 - October 2025</p>
-                        <details class="mt-2">
-                            <summary class="text-blue-500 cursor-pointer flex items-center">
-                                View Details <i class="fas fa-chevron-down ml-2 transition-transform duration-300"></i>
-                            </summary>
-                            <ul class="list-none text-gray-300 mt-2 space-y-2">
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Architected and implemented a multi-tenant SaaS backend for auto detailing shops, streamlining bookings, employee management, and payments.</span>
-                                </li>
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Implemented AI-driven photo quoting, improving job estimation accuracy</span>
-                                </li>
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Developed a scheduling and calendar system with real-time bay availability, task checklists, and self-service customer booking.</span>
-                                </li>
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Implemented secure payment workflows with Stripe subscriptions, token-based authentication, and Google Secret Manager.</span>
-                                </li>
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Developed role-based portals with secure authentication and permission systems.</span>
-                                </li>
-                            </ul>
-                        </details>
+                        <button class="view-details-btn text-blue-500 hover:underline cursor-pointer mt-2" data-job-id="1">View Details</button>
                     </div>
                 </div>
 
@@ -173,27 +147,9 @@
                     </div>
                     <div class="order-1 bg-gray-800 rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                         <h3 class="font-bold text-2xl text-white">Full-Stack PHP Developer</h3>
-                        <p class="text-sm font-medium text-blue-600">TSR Ventures & Solutions</p>
+                        <p class="text-base font-semibold text-blue-500">TSR Ventures & Solutions</p>
                         <p class="text-sm font-medium text-blue-600">October 2024 - July 2025</p>
-                        <details class="mt-2">
-                            <summary class="text-blue-500 cursor-pointer flex items-center">
-                                View Details <i class="fas fa-chevron-down ml-2 transition-transform duration-300"></i>
-                            </summary>
-                            <ul class="list-none text-gray-300 mt-2 space-y-2">
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Designed and developed a custom PHP framework to improve developer efficiency.</span>
-                                </li>
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Built a Digital Asset Management System (DAMS) with media uploads, metadata extraction, and indexing.</span>
-                                </li>
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Developed reusable backend modules, reducing code duplication by 30%.</span>
-                                </li>
-                            </ul>
-                        </details>
+                        <button class="view-details-btn text-blue-500 hover:underline cursor-pointer mt-2" data-job-id="2">View Details</button>
                     </div>
                 </div>
             </div>
@@ -378,5 +334,18 @@
         <p>&copy; 2025 ABDELRAHMAN MAHMOUD</p>
     </footer>
     <script src="script.js"></script>
+
+    <!-- Mobile Job Details Modal -->
+    <div id="job-details-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50">
+        <div class="bg-gray-800 rounded-lg shadow-xl p-6 m-4 max-w-md w-full relative">
+            <button id="close-modal-btn" class="absolute top-3 right-3 text-gray-400 hover:text-white text-2xl">&times;</button>
+            <h3 id="modal-job-title" class="font-bold text-2xl text-white mb-2"></h3>
+            <p id="modal-company-name" class="text-base font-semibold text-blue-500 mb-1"></p>
+            <p id="modal-job-dates" class="text-sm font-medium text-blue-600 mb-4"></p>
+            <div id="modal-job-details" class="text-gray-300">
+                <!-- Job details will be loaded here -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>
