@@ -115,81 +115,38 @@
                 <button class="skill-category-btn px-6 py-2 rounded-full bg-gray-700 text-white font-semibold hover:bg-blue-700 focus:outline-none" data-category="databases-tools">Databases & Tools</button>
             </div>
 
-            <div id="skills-container">
-                <div class="skill-category-content grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center" data-category="all">
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fab fa-html5 text-6xl text-orange-500 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">HTML5</h4>
-                    </div>
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fab fa-css3-alt text-6xl text-blue-500 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">CSS3</h4>
-                    </div>
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fab fa-js-square text-6xl text-yellow-500 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">JavaScript</h4>
-                    </div>
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fab fa-react text-6xl text-blue-400 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">React</h4>
-                    </div>
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fab fa-node-js text-6xl text-green-500 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">Node.js</h4>
-                    </div>
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fab fa-python text-6xl text-blue-700 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">Python</h4>
-                    </div>
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fas fa-database text-6xl text-gray-400 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">SQL</h4>
-                    </div>
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fab fa-git-alt text-6xl text-red-600 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">Git</h4>
-                    </div>
+            <div id="all-skills-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center">
+                <div class="skill-item bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-categories="frontend">
+                    <i class="fab fa-html5 text-6xl text-orange-500 mb-4"></i>
+                    <h4 class="text-xl font-bold text-white">HTML5</h4>
                 </div>
-
-                <div class="skill-category-content grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center hidden" data-category="frontend">
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fab fa-html5 text-6xl text-orange-500 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">HTML5</h4>
-                    </div>
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fab fa-css3-alt text-6xl text-blue-500 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">CSS3</h4>
-                    </div>
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fab fa-js-square text-6xl text-yellow-500 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">JavaScript</h4>
-                    </div>
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fab fa-react text-6xl text-blue-400 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">React</h4>
-                    </div>
+                <div class="skill-item bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-categories="frontend">
+                    <i class="fab fa-css3-alt text-6xl text-blue-500 mb-4"></i>
+                    <h4 class="text-xl font-bold text-white">CSS3</h4>
                 </div>
-
-                <div class="skill-category-content grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center hidden" data-category="backend">
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fab fa-node-js text-6xl text-green-500 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">Node.js</h4>
-                    </div>
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fab fa-python text-6xl text-blue-700 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">Python</h4>
-                    </div>
+                <div class="skill-item bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-categories="frontend">
+                    <i class="fab fa-js-square text-6xl text-yellow-500 mb-4"></i>
+                    <h4 class="text-xl font-bold text-white">JavaScript</h4>
                 </div>
-
-                <div class="skill-category-content grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center hidden" data-category="databases-tools">
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fas fa-database text-6xl text-gray-400 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">SQL</h4>
-                    </div>
-                    <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <i class="fab fa-git-alt text-6xl text-red-600 mb-4"></i>
-                        <h4 class="text-xl font-bold text-white">Git</h4>
-                    </div>
+                <div class="skill-item bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-categories="frontend">
+                    <i class="fab fa-react text-6xl text-blue-400 mb-4"></i>
+                    <h4 class="text-xl font-bold text-white">React</h4>
+                </div>
+                <div class="skill-item bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-categories="backend">
+                    <i class="fab fa-node-js text-6xl text-green-500 mb-4"></i>
+                    <h4 class="text-xl font-bold text-white">Node.js</h4>
+                </div>
+                <div class="skill-item bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-categories="backend">
+                    <i class="fab fa-python text-6xl text-blue-700 mb-4"></i>
+                    <h4 class="text-xl font-bold text-white">Python</h4>
+                </div>
+                <div class="skill-item bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-categories="databases-tools">
+                    <i class="fas fa-database text-6xl text-gray-400 mb-4"></i>
+                    <h4 class="text-xl font-bold text-white">SQL</h4>
+                </div>
+                <div class="skill-item bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-categories="databases-tools">
+                    <i class="fab fa-git-alt text-6xl text-red-600 mb-4"></i>
+                    <h4 class="text-xl font-bold text-white">Git</h4>
                 </div>
             </div>
         </div>

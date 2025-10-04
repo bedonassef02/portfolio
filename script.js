@@ -42,25 +42,27 @@ document.querySelectorAll('img').forEach(img => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const categoryButtons = document.querySelectorAll('.skill-category-btn');
-    const skillContents = document.querySelectorAll('.skill-category-content');
+    const skillItems = document.querySelectorAll('.skill-item');
 
     categoryButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const category = button.dataset.category;
+            const selectedCategory = button.dataset.category;
 
-            // Remove active class from all buttons and add to the clicked one
-            categoryButtons.forEach(btn => btn.classList.remove('active-category', 'bg-blue-600', 'hover:bg-blue-700'));
-            categoryButtons.forEach(btn => btn.classList.add('bg-gray-700', 'hover:bg-blue-700'));
-            button.classList.add('active-category', 'bg-blue-600', 'hover:bg-blue-700');
+            // Update active button styling
+            categoryButtons.forEach(btn => {
+                btn.classList.remove('active-category', 'bg-blue-600');
+                btn.classList.add('bg-gray-700');
+            });
+            button.classList.add('active-category', 'bg-blue-600');
             button.classList.remove('bg-gray-700');
 
-
-            // Hide all skill content and show the selected one
-            skillContents.forEach(content => {
-                if (content.dataset.category === category || category === 'all') {
-                    content.classList.remove('hidden');
+            // Show/hide skill items based on selected category
+            skillItems.forEach(item => {
+                const itemCategories = item.dataset.categories.split(' ');
+                if (selectedCategory === 'all' || itemCategories.includes(selectedCategory)) {
+                    item.classList.remove('hidden');
                 } else {
-                    content.classList.add('hidden');
+                    item.classList.add('hidden');
                 }
             });
         });
