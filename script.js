@@ -157,12 +157,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showNextProject() {
-        currentIndex = (currentIndex + 1) % (projectCards.length - projectsToShow + 1);
+        if (currentIndex < projectCards.length - projectsToShow) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Loop back to the beginning
+        }
         showProject(currentIndex);
     }
 
     function showPrevProject() {
-        currentIndex = (currentIndex - 1 + (projectCards.length - projectsToShow + 1)) % (projectCards.length - projectsToShow + 1);
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = projectCards.length - projectsToShow; // Loop to the end
+        }
         showProject(currentIndex);
     }
 
