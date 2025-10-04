@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 1,
             title: "EGYPTIAN LANDMARKS APP | GRADUATION PROJECT",
             techStack: "Nest.js, Next.js, MongoDB, TensorFlow",
+            imageUrl: "https://placehold.co/600x400",
             description: `
                 <p class="text-lg text-gray-300 mb-2">Implemented AI-powered image recognition for landmark identification</p>
                 <p class="text-lg text-gray-300 mb-2">Built comprehensive admin dashboard with content management</p>
@@ -106,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 2,
             title: "DYNAMIC ASSET SERVING SYSTEM",
             techStack: "PHP 8.4+, JavaScript, Google Maps API",
+            imageUrl: "https://placehold.co/600x400",
             description: `
                 <p class="text-lg text-gray-300 mb-2">Built real-time asset processing system for dynamic delivery of JavaScript and CSS files</p>
                 <p class="text-lg text-gray-300 mb-2">Integrated Google Maps API for advanced direction services and route visualization</p>
@@ -116,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 3,
             title: "MICROSERVICE E-COMMERCE PLATFORM",
             techStack: "Nest.js, RabbitMQ, Redis, Docker",
+            imageUrl: "https://placehold.co/600x400",
             description: `
                 <p class="text-lg text-gray-300 mb-2">Designed and implemented distributed microservices architecture</p>
                 <p class="text-lg text-gray-300 mb-2">Built event-driven communication system using RabbitMQ for inter-service messaging</p>
@@ -128,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 4,
             title: "MOBILE-STORE",
             techStack: "Express.js, TypeScript, MySQL, Redis, Stripe API, Docker",
+            imageUrl: "https://placehold.co/600x400",
             description: `
                 <p class="text-lg text-gray-300 mb-2">Created an e-commerce platform for mobile devices with a focus on security and user experience.</p>
                 <p class="text-lg text-gray-300 mb-2">Built high-performance REST API</p>
@@ -141,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 5,
             title: "PANEL MISR",
             techStack: "Laravel, MySQL",
+            imageUrl: "https://placehold.co/600x400",
             description: `
                 <p class="text-lg text-gray-300 mb-2">Engineered the Panel Misr website, delivering a robust and scalable solution</p>
                 <p class="text-lg text-gray-300 mb-2">Delivered full-stack solution for enterprise client</p>
@@ -152,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 6,
             title: "MI-MUSIC",
             techStack: "Nest.js, MongoDB, Google OAuth",
+            imageUrl: "https://placehold.co/600x400",
             description: `
                 <p class="text-lg text-gray-300 mb-2">Designed a music streaming application with a focus on performance and security, using Nest.js and MongoDB.</p>
                 <p class="text-lg text-gray-300 mb-2">Integrated Google OAuth and email notifications for enhanced user interactio</p>
@@ -217,6 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalProjectTitle = document.getElementById('modal-project-title');
     const modalProjectTechStack = document.getElementById('modal-project-tech-stack');
     const modalProjectDescription = document.getElementById('modal-project-description');
+    const modalProjectImage = document.getElementById('modal-project-image'); // Get reference to the image element
 
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('click', () => {
@@ -227,6 +234,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalProjectTitle.textContent = project.title;
                 modalProjectTechStack.textContent = `Tech Stack: ${project.techStack}`;
                 modalProjectDescription.innerHTML = project.description;
+                modalProjectImage.src = project.imageUrl; // Set image src
+                modalProjectImage.alt = project.title; // Set image alt
                 projectDetailsModal.classList.remove('hidden');
             }
         });
