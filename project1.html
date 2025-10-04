@@ -16,16 +16,6 @@
         .animate-slideIn {
             animation: slideIn 1s ease-in-out;
         }
-
-        @keyframes neon-outline {
-            0% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.7), 0 0 10px rgba(0, 255, 255, 0.5); }
-            50% { box-shadow: 0 0 8px rgba(0, 255, 255, 0.9), 0 0 15px rgba(0, 255, 255, 0.6); }
-            100% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.7), 0 0 10px rgba(0, 255, 255, 0.5); }
-        }
-
-        .neon-effect {
-            animation: neon-outline 1.5s ease-in-out infinite alternate;
-        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-100">
@@ -39,7 +29,7 @@
     <main class="container mx-auto p-8 px-4 md:px-8 animate-slideIn">
         <h1 class="text-5xl font-bold my-4 text-center text-gray-800 dark:text-white">Project 1</h1>
         <div class="flex flex-col md:flex-row md:space-x-8 mt-8">
-            <div class="md:w-1/2 neon-effect">
+            <div class="md:w-1/2">
                 <img src="https://placehold.co/600x400" alt="Project 1" class="rounded-lg shadow-xl mx-auto mb-4">
             </div>
             <div class="md:w-1/2">

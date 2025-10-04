@@ -38,16 +38,6 @@
         .animate-outline {
             animation: outline 0.5s ease-in-out forwards;
         }
-
-        @keyframes neon-outline {
-            0% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.7), 0 0 10px rgba(0, 255, 255, 0.5); }
-            50% { box-shadow: 0 0 8px rgba(0, 255, 255, 0.9), 0 0 15px rgba(0, 255, 255, 0.6); }
-            100% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.7), 0 0 10px rgba(0, 255, 255, 0.5); }
-        }
-
-        .neon-effect {
-            animation: neon-outline 1.5s ease-in-out infinite alternate;
-        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-100">
@@ -70,7 +60,7 @@
 
     <section id="about" class="text-center py-20 animate-slideIn">
         <div class="container mx-auto px-4 md:px-8">
-            <img src="https://placehold.co/150" alt="Profile Picture" class="rounded-full mx-auto mb-4 animate-breathe neon-effect">
+            <img src="https://placehold.co/150" alt="Profile Picture" class="rounded-full mx-auto mb-4 animate-breathe">
             <h1 class="text-5xl font-bold text-gray-800 dark:text-white">John Doe</h1>
             <p class="text-2xl text-blue-600">Software Developer</p>
             <p class="max-w-3xl mx-auto mt-4 text-lg text-gray-600 dark:text-gray-300">Hi, I'm John Doe, a passionate software developer with experience in creating web applications. I love to learn new technologies and build cool things.</p>
@@ -87,7 +77,7 @@
                     <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full">
                         <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
                     </div>
-                    <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl dark:bg-gray-800 neon-effect">
+                    <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl dark:bg-gray-800">
                         <h3 class="font-bold text-2xl text-gray-800 dark:text-white">Senior Developer</h3>
                         <p class="text-sm font-medium text-blue-600">2020 - Present</p>
                         <p class="mt-2 text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -103,7 +93,7 @@
                     <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full">
                         <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
                     </div>
-                    <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl dark:bg-gray-800 neon-effect">
+                    <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl dark:bg-gray-800">
                         <h3 class="font-bold text-2xl text-gray-800 dark:text-white">Junior Developer</h3>
                         <p class="text-sm font-medium text-blue-600">2018 - 2020</p>
                         <p class="mt-2 text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -121,19 +111,19 @@
         <div class="container mx-auto px-4 md:px-8">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl dark:bg-gray-800 neon-effect">
+                <div class="bg-white rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl dark:bg-gray-800">
                     <img src="https://placehold.co/300x200" alt="Project 1" class="rounded-md mx-auto mb-4">
                     <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Project 1</h3>
                     <p class="text-gray-600 mt-2 dark:text-gray-300">A brief description of your project.</p>
                     <a href="project1.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full mt-4 hover:bg-blue-700 animate-pulse">View Project</a>
                 </div>
-                <div class="bg-white rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl dark:bg-gray-800 neon-effect">
+                <div class="bg-white rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl dark:bg-gray-800">
                     <img src="https://placehold.co/300x200" alt="Project 2" class="rounded-md mx-auto mb-4">
                     <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Project 2</h3>
                     <p class="text-gray-600 mt-2 dark:text-gray-300">A brief description of your project.</p>
                     <a href="project2.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full mt-4 hover:bg-blue-700 animate-pulse">View Project</a>
                 </div>
-                <div class="bg-white rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl dark:bg-gray-800 neon-effect">
+                <div class="bg-white rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl dark:bg-gray-800">
                     <img src="https://placehold.co/300x200" alt="Project 3" class="rounded-md mx-auto mb-4">
                     <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Project 3</h3>
                     <p class="text-gray-600 mt-2 dark:text-gray-300">A brief description of your project.</p>
