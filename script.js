@@ -14,3 +14,17 @@ document.querySelectorAll('#work-experience button').forEach(button => {
         content.classList.toggle('hidden');
     });
 });
+
+const sections = document.querySelectorAll('section');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fadeIn');
+        }
+    });
+});
+
+sections.forEach(section => {
+    observer.observe(section);
+});
