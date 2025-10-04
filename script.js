@@ -94,73 +94,113 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 1,
             title: "EGYPTIAN LANDMARKS APP | GRADUATION PROJECT",
-            techStack: "Nest.js, Next.js, MongoDB, TensorFlow",
+            techStack: [
+                { name: "Nest.js", iconClass: "devicon-nestjs-plain text-red-500" },
+                { name: "Next.js", iconClass: "devicon-nextjs-plain text-white" },
+                { name: "MongoDB", iconClass: "devicon-mongodb-plain text-green-500" },
+                { name: "TensorFlow", iconClass: "devicon-tensorflow-plain text-orange-500" }
+            ],
             imageUrl: "https://placehold.co/600x400",
             description: `
-                <p class="text-lg text-gray-300 mb-2">Implemented AI-powered image recognition for landmark identification</p>
-                <p class="text-lg text-gray-300 mb-2">Built comprehensive admin dashboard with content management</p>
-                <p class="text-lg text-gray-300 mb-2">Integrated intelligent chatbot using LLM for interactive user engagement</p>
-                <p class="text-lg text-gray-300 mb-2">Remotly /bedonassef02</p>
+                <ul class="list-disc list-inside text-lg text-gray-300 space-y-1">
+                    <li>Implemented AI-powered image recognition for landmark identification</li>
+                    <li>Built comprehensive admin dashboard with content management</li>
+                    <li>Integrated intelligent chatbot using LLM for interactive user engagement</li>
+                    <li>Remotly /bedonassef02</li>
+                </ul>
             `
         },
         {
             id: 2,
             title: "DYNAMIC ASSET SERVING SYSTEM",
-            techStack: "PHP 8.4+, JavaScript, Google Maps API",
+            techStack: [
+                { name: "PHP 8.4+", iconClass: "devicon-php-plain text-blue-600" },
+                { name: "JavaScript", iconClass: "devicon-javascript-plain text-yellow-500" },
+                { name: "Google Maps API", iconClass: "fas fa-map-marked-alt text-red-500" }
+            ],
             imageUrl: "https://placehold.co/600x400",
             description: `
-                <p class="text-lg text-gray-300 mb-2">Built real-time asset processing system for dynamic delivery of JavaScript and CSS files</p>
-                <p class="text-lg text-gray-300 mb-2">Integrated Google Maps API for advanced direction services and route visualization</p>
-                <p class="text-lg text-gray-300 mb-2">Implemented intelligent caching strategies for optimized performance</p>
+                <ul class="list-disc list-inside text-lg text-gray-300 space-y-1">
+                    <li>Built real-time asset processing system for dynamic delivery of JavaScript and CSS files</li>
+                    <li>Integrated Google Maps API for advanced direction services and route visualization</li>
+                    <li>Implemented intelligent caching strategies for optimized performance</li>
+                </ul>
             `
         },
         {
             id: 3,
             title: "MICROSERVICE E-COMMERCE PLATFORM",
-            techStack: "Nest.js, RabbitMQ, Redis, Docker",
+            techStack: [
+                { name: "Nest.js", iconClass: "devicon-nestjs-plain text-red-500" },
+                { name: "RabbitMQ", iconClass: "fas fa-exchange-alt text-orange-500" },
+                { name: "Redis", iconClass: "devicon-redis-plain text-red-500" },
+                { name: "Docker", iconClass: "devicon-docker-plain text-blue-400" }
+            ],
             imageUrl: "https://placehold.co/600x400",
             description: `
-                <p class="text-lg text-gray-300 mb-2">Designed and implemented distributed microservices architecture</p>
-                <p class="text-lg text-gray-300 mb-2">Built event-driven communication system using RabbitMQ for inter-service messaging</p>
-                <p class="text-lg text-gray-300 mb-2">Implemented CQRS pattern improving query performance</p>
-                <p class="text-lg text-gray-300 mb-2">Developed comprehensive authentication service with 2FA and OAuth2 integration</p>
-                <p class="text-lg text-gray-300 mb-2">Created automated backup system ensuring data availability</p>
+                <ul class="list-disc list-inside text-lg text-gray-300 space-y-1">
+                    <li>Designed and implemented distributed microservices architecture</li>
+                    <li>Built event-driven communication system using RabbitMQ for inter-service messaging</li>
+                    <li>Implemented CQRS pattern improving query performance</li>
+                    <li>Developed comprehensive authentication service with 2FA and OAuth2 integration</li>
+                    <li>Created automated backup system ensuring data availability</li>
+                </ul>
             `
         },
         {
             id: 4,
             title: "MOBILE-STORE",
-            techStack: "Express.js, TypeScript, MySQL, Redis, Stripe API, Docker",
+            techStack: [
+                { name: "Express.js", iconClass: "devicon-express-plain text-gray-400" },
+                { name: "TypeScript", iconClass: "devicon-typescript-plain text-blue-500" },
+                { name: "MySQL", iconClass: "devicon-mysql-plain text-blue-500" },
+                { name: "Redis", iconClass: "devicon-redis-plain text-red-500" },
+                { name: "Stripe API", iconClass: "fab fa-stripe text-purple-500" },
+                { name: "Docker", iconClass: "devicon-docker-plain text-blue-400" }
+            ],
             imageUrl: "https://placehold.co/600x400",
             description: `
-                <p class="text-lg text-gray-300 mb-2">Created an e-commerce platform for mobile devices with a focus on security and user experience.</p>
-                <p class="text-lg text-gray-300 mb-2">Built high-performance REST API</p>
-                <p class="text-lg text-gray-300 mb-2">Integrated Stripe payment gateway</p>
-                <p class="text-lg text-gray-300 mb-2">Implemented Redis caching layer improving performance</p>
-                <p class="text-lg text-gray-300 mb-2">Developed OAuth authentication supporting Google and GitHub</p>
-                <p class="text-lg text-gray-300 mb-2">Created comprehensive cart and wishlist system</p>
+                <ul class="list-disc list-inside text-lg text-gray-300 space-y-1">
+                    <li>Created an e-commerce platform for mobile devices with a focus on security and user experience.</li>
+                    <li>Built high-performance REST API</li>
+                    <li>Integrated Stripe payment gateway</li>
+                    <li>Implemented Redis caching layer improving performance</li>
+                    <li>Developed OAuth authentication supporting Google and GitHub</li>
+                    <li>Created comprehensive cart and wishlist system</li>
+                </ul>
             `
         },
         {
             id: 5,
             title: "PANEL MISR",
-            techStack: "Laravel, MySQL",
+            techStack: [
+                { name: "Laravel", iconClass: "devicon-laravel-plain text-red-500" },
+                { name: "MySQL", iconClass: "devicon-mysql-plain text-blue-500" }
+            ],
             imageUrl: "https://placehold.co/600x400",
             description: `
-                <p class="text-lg text-gray-300 mb-2">Engineered the Panel Misr website, delivering a robust and scalable solution</p>
-                <p class="text-lg text-gray-300 mb-2">Delivered full-stack solution for enterprise client</p>
-                <p class="text-lg text-gray-300 mb-2">Optimized database queries reducing load time</p>
-                <p class="text-lg text-gray-300 mb-2">Built responsive admin panel with advanced reporting features</p>
+                <ul class="list-disc list-inside text-lg text-gray-300 space-y-1">
+                    <li>Engineered the Panel Misr website, delivering a robust and scalable solution</li>
+                    <li>Delivered full-stack solution for enterprise client</li>
+                    <li>Optimized database queries reducing load time</li>
+                    <li>Built responsive admin panel with advanced reporting features</li>
+                </ul>
             `
         },
         {
             id: 6,
             title: "MI-MUSIC",
-            techStack: "Nest.js, MongoDB, Google OAuth",
+            techStack: [
+                { name: "Nest.js", iconClass: "devicon-nestjs-plain text-red-500" },
+                { name: "MongoDB", iconClass: "devicon-mongodb-plain text-green-500" },
+                { name: "Google OAuth", iconClass: "fab fa-google text-blue-500" }
+            ],
             imageUrl: "https://placehold.co/600x400",
             description: `
-                <p class="text-lg text-gray-300 mb-2">Designed a music streaming application with a focus on performance and security, using Nest.js and MongoDB.</p>
-                <p class="text-lg text-gray-300 mb-2">Integrated Google OAuth and email notifications for enhanced user interactio</p>
+                <ul class="list-disc list-inside text-lg text-gray-300 space-y-1">
+                    <li>Designed a music streaming application with a focus on performance and security, using Nest.js and MongoDB.</li>
+                    <li>Integrated Google OAuth and email notifications for enhanced user interactio</li>
+                </ul>
             `
         }
     ];
@@ -232,7 +272,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (project) {
                 modalProjectTitle.textContent = project.title;
-                modalProjectTechStack.textContent = `Tech Stack: ${project.techStack}`;
+                // Populate tech stack with icons
+                modalProjectTechStack.innerHTML = project.techStack.map(tech => `
+                    <span class="inline-flex items-center mr-2 mb-1">
+                        <i class="${tech.iconClass} text-xl mr-1"></i>
+                        <span>${tech.name}</span>
+                    </span>
+                `).join('');
                 modalProjectDescription.innerHTML = project.description;
                 modalProjectImage.src = project.imageUrl; // Set image src
                 modalProjectImage.alt = project.title; // Set image alt
