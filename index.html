@@ -38,17 +38,12 @@
         .animate-outline {
             animation: outline 0.5s ease-in-out forwards;
         }
-        .bg-pattern {
-            background-image: linear-gradient(45deg, #2d3748 25%, transparent 25%),
-                            linear-gradient(-45deg, #2d3748 25%, transparent 25%),
-                            linear-gradient(45deg, transparent 75%, #2d3748 75%),
-                            linear-gradient(-45deg, transparent 75%, #2d3748 75%);
-            background-size: 20px 20px;
-            background-color: #1a202c;
+        .bg-gradient-dark {
+            background: linear-gradient(to bottom right, #1a202c, #2d3748);
         }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100 font-sans bg-pattern">
+<body class="bg-gray-900 text-gray-100 font-sans bg-gradient-dark">
     <header class="bg-gray-800 shadow-md sticky top-0 z-50">
         <nav class="container mx-auto flex justify-between items-center px-4 md:px-8 py-4">
             <a href="#" class="text-2xl font-bold text-blue-600">My Portfolio</a>
