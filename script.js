@@ -148,27 +148,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextProjectBtn = document.getElementById('next-project');
     const projectCards = Array.from(projectsCarousel.children);
     let currentIndex = 0;
+    let autoSwipeInterval;
+    const projectsToShow = 3; // Number of projects to show at once
 
     function showProject(index) {
-        projectsCarousel.scrollLeft = projectCards[index].offsetLeft;
+        const cardWidth = projectCards[0].offsetWidth + 32; // card width + gap-8 (32px)
+        projectsCarousel.scrollLeft = index * cardWidth;
     }
 
     function showNextProject() {
-        currentIndex = (currentIndex + 1) % projectCards.length;
+        currentIndex = (currentIndex + 1) % (projectCards.length - projectsToShow + 1);
         showProject(currentIndex);
     }
 
     function showPrevProject() {
-        currentIndex = (currentIndex - 1 + projectCards.length) % projectCards.length;
+        currentIndex = (currentIndex - 1 + (projectCards.length - projectsToShow + 1)) % (projectCards.length - projectsToShow + 1);
         showProject(currentIndex);
     }
 
+    function startAutoSwipe() {
+        autoSwipeInterval = setInterval(showNextProject, 3000); // Auto-swipe every 3 seconds
+    }
+
+    function stopAutoSwipe() {
+        clearInterval(autoSwipeInterval);
+    }
+
     if (prevProjectBtn && nextProjectBtn && projectsCarousel && projectCards.length > 0) {
-        prevProjectBtn.addEventListener('click', showPrevProject);
-        nextProjectBtn.addEventListener('click', showNextProject);
+        prevProjectBtn.addEventListener('click', () => {
+            stopAutoSwipe();
+            showPrevProject();
+            startAutoSwipe();
+        });
+        nextProjectBtn.addEventListener('click', () => {
+            stopAutoSwipe();
+            showNextProject();
+            startAutoSwipe();
+        });
+
+        projectsCarousel.addEventListener('mouseenter', stopAutoSwipe);
+        projectsCarousel.addEventListener('mouseleave', startAutoSwipe);
 
         // Initialize carousel to show the first project
         showProject(currentIndex);
+        startAutoSwipe(); // Start auto-swipe on load
     }
 
     const categoryButtons = document.querySelectorAll('.skill-category-btn');
