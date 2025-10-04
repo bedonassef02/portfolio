@@ -51,16 +51,34 @@
     <header class="bg-gray-800 shadow-md sticky top-0 z-50">
         <nav class="container mx-auto flex justify-between items-center px-4 md:px-8 py-4">
             <a href="#" class="text-2xl font-bold text-blue-600">My Portfolio</a>
-            <ul class="flex space-x-8 items-center">
+
+            <!-- Hamburger menu button for small screens -->
+            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Navigation links -->
+            <ul id="nav-links" class="hidden md:flex space-x-8 items-center">
                 <li><a href="#about" class="hover:text-blue-600">About</a></li>
                 <li><a href="#overview" class="hover:text-blue-600">Overview</a></li>
                 <li><a href="#work-experience" class="hover:text-blue-600">Work Experience</a></li>
                 <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
                 <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
                 <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
-
             </ul>
         </nav>
+
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800 pb-4">
+            <ul class="flex flex-col items-center space-y-4">
+                <li><a href="#about" class="block text-white hover:text-blue-600">About</a></li>
+                <li><a href="#overview" class="block text-white hover:text-blue-600">Overview</a></li>
+                <li><a href="#work-experience" class="block text-white hover:text-blue-600">Work Experience</a></li>
+                <li><a href="#skills" class="block text-white hover:text-blue-600">Skills</a></li>
+                <li><a href="#projects" class="block text-white hover:text-blue-600">Projects</a></li>
+                <li><a href="#contact" class="block text-white hover:text-blue-600">Contact</a></li>
+            </ul>
+        </div>
     </header>
 
     <section id="about" class="text-center py-20 animate-slideIn">

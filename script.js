@@ -34,6 +34,27 @@ sections.forEach(section => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Navbar responsiveness
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    if (menuButton && mobileMenu && navLinks) {
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            navLinks.classList.toggle('hidden'); // Hide desktop links when mobile menu is open
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                // Optionally, show desktop links again if needed, though usually not for mobile
+                // navLinks.classList.remove('hidden');
+            });
+        });
+    }
+
     const categoryButtons = document.querySelectorAll('.skill-category-btn');
     const skillItems = document.querySelectorAll('.skill-item');
 
