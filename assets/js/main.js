@@ -4,6 +4,7 @@ import { initializeProjects } from './projects.js';
 import { initializeSkills } from './skills.js';
 import { initializeNavbar } from './navbar.js';
 import { initializeIntersectionObserver } from './intersectionObserver.js';
+import { initializeAbout } from './about.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeSmoothScroll();
@@ -12,4 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeSkills();
     initializeNavbar();
     initializeIntersectionObserver();
+    initializeAbout();
 });
