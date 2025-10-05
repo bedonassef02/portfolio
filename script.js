@@ -109,33 +109,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const projectsContainer = document.getElementById('projects-container');
             projectsContainer.innerHTML = `
                 ${projectDetailsData.map(project => `
-                    <div class="project-carousel-item flex-none w-full md:w-1/2 lg:w-1/3 snap-center">
-                        <a href="#" class="project-card block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="${project.id}">
-                            <img src="${project.imageUrl}" alt="${project.title}" class="rounded-md mx-auto mb-4">
-                            <h3 class="text-2xl font-bold text-white">${project.title}</h3>
-                            <p class="text-sm font-medium text-blue-600 mt-2">Tech Stack: ${project.techStack.map(tech => tech.name).join(', ')}</p>
-                        </a>
-                    </div>
+                    <a href="#" class="project-card block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="${project.id}">
+                        <img src="${project.imageUrl}" alt="${project.title}" class="rounded-md mx-auto mb-4">
+                        <h3 class="text-2xl font-bold text-white">${project.title}</h3>
+                        <p class="text-sm font-medium text-blue-600 mt-2">Tech Stack: ${project.techStack.map(tech => tech.name).join(', ')}</p>
+                    </a>
                 `).join('')}
             `;
-
-            // Carousel functionality
-            const prevProjectButton = document.getElementById('prev-project');
-            const nextProjectButton = document.getElementById('next-project');
-            let scrollPosition = 0;
-            // Calculate item width dynamically, considering potential gaps (space-x-4 in Tailwind CSS is 16px)
-            // This assumes all project items have the same width and gap. Adjust if necessary.
-            const projectItemWidth = projectsContainer.querySelector('.project-carousel-item').offsetWidth + 16; 
-
-            prevProjectButton.addEventListener('click', () => {
-                scrollPosition = Math.max(scrollPosition - projectItemWidth, 0);
-                projectsContainer.scrollLeft = scrollPosition;
-            });
-
-            nextProjectButton.addEventListener('click', () => {
-                scrollPosition = Math.min(scrollPosition + projectItemWidth, projectsContainer.scrollWidth - projectsContainer.clientWidth);
-                projectsContainer.scrollLeft = scrollPosition;
-            });
 
             // Project Details Modal functionality (moved here)
             const projectDetailsModal = document.getElementById('project-details-modal');
