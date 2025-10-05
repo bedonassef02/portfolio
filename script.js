@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             workExperienceContainer.innerHTML = `
                 <div class="border-l-4 border-blue-600 absolute h-full top-0 left-1/2 transform -translate-x-1/2"></div>
                 ${jobDetailsData.map((job, index) => `
-                    <div class="mb-8 flex justify-between ${index % 2 === 0 ? 'flex-row-reverse' : ''} items-center w-full left-timeline">
+                    <div class="mb-8 flex justify-between ${index % 2 !== 0 ? 'flex-row-reverse' : ''} items-center w-full left-timeline">
                         <div class="order-1 w-5/12"></div>
                         <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full">
                             <h1 class="mx-auto text-white font-semibold text-lg">${job.id}</h1>
