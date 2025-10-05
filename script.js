@@ -110,8 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             projectsContainer.innerHTML = `
                 ${projectDetailsData.map(project => `
                     <a href="#" class="project-card block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="${project.id}">
-                        <img src="${project.imageUrl}" alt="${project.title}" class="rounded-md mx-auto mb-4">
-                        <h3 class="text-2xl font-bold text-white">${project.title}</h3>
+                                                    <img src="${project.imageUrl}" alt="${project.title}" class="rounded-md mx-auto mb-4 w-full h-48 object-cover">                        <h3 class="text-2xl font-bold text-white">${project.title}</h3>
                         <p class="text-sm font-medium text-blue-600 mt-2">Tech Stack: ${project.techStack.map(tech => tech.name).join(', ')}</p>
                     </a>
                 `).join('')}
