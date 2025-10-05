@@ -120,7 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span>Remotly /bedonassef02</span>
                     </li>
                 </ul>
-            `
+            `,
+            projectLink: "https://github.com/bedonassef/EGYPTIAN-LANDMARKS-APP"
         },
         {
             id: 2,
@@ -146,7 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span>Implemented intelligent caching strategies for optimized performance</span>
                     </li>
                 </ul>
-            `
+            `,
+            projectLink: "#"
         },
         {
             id: 3,
@@ -181,7 +183,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span>Created automated backup system ensuring data availability</span>
                     </li>
                 </ul>
-            `
+            `,
+            projectLink: "https://github.com/bedonassef/e-commerce-microservice"
         },
         {
             id: 4,
@@ -222,7 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span>Created comprehensive cart and wishlist system</span>
                     </li>
                 </ul>
-            `
+            `,
+            projectLink: "https://github.com/bedonassef/mobile-store"
         },
         {
             id: 5,
@@ -251,7 +255,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span>Built responsive admin panel with advanced reporting features</span>
                     </li>
                 </ul>
-            `
+            `,
+            projectLink: "#"
         },
         {
             id: 6,
@@ -273,7 +278,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span>Integrated Google OAuth and email notifications for enhanced user interactio</span>
                     </li>
                 </ul>
-            `
+            `,
+            projectLink: "https://github.com/bedonassef/MI-MUSIC"
         }
     ];
 
@@ -336,6 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalProjectTechStack = document.getElementById('modal-project-tech-stack');
     const modalProjectDescription = document.getElementById('modal-project-description');
     const modalProjectImage = document.getElementById('modal-project-image'); // Get reference to the image element
+    const modalProjectLink = document.getElementById('modal-project-link');
 
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('click', () => {
@@ -354,6 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalProjectDescription.innerHTML = project.description;
                 modalProjectImage.src = project.imageUrl; // Set image src
                 modalProjectImage.alt = project.title; // Set image alt
+                modalProjectLink.href = project.projectLink;
                 projectDetailsModal.classList.remove('hidden');
             }
         });
