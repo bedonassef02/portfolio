@@ -2,6 +2,7 @@ export function initializeSkills() {
     let allSkillsData = [];
 
     fetch('./skills.json')
+    fetch('./assets/data/skills.json')
         .then(response => response.json())
         .then(data => {
             allSkillsData = data;

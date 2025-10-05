@@ -4,6 +4,7 @@ export function initializeWorkExperience() {
     let jobDetailsData = [];
 
     fetch('./work-experience.json')
+    fetch('./assets/data/work-experience.json')
         .then(response => response.json())
         .then(data => {
             jobDetailsData = data;

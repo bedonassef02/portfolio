@@ -4,6 +4,7 @@ export function initializeProjects() {
     let projectDetailsData = [];
 
     fetch('./projects.json')
+    fetch('./assets/data/projects.json')
         .then(response => response.json())
         .then(data => {
             projectDetailsData = data;
