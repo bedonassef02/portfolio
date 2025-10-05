@@ -125,80 +125,7 @@
     <section id="work-experience" class="py-20 bg-gray-900 animate-slideIn">
         <div class="container mx-auto px-4 md:px-8">
             <h2 class="text-4xl font-bold text-center mb-12 text-white">Work Experience</h2>
-            <div class="relative">
-                <div class="border-l-4 border-blue-600 absolute h-full top-0 left-1/2 transform -translate-x-1/2"></div>
-                <div class="mb-8 flex justify-between items-center w-full right-timeline">
-                    <div class="order-1 w-5/12"></div>
-                    <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full">
-                        <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
-                    </div>
-                    <div class="order-1 bg-gray-800 rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <h3 class="font-bold text-2xl text-white">Backend Developer</h3>
-                        <p class="text-base font-semibold text-blue-600">Corporate Synergy Solutions</p>
-                        <p class="text-sm font-medium text-blue-600">August 2025 - October 2025</p>
-                        <details class="mt-2 md:block hidden"> <!-- Hidden on mobile, shown on desktop -->
-                            <summary class="text-blue-500 cursor-pointer flex items-center">
-                                View Details <i class="fas fa-chevron-down ml-2 transition-transform duration-300"></i>
-                            </summary>
-                            <ul class="list-none text-gray-300 mt-2 space-y-2">
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Architected and implemented a multi-tenant SaaS backend for auto detailing shops, streamlining bookings, employee management, and payments.</span>
-                                </li>
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Implemented AI-driven photo quoting, improving job estimation accuracy</span>
-                                </li>
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Developed a scheduling and calendar system with real-time bay availability, task checklists, and self-service customer booking.</span>
-                                </li>
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Implemented secure payment workflows with Stripe subscriptions, token-based authentication, and Google Secret Manager.</span>
-                                </li>
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Developed role-based portals with secure authentication and permission systems.</span>
-                                </li>
-                            </ul>
-                        </details>
-                        <button class="view-details-btn text-blue-500 hover:underline cursor-pointer mt-2 md:hidden" data-job-id="1">View Details</button>
-                    </div>
-                </div>
-
-                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-                    <div class="order-1 w-5/12"></div>
-                    <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full">
-                        <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
-                    </div>
-                    <div class="order-1 bg-gray-800 rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                        <h3 class="font-bold text-2xl text-white">Full-Stack PHP Developer</h3>
-                        <p class="text-base font-semibold text-blue-600">TSR Ventures & Solutions</p>
-                        <p class="text-sm font-medium text-blue-600">October 2024 - July 2025</p>
-                        <details class="mt-2 md:block hidden"> <!-- Hidden on mobile, shown on desktop -->
-                            <summary class="text-blue-500 cursor-pointer flex items-center">
-                                View Details <i class="fas fa-chevron-down ml-2 transition-transform duration-300"></i>
-                            </summary>
-                            <ul class="list-none text-gray-300 mt-2 space-y-2">
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Designed and developed a custom PHP framework to improve developer efficiency.</span>
-                                </li>
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Built a Digital Asset Management System (DAMS) with media uploads, metadata extraction, and indexing.</span>
-                                </li>
-                                <li class="flex items-baseline relative pl-6">
-                                    <i class="fas fa-check-circle text-blue-400 mr-2 flex-shrink-0"></i>
-                                    <span>Developed reusable backend modules, reducing code duplication by 30%.</span>
-                                </li>
-                            </ul>
-                        </details>
-                        <button class="view-details-btn text-blue-500 hover:underline cursor-pointer mt-2 md:hidden" data-job-id="2">View Details</button>
-                    </div>
-                </div>
-            </div>
+            <div id="work-experience-container" class="relative"></div>
         </div>
     </section>
 
@@ -326,23 +253,7 @@
     <section id="projects" class="py-20 animate-slideIn">
         <div class="container mx-auto px-4 md:px-8">
             <h2 class="text-4xl font-bold text-center mb-12 text-white">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="#" class="project-card block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="1">
-                    <img src="https://placehold.co/300x200" alt="Egyptian Landmarks App" class="rounded-md mx-auto mb-4">
-                    <h3 class="text-2xl font-bold text-white">EGYPTIAN LANDMARKS APP | GRADUATION PROJECT</h3>
-                    <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Nest.js, Next.js, MongoDB, TensorFlow</p>
-                </a>
-                <a href="#" class="project-card block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="2">
-                    <img src="https://placehold.co/300x200" alt="Dynamic Asset Serving System" class="rounded-md mx-auto mb-4">
-                    <h3 class="text-2xl font-bold text-white">DYNAMIC ASSET SERVING SYSTEM</h3>
-                    <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: PHP 8.4+, JavaScript, Google Maps API</p>
-                </a>
-                <a href="#" class="project-card block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="3">
-                    <img src="https://placehold.co/300x200" alt="Microservice E-commerce Platform" class="rounded-md mx-auto mb-4">
-                    <h3 class="text-2xl font-bold text-white">MICROSERVICE E-COMMERCE PLATFORM</h3>
-                    <p class="text-sm font-medium text-blue-600 mt-2">Teach Stack: Nest.js, RabbitMQ, Redis, Docker</p>
-                </a>
-            </div>
+            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </div>
     </section>
 
