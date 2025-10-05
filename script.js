@@ -160,6 +160,50 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error fetching projects:', error));
 
+    let allSkillsData = []; // New variable to store all skills
+
+    fetch('./skills.json')
+        .then(response => response.json())
+        .then(data => {
+            allSkillsData = data;
+            const skillsContainer = document.getElementById('skills-container');
+            skillsContainer.innerHTML = allSkillsData.map(skill => `
+                <div class="skill-item bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-categories="${skill.categories.join(' ')}">
+                    <i class="${skill.iconClass}"></i>
+                    <h4 class="text-xl font-bold text-white">${skill.name}</h4>
+                </div>
+            `).join('');
+
+            const categoryButtons = document.querySelectorAll('.skill-category-btn');
+            const skillItems = document.querySelectorAll('.skill-item');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const selectedCategory = button.dataset.category;
+
+                    categoryButtons.forEach(btn => {
+                        btn.classList.remove('active-category', 'bg-blue-600');
+                        btn.classList.add('bg-gray-700');
+                    });
+                    button.classList.add('active-category', 'bg-blue-600');
+                    button.classList.remove('bg-gray-700');
+
+                    skillItems.forEach(item => {
+                        const itemCategories = item.dataset.categories.split(' ');
+                        if (selectedCategory === 'all' || itemCategories.includes(selectedCategory)) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            // Trigger click on Backend Development button on page load
+            document.querySelector('[data-category="backend-development"]').click();
+        })
+        .catch(error => console.error('Error fetching skills:', error));
+
     // Navbar responsiveness
     const menuButton = document.getElementById('menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -186,26 +230,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalJobDates = document.getElementById('modal-job-dates');
     const modalJobDetails = document.getElementById('modal-job-details');
 
-    document.querySelectorAll('.view-details-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const jobId = parseInt(button.dataset.jobId);
-            const job = jobDetailsData.find(item => item.id === jobId);
-
-            if (job) {
-                modalJobTitle.textContent = job.title;
-                modalCompanyName.textContent = job.company;
-                modalJobDates.textContent = job.dates;
-                modalJobDetails.innerHTML = job.details;
-                jobDetailsModal.classList.remove('hidden');
-            }
-        });
-    });
-
     closeModalBtn.addEventListener('click', () => {
         jobDetailsModal.classList.add('hidden');
     });
 
-    // Close modal if clicked outside
     jobDetailsModal.addEventListener('click', (e) => {
         if (e.target === jobDetailsModal) {
             jobDetailsModal.classList.add('hidden');
@@ -221,29 +249,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalProjectImage = document.getElementById('modal-project-image'); // Get reference to the image element
     const modalProjectLink = document.getElementById('modal-project-link');
 
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const projectId = parseInt(card.dataset.projectId);
-            const project = projectDetailsData.find(item => item.id === projectId);
-
-            if (project) {
-                modalProjectTitle.textContent = project.title;
-                // Populate tech stack with icons
-                modalProjectTechStack.innerHTML = project.techStack.map(tech => `
-                    <span class="inline-flex items-center mr-2 mb-1">
-                        <i class="${tech.iconClass} text-xl mr-1"></i>
-                        <span>${tech.name}</span>
-                    </span>
-                `).join('');
-                modalProjectDescription.innerHTML = project.description;
-                modalProjectImage.src = project.imageUrl; // Set image src
-                modalProjectImage.alt = project.title; // Set image alt
-                modalProjectLink.href = project.projectLink;
-                projectDetailsModal.classList.remove('hidden');
-            }
-        });
-    });
-
     closeProjectModalBtn.addEventListener('click', () => {
         projectDetailsModal.classList.add('hidden');
     });
@@ -254,34 +259,4 @@ document.addEventListener('DOMContentLoaded', () => {
             projectDetailsModal.classList.add('hidden');
         }
     });
-
-    const categoryButtons = document.querySelectorAll('.skill-category-btn');
-    const skillItems = document.querySelectorAll('.skill-item');
-
-    categoryButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const selectedCategory = button.dataset.category;
-
-            // Update active button styling
-            categoryButtons.forEach(btn => {
-                btn.classList.remove('active-category', 'bg-blue-600');
-                btn.classList.add('bg-gray-700');
-            });
-            button.classList.add('active-category', 'bg-blue-600');
-            button.classList.remove('bg-gray-700');
-
-            // Show/hide skill items based on selected category
-            skillItems.forEach(item => {
-                const itemCategories = item.dataset.categories.split(' ');
-                if (selectedCategory === 'all' || itemCategories.includes(selectedCategory)) {
-                    item.classList.remove('hidden');
-                } else {
-                    item.classList.add('hidden');
-                }
-            });
-        });
-    });
-
-    // Trigger click on Backend Development button on page load
-    document.querySelector('[data-category="backend-development"]').click();
 });
