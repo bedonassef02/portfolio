@@ -77,7 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.view-details-btn').forEach(button => {
                 button.addEventListener('click', () => {
                     lastScrollY = window.scrollY; // Save scroll position
+                    console.log('Opening Job Modal. Saved scrollY:', lastScrollY);
                     document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                    document.body.style.position = 'fixed';
+                    document.body.style.top = `-${lastScrollY}px`;
+                    document.body.style.width = '100%';
+                    console.log('Body overflow on open:', document.body.style.overflow);
 
                     const jobId = parseInt(button.dataset.jobId);
                     const job = jobDetailsData.find(item => item.id === jobId);
@@ -95,14 +100,24 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModalBtn.addEventListener('click', () => {
                 jobDetailsModal.classList.add('hidden');
                 document.body.style.overflow = ''; // Restore background scrolling
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.width = '';
+                console.log('Body overflow on close (button):', document.body.style.overflow);
                 window.scrollTo(0, lastScrollY); // Restore scroll position
+                console.log('Restored scrollY (button):', lastScrollY);
             });
 
             jobDetailsModal.addEventListener('click', (e) => {
                 if (e.target === jobDetailsModal) {
                     jobDetailsModal.classList.add('hidden');
                     document.body.style.overflow = ''; // Restore background scrolling
+                    document.body.style.position = '';
+                    document.body.style.top = '';
+                    document.body.style.width = '';
+                    console.log('Body overflow on close (outside):', document.body.style.overflow);
                     window.scrollTo(0, lastScrollY); // Restore scroll position
+                    console.log('Restored scrollY (outside):', lastScrollY);
                 }
             });
         })
@@ -136,7 +151,12 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.project-card').forEach(card => {
                 card.addEventListener('click', () => {
                     lastScrollY = window.scrollY; // Save scroll position
+                    console.log('Opening Project Modal. Saved scrollY:', lastScrollY);
                     document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                    document.body.style.position = 'fixed';
+                    document.body.style.top = `-${lastScrollY}px`;
+                    document.body.style.width = '100%';
+                    console.log('Body overflow on open:', document.body.style.overflow);
 
                     const projectId = parseInt(card.dataset.projectId);
                     const project = projectDetailsData.find(item => item.id === projectId);
@@ -161,14 +181,24 @@ document.addEventListener('DOMContentLoaded', () => {
             closeProjectModalBtn.addEventListener('click', () => {
                 projectDetailsModal.classList.add('hidden');
                 document.body.style.overflow = ''; // Restore background scrolling
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.width = '';
+                console.log('Body overflow on close (button):', document.body.style.overflow);
                 window.scrollTo(0, lastScrollY); // Restore scroll position
+                console.log('Restored scrollY (button):', lastScrollY);
             });
 
             projectDetailsModal.addEventListener('click', (e) => {
                 if (e.target === projectDetailsModal) {
                     projectDetailsModal.classList.add('hidden');
                     document.body.style.overflow = ''; // Restore background scrolling
+                    document.body.style.position = '';
+                    document.body.style.top = '';
+                    document.body.style.width = '';
+                    console.log('Body overflow on close (outside):', document.body.style.overflow);
                     window.scrollTo(0, lastScrollY); // Restore scroll position
+                    console.log('Restored scrollY (outside):', lastScrollY);
                 }
             });
         })
