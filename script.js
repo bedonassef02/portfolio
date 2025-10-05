@@ -40,7 +40,63 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             jobDetailsData = data;
-            // You can now use jobDetailsData in your application
+            const workExperienceContainer = document.getElementById('work-experience-container');
+            workExperienceContainer.innerHTML = `
+                <div class="border-l-4 border-blue-600 absolute h-full top-0 left-1/2 transform -translate-x-1/2"></div>
+                ${jobDetailsData.map((job, index) => `
+                    <div class="mb-8 flex justify-between ${index % 2 === 0 ? 'flex-row-reverse' : ''} items-center w-full left-timeline">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full">
+                            <h1 class="mx-auto text-white font-semibold text-lg">${job.id}</h1>
+                        </div>
+                        <div class="order-1 bg-gray-800 rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                            <h3 class="font-bold text-2xl text-white">${job.title}</h3>
+                            <p class="text-base font-semibold text-blue-600">${job.company}</p>
+                            <p class="text-sm font-medium text-blue-600">${job.dates}</p>
+                            <details class="mt-2 md:block hidden">
+                                <summary class="text-blue-500 cursor-pointer flex items-center">
+                                    View Details <i class="fas fa-chevron-down ml-2 transition-transform duration-300"></i>
+                                </summary>
+                                ${job.details}
+                            </details>
+                            <button class="view-details-btn text-blue-500 hover:underline cursor-pointer mt-2 md:hidden" data-job-id="${job.id}">View Details</button>
+                        </div>
+                    </div>
+                `).join('')}
+            `;
+
+            // Job Details Modal functionality (moved here)
+            const jobDetailsModal = document.getElementById('job-details-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const modalJobTitle = document.getElementById('modal-job-title');
+            const modalCompanyName = document.getElementById('modal-company-name');
+            const modalJobDates = document.getElementById('modal-job-dates');
+            const modalJobDetails = document.getElementById('modal-job-details');
+
+            document.querySelectorAll('.view-details-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const jobId = parseInt(button.dataset.jobId);
+                    const job = jobDetailsData.find(item => item.id === jobId);
+
+                    if (job) {
+                        modalJobTitle.textContent = job.title;
+                        modalCompanyName.textContent = job.company;
+                        modalJobDates.textContent = job.dates;
+                        modalJobDetails.innerHTML = job.details;
+                        jobDetailsModal.classList.remove('hidden');
+                    }
+                });
+            });
+
+            closeModalBtn.addEventListener('click', () => {
+                jobDetailsModal.classList.add('hidden');
+            });
+
+            jobDetailsModal.addEventListener('click', (e) => {
+                if (e.target === jobDetailsModal) {
+                    jobDetailsModal.classList.add('hidden');
+                }
+            });
         })
         .catch(error => console.error('Error fetching work experience:', error));
 
@@ -50,7 +106,57 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             projectDetailsData = data;
-            // You can now use projectDetailsData in your application
+            const projectsContainer = document.getElementById('projects-container');
+            projectsContainer.innerHTML = `
+                ${projectDetailsData.map(project => `
+                    <a href="#" class="project-card block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="${project.id}">
+                        <img src="${project.imageUrl}" alt="${project.title}" class="rounded-md mx-auto mb-4">
+                        <h3 class="text-2xl font-bold text-white">${project.title}</h3>
+                        <p class="text-sm font-medium text-blue-600 mt-2">Tech Stack: ${project.techStack.map(tech => tech.name).join(', ')}</p>
+                    </a>
+                `).join('')}
+            `;
+
+            // Project Details Modal functionality (moved here)
+            const projectDetailsModal = document.getElementById('project-details-modal');
+            const closeProjectModalBtn = document.getElementById('close-project-modal-btn');
+            const modalProjectTitle = document.getElementById('modal-project-title');
+            const modalProjectTechStack = document.getElementById('modal-project-tech-stack');
+            const modalProjectDescription = document.getElementById('modal-project-description');
+            const modalProjectImage = document.getElementById('modal-project-image');
+            const modalProjectLink = document.getElementById('modal-project-link');
+
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const projectId = parseInt(card.dataset.projectId);
+                    const project = projectDetailsData.find(item => item.id === projectId);
+
+                    if (project) {
+                        modalProjectTitle.textContent = project.title;
+                        modalProjectTechStack.innerHTML = project.techStack.map(tech => `
+                            <span class="inline-flex items-center mr-2 mb-1">
+                                <i class="${tech.iconClass} text-xl mr-1"></i>
+                                <span>${tech.name}</span>
+                            </span>
+                        `).join('');
+                        modalProjectDescription.innerHTML = project.description;
+                        modalProjectImage.src = project.imageUrl;
+                        modalProjectImage.alt = project.title;
+                        modalProjectLink.href = project.projectLink;
+                        projectDetailsModal.classList.remove('hidden');
+                    }
+                });
+            });
+
+            closeProjectModalBtn.addEventListener('click', () => {
+                projectDetailsModal.classList.add('hidden');
+            });
+
+            projectDetailsModal.addEventListener('click', (e) => {
+                if (e.target === projectDetailsModal) {
+                    projectDetailsModal.classList.add('hidden');
+                }
+            });
         })
         .catch(error => console.error('Error fetching projects:', error));
 
