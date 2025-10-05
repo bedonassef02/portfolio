@@ -107,17 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             projectDetailsData = data;
             const projectsContainer = document.getElementById('projects-container');
-            const numVisibleProjects = 3; // Number of projects visible at once
-
-            // Duplicate projects for infinite scroll
-            const carouselProjects = [
-                ...projectDetailsData.slice(-numVisibleProjects), // Prepend last few projects
-                ...projectDetailsData,
-                ...projectDetailsData.slice(0, numVisibleProjects) // Append first few projects
-            ];
-
             projectsContainer.innerHTML = `
-                ${carouselProjects.map(project => `
+                ${projectDetailsData.map(project => `
                     <div class="project-carousel-item flex-none w-full md:w-1/2 lg:w-1/3 snap-center">
                         <a href="#" class="project-card block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="${project.id}">
                             <img src="${project.imageUrl}" alt="${project.title}" class="rounded-md mx-auto mb-4">
@@ -128,36 +119,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 `).join('')}
             `;
 
+            // Carousel functionality
             const prevProjectButton = document.getElementById('prev-project');
             const nextProjectButton = document.getElementById('next-project');
             let scrollPosition = 0;
-            let projectItemWidth = projectsContainer.querySelector('.project-carousel-item').offsetWidth + 16; // Item width + gap
-
-            // Initialize scroll position to the first actual project (skip prepended duplicates)
-            projectsContainer.scrollLeft = numVisibleProjects * projectItemWidth;
+            // Calculate item width dynamically, considering potential gaps (space-x-4 in Tailwind CSS is 16px)
+            // This assumes all project items have the same width and gap. Adjust if necessary.
+            const projectItemWidth = projectsContainer.querySelector('.project-carousel-item').offsetWidth + 16; 
 
             prevProjectButton.addEventListener('click', () => {
-                projectsContainer.scrollBy({
-                    left: -projectItemWidth,
-                    behavior: 'smooth'
-                });
+                scrollPosition = Math.max(scrollPosition - projectItemWidth, 0);
+                projectsContainer.scrollLeft = scrollPosition;
             });
 
             nextProjectButton.addEventListener('click', () => {
-                projectsContainer.scrollBy({
-                    left: projectItemWidth,
-                    behavior: 'smooth'
-                });
-            });
-
-            projectsContainer.addEventListener('scroll', () => {
-                if (projectsContainer.scrollLeft === 0) {
-                    // Jump to the end of the actual projects (before appended duplicates)
-                    projectsContainer.scrollLeft = (projectDetailsData.length) * projectItemWidth;
-                } else if (projectsContainer.scrollLeft >= (carouselProjects.length - numVisibleProjects) * projectItemWidth) {
-                    // Jump to the beginning of the actual projects (after prepended duplicates)
-                    projectsContainer.scrollLeft = numVisibleProjects * projectItemWidth;
-                }
+                scrollPosition = Math.min(scrollPosition + projectItemWidth, projectsContainer.scrollWidth - projectsContainer.clientWidth);
+                projectsContainer.scrollLeft = scrollPosition;
             });
 
             // Project Details Modal functionality (moved here)
