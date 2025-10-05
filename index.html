@@ -146,7 +146,7 @@
         <div class="container mx-auto px-4 md:px-8">
             <h2 class="text-4xl font-bold text-center mb-12 text-white">Skills</h2>
 
-            <div class="flex justify-center mb-8 space-x-4">
+            <div class="flex flex-wrap justify-center mb-8 gap-2 px-4">
                 <button class="skill-category-btn px-6 py-2 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 focus:outline-none active-category" data-category="backend-development">Backend Development</button>
                 <button class="skill-category-btn px-6 py-2 rounded-full bg-gray-700 text-white font-semibold hover:bg-blue-700 focus:outline-none" data-category="databases-caching">Databases & Caching</button>
                 <button class="skill-category-btn px-6 py-2 rounded-full bg-gray-700 text-white font-semibold hover:bg-blue-700 focus:outline-none" data-category="devops-architecture">DevOps & Architecture</button>
@@ -207,7 +207,7 @@
 
     <!-- Project Details Modal -->
     <div id="project-details-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50">
-        <div class="bg-gray-800 rounded-lg shadow-xl p-6 m-4 max-w-5xl w-full relative flex flex-col md:flex-row">
+        <div class="bg-gray-800 rounded-lg shadow-xl p-6 m-4 max-w-5xl w-full relative flex flex-col md:flex-row overflow-y-auto">
             <button id="close-project-modal-btn" class="absolute top-3 right-3 text-gray-400 hover:text-white text-2xl">&times;</button>
             <div class="md:w-1/2 md:pr-4 mb-4 md:mb-0">
                 <img id="modal-project-image" src="https://placehold.co/600x400" alt="Project Image" class="rounded-lg shadow-md w-full">
