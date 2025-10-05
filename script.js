@@ -34,6 +34,7 @@ sections.forEach(section => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+        let lastScrollY = 0; // Declare lastScrollY here
         let jobDetailsData = [];
 
     fetch('./work-experience.json')
@@ -75,6 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             document.querySelectorAll('.view-details-btn').forEach(button => {
                 button.addEventListener('click', () => {
+                    lastScrollY = window.scrollY; // Save scroll position
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
                     const jobId = parseInt(button.dataset.jobId);
                     const job = jobDetailsData.find(item => item.id === jobId);
 
@@ -90,11 +94,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             closeModalBtn.addEventListener('click', () => {
                 jobDetailsModal.classList.add('hidden');
+                document.body.style.overflow = ''; // Restore background scrolling
+                window.scrollTo(0, lastScrollY); // Restore scroll position
             });
 
             jobDetailsModal.addEventListener('click', (e) => {
                 if (e.target === jobDetailsModal) {
                     jobDetailsModal.classList.add('hidden');
+                    document.body.style.overflow = ''; // Restore background scrolling
+                    window.scrollTo(0, lastScrollY); // Restore scroll position
                 }
             });
         })
@@ -127,6 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             document.querySelectorAll('.project-card').forEach(card => {
                 card.addEventListener('click', () => {
+                    lastScrollY = window.scrollY; // Save scroll position
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
                     const projectId = parseInt(card.dataset.projectId);
                     const project = projectDetailsData.find(item => item.id === projectId);
 
@@ -149,11 +160,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             closeProjectModalBtn.addEventListener('click', () => {
                 projectDetailsModal.classList.add('hidden');
+                document.body.style.overflow = ''; // Restore background scrolling
+                window.scrollTo(0, lastScrollY); // Restore scroll position
             });
 
             projectDetailsModal.addEventListener('click', (e) => {
                 if (e.target === projectDetailsModal) {
                     projectDetailsModal.classList.add('hidden');
+                    document.body.style.overflow = ''; // Restore background scrolling
+                    window.scrollTo(0, lastScrollY); // Restore scroll position
                 }
             });
         })
