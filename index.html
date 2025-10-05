@@ -390,23 +390,25 @@
 
     <!-- Project Details Modal -->
     <div id="project-details-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50">
-        <div class="bg-gray-800 rounded-lg shadow-xl p-6 m-4 max-w-5xl w-full relative flex flex-col md:flex-row">
-            <button id="close-project-modal-btn" class="absolute top-3 right-3 text-gray-400 hover:text-white text-2xl">&times;</button>
-            <div class="md:w-1/2 md:pr-4 mb-4 md:mb-0">
-                <img id="modal-project-image" src="https://placehold.co/600x400" alt="Project Image" class="rounded-lg shadow-md w-full">
-            </div>
-            <div class="md:w-1/2">
-                <h3 id="modal-project-title" class="font-bold text-2xl text-white mb-2"></h3>
-                <div id="modal-project-tech-stack" class="flex space-x-4 mb-4">
-                    <!-- Tech stack icons will be loaded here -->
+        <div class="bg-gray-800 rounded-lg shadow-xl p-6 m-4 max-w-5xl w-full relative">
+            <button id="close-project-modal-btn" class="absolute top-2 right-2 bg-gray-700 rounded-full text-white hover:text-gray-300 text-2xl w-10 h-10 flex items-center justify-center z-20">&times;</button>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 md:pr-4 mb-4 md:mb-0 relative z-10">
+                    <img id="modal-project-image" src="https://placehold.co/600x400" alt="Project Image" class="rounded-lg shadow-md w-full">
                 </div>
-                <a id="modal-project-link" href="#" target="_blank" class="inline-flex items-center text-blue-600 hover:underline">
-                    View on GitHub
-                    <i class="fab fa-github ml-2"></i>
-                    <i class="fas fa-external-link-alt ml-2"></i>
-                </a>
-                <div id="modal-project-description">
-                    <!-- Project description will be loaded here -->
+                <div class="md:w-1/2">
+                    <h3 id="modal-project-title" class="font-bold text-2xl text-white mb-2"></h3>
+                    <div id="modal-project-tech-stack" class="flex flex-wrap space-x-4 mb-4">
+                        <!-- Tech stack icons will be loaded here -->
+                    </div>
+                    <a id="modal-project-link" href="#" target="_blank" class="inline-flex items-center text-blue-600 hover:underline">
+                        View on GitHub
+                        <i class="fab fa-github ml-2"></i>
+                        <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                    <div id="modal-project-description" class="mt-4">
+                        <!-- Project description will be loaded here -->
+                    </div>
                 </div>
             </div>
         </div>
