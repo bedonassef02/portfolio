@@ -165,14 +165,20 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('./skills.json')
         .then(response => response.json())
         .then(data => {
-            allSkillsData = data;
+            allSkillsData = data; // allSkillsData will now be the structured object
             const skillsContainer = document.getElementById('skills-container');
-            skillsContainer.innerHTML = allSkillsData.map(skill => `
-                <div class="skill-item bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-categories="${skill.categories.join(' ')}">
-                    <i class="${skill.iconClass}"></i>
-                    <h4 class="text-xl font-bold text-white">${skill.name}</h4>
-                </div>
-            `).join('');
+            let skillsHtml = '';
+            for (const category in allSkillsData) {
+                allSkillsData[category].forEach(skill => {
+                    skillsHtml += `
+                        <div class="skill-item bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-categories="${category}">
+                            <i class="${skill.iconClass}"></i>
+                            <h4 class="text-xl font-bold text-white">${skill.name}</h4>
+                        </div>
+                    `;
+                });
+            }
+            skillsContainer.innerHTML = skillsHtml;
 
             const categoryButtons = document.querySelectorAll('.skill-category-btn');
             const skillItems = document.querySelectorAll('.skill-item');
@@ -189,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     button.classList.remove('bg-gray-700');
 
                     skillItems.forEach(item => {
-                        const itemCategories = item.dataset.categories.split(' ');
+                        const itemCategories = item.dataset.categories.split(' '); // This will now only contain one category
                         if (selectedCategory === 'all' || itemCategories.includes(selectedCategory)) {
                             item.classList.remove('hidden');
                         } else {
