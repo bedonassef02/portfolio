@@ -20,7 +20,7 @@
             { "name": "JavaScript", "iconClass": "devicon-javascript-plain text-yellow-500" },
             { "name": "Google Maps API", "iconClass": "fas fa-map-marked-alt text-red-500" }
         ],
-        "imageUrl": "https://placehold.co/600x400",
+        "imageUrl": "assets/projects/2/bg.png",
         "description": "<ul class=\"list-none text-gray-300 mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-blue-400 mr-2 flex-shrink-0\"></i><span>Built real-time asset processing system for dynamic delivery of JavaScript and CSS files</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-blue-400 mr-2 flex-shrink-0\"></i><span>Integrated Google Maps API for advanced direction services and route visualization</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-blue-400 mr-2 flex-shrink-0\"></i><span>Implemented intelligent caching strategies for optimized performance</span></li></ul>",
         "projectLink": "#"
     },
