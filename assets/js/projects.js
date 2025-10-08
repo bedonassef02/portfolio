@@ -3,24 +3,21 @@ import { openModal, closeModal } from './utils.js';
 export function initializeProjects() {
     let projectDetailsData = [];
 
-    fetch('./projects.json')
     fetch('./assets/data/projects.json')
         .then(response => response.json())
         .then(data => {
             projectDetailsData = data;
             const projectsContainer = document.getElementById('projects-container');
             const INITIAL_PROJECT_DISPLAY_LIMIT = 3;
-            let projectsDisplayed = INITIAL_PROJECT_DISPLAY_LIMIT;
 
             const renderProjects = (projectsToRender) => {
-                projectsContainer.innerHTML = `
-                    ${projectsToRender.map(project => `
-                        <a href="#" class="project-card block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="${project.id}">
-                                                        <img src="${project.imageUrl}" alt="${project.title}" class="rounded-md mx-auto mb-4 w-full h-48 object-cover">                            <h3 class="text-2xl font-bold text-white">${project.title}</h3>
-                            <p class="text-sm font-medium text-blue-600 mt-2">Tech Stack: ${project.techStack.map(tech => tech.name).join(', ')}</p>
-                        </a>
-                    `).join('')}
-                `;
+                projectsContainer.innerHTML = projectsToRender.map(project => `
+                    <a href="#" class="project-card block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="${project.id}">
+                        <img src="${project.imageUrl}" alt="${project.title}" class="rounded-md mx-auto mb-4 w-full h-48 object-cover">
+                        <h3 class="text-2xl font-bold text-white">${project.title}</h3>
+                        <p class="text-sm font-medium text-blue-600 mt-2">Tech Stack: ${project.techStack.map(tech => tech.name).join(', ')}</p>
+                    </a>
+                `).join('');
             };
 
             renderProjects(projectDetailsData.slice(0, INITIAL_PROJECT_DISPLAY_LIMIT));
@@ -47,37 +44,11 @@ export function initializeProjects() {
                     renderProjects(projectDetailsData);
                     showMoreBtnContainer.style.display = 'none';
                     projectCountInfo.textContent = `Showing ${projectDetailsData.length} of ${projectDetailsData.length} projects`;
-                    attachProjectCardListeners();
                 });
             } else {
                 projectCountInfo.textContent = `Showing ${projectDetailsData.length} of ${projectDetailsData.length} projects`;
                 projectsContainer.parentNode.appendChild(showMoreBtnContainer);
             }
-
-            const attachProjectCardListeners = () => {
-                document.querySelectorAll('.project-card').forEach(card => {
-                    card.addEventListener('click', () => {
-                        const projectId = parseInt(card.dataset.projectId);
-                        const project = projectDetailsData.find(item => item.id === projectId);
-
-                        if (project) {
-                            modalProjectTitle.textContent = project.title;
-                            modalProjectTechStack.innerHTML = project.techStack.map(tech => `
-                                <span class="inline-flex items-center mr-2 mb-1">
-                                    <i class="${tech.iconClass} text-xl mr-1"></i>
-                                    <span>${tech.name}</span>
-                                </span>
-                            `).join('');
-                            modalProjectDescription.innerHTML = project.description;
-                            modalProjectImage.src = project.imageUrl;
-                            modalProjectImage.alt = project.title;
-                            modalProjectLink.href = project.projectLink;
-                            openModal(projectDetailsModal);
-                        }
-                    });
-                });
-            };
-            attachProjectCardListeners();
 
             const projectDetailsModal = document.getElementById('project-details-modal');
             const closeProjectModalBtn = document.getElementById('close-project-modal-btn');
@@ -87,9 +58,11 @@ export function initializeProjects() {
             const modalProjectImage = document.getElementById('modal-project-image');
             const modalProjectLink = document.getElementById('modal-project-link');
 
-            document.querySelectorAll('.project-card').forEach(card => {
-                card.addEventListener('click', () => {
-                    const projectId = parseInt(card.dataset.projectId);
+            projectsContainer.addEventListener('click', (e) => {
+                const projectCard = e.target.closest('.project-card');
+                if (projectCard) {
+                    e.preventDefault();
+                    const projectId = parseInt(projectCard.dataset.projectId);
                     const project = projectDetailsData.find(item => item.id === projectId);
 
                     if (project) {
@@ -106,7 +79,7 @@ export function initializeProjects() {
                         modalProjectLink.href = project.projectLink;
                         openModal(projectDetailsModal);
                     }
-                });
+                }
             });
 
             closeProjectModalBtn.addEventListener('click', () => {
