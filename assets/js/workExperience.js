@@ -9,24 +9,39 @@ export function initializeWorkExperience() {
             jobDetailsData = data;
             const workExperienceContainer = document.getElementById('work-experience-container');
             workExperienceContainer.innerHTML = `
-                <div class="border-l-4 border-blue-600 absolute h-full top-0 left-1/2 transform -translate-x-1/2"></div>
+                <div class="border-l-4 border-[#007bff] absolute h-full top-0 left-1/2 transform -translate-x-1/2 hidden md:block"></div>
                 ${jobDetailsData.map((job, index) => `
-                    <div class="mb-8 flex justify-between ${index % 2 !== 0 ? 'flex-row-reverse' : ''} items-center w-full left-timeline">
+                    <!-- Desktop View -->
+                    <div class="mb-8 hidden md:flex justify-between ${index % 2 !== 0 ? 'flex-row-reverse' : ''} items-center w-full left-timeline">
                         <div class="order-1 w-5/12"></div>
-                        <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full">
+                        <div class="z-20 flex items-center order-1 bg-[#007bff] shadow-xl w-12 h-12 rounded-full">
                             <h1 class="mx-auto text-white font-semibold text-lg">${job.id}</h1>
                         </div>
                         <div class="order-1 bg-gray-800 rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                             <h3 class="font-bold text-2xl text-white">${job.title}</h3>
-                            <p class="text-base font-semibold text-blue-600">${job.company}</p>
-                            <p class="text-sm font-medium text-blue-600">${job.dates}</p>
-                            <details class="mt-2 md:block hidden">
-                                <summary class="text-blue-500 cursor-pointer flex items-center">
+                            <p class="text-base font-semibold text-[#007bff]">${job.company}</p>
+                            <p class="text-sm font-medium text-[#007bff]">${job.dates}</p>
+                            <details class="mt-2">
+                                <summary class="text-[#007bff] cursor-pointer flex items-center">
                                     View Details <i class="fas fa-chevron-down ml-2 transition-transform duration-300"></i>
                                 </summary>
                                 ${job.details}
                             </details>
-                            <button class="view-details-btn text-blue-500 hover:underline cursor-pointer mt-2 md:hidden" data-job-id="${job.id}">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Mobile View -->
+                    <div class="mb-8 flex flex-col items-center w-full md:hidden">
+                        <div class="order-1 w-full px-4 relative">
+                            <div class="bg-gray-800 rounded-lg shadow-xl w-full px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl relative">
+                                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 z-20 flex items-center bg-[#007bff] shadow-xl w-12 h-12 rounded-full">
+                                    <h1 class="mx-auto text-white font-semibold text-lg">${job.id}</h1>
+                                </div>
+                                <h3 class="font-bold text-2xl text-white">${job.title}</h3>
+                                <p class="text-base font-semibold text-[#007bff]">${job.company}</p>
+                                <p class="text-sm font-medium text-[#007bff]">${job.dates}</p>
+                                <button class="view-details-btn text-[#007bff] hover:underline cursor-pointer mt-2" data-job-id="${job.id}">View Details</button>
+                            </div>
                         </div>
                     </div>
                 `).join('')}
