@@ -31,17 +31,15 @@ export function initializeWorkExperience() {
                     </div>
 
                     <!-- Mobile View -->
-                    <div class="mb-8 flex flex-col items-center w-full md:hidden">
-                        <div class="order-1 w-full px-4 relative">
-                            <div class="bg-gray-800 rounded-lg shadow-xl w-full px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl relative">
-                                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 z-20 flex items-center bg-[#007bff] shadow-xl w-12 h-12 rounded-full">
-                                    <h1 class="mx-auto text-white font-semibold text-lg">${job.id}</h1>
-                                </div>
-                                <h3 class="font-bold text-2xl text-white">${job.title}</h3>
-                                <p class="text-base font-semibold text-[#007bff]">${job.company}</p>
-                                <p class="text-sm font-medium text-[#007bff]">${job.dates}</p>
-                                <button class="view-details-btn text-[#007bff] hover:underline cursor-pointer mt-2" data-job-id="${job.id}">View Details</button>
+                    <div class="mb-8 flex flex-col items-center w-full md:hidden relative">
+                        <div class="bg-gray-800 rounded-lg shadow-xl w-full px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl relative">
+                            <div class="absolute -left-6 top-1/2 transform -translate-y-1/2 z-20 flex items-center bg-[#007bff] shadow-xl w-12 h-12 rounded-full">
+                                <h1 class="mx-auto text-white font-semibold text-lg">${job.id}</h1>
                             </div>
+                            <h3 class="font-bold text-2xl text-white">${job.title}</h3>
+                            <p class="text-base font-semibold text-[#007bff]">${job.company}</p>
+                            <p class="text-sm font-medium text-[#007bff]">${job.dates}</p>
+                            <button class="view-details-btn text-[#007bff] hover:underline cursor-pointer mt-2" data-job-id="${job.id}">View Details</button>
                         </div>
                     </div>
                 `).join('')}
