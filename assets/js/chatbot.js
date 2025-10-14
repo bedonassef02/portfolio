@@ -21,7 +21,7 @@ export function initializeChatbot() {
         appendMessage('bot', 'Hello! I\'m Abdelrahman AI Assistant. Here are some things you can ask me:');
         sampleQuestions.forEach(q => {
             const questionElement = document.createElement('div');
-            questionElement.classList.add('mb-2', 'p-2', 'rounded-lg', 'max-w-[80%]', 'bg-[var(--color-background-light)]', 'text-[var(--color-text-light)]', 'cursor-pointer', 'hover:bg-[var(--color-background-medium)]');
+            questionElement.classList.add('mb-2', 'p-2', 'rounded-lg', 'max-w-[80%]', 'bg-[var(--color-background-light)]', 'text-[var(--color-text-light)]', 'cursor-pointer', 'hover:bg-[var(--color-background-medium)]', 'sample-question-item');
             questionElement.textContent = q;
             questionElement.addEventListener('click', () => {
                 chatInput.value = q;
@@ -61,6 +61,9 @@ export function initializeChatbot() {
         appendMessage('user', userMessage);
         chatInput.value = '';
         chatHistory.scrollTop = chatHistory.scrollHeight; // Scroll to bottom
+
+        // Remove all sample question items
+        document.querySelectorAll('.sample-question-item').forEach(item => item.remove());
 
         // Show thinking icon
         defaultChatbotIcon.classList.add('hidden');
