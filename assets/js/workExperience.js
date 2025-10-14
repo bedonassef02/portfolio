@@ -17,7 +17,7 @@ export function initializeWorkExperience() {
                         <div class="z-20 flex items-center order-1 bg-[#007bff] shadow-xl w-12 h-12 rounded-full">
                             <h1 class="mx-auto text-white font-semibold text-lg">${job.id}</h1>
                         </div>
-                        <div class="order-1 bg-[var(--color-background-medium)] rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                        <div class="order-1 bg-[var(--color-background-medium)] rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl text-left">
                             <h3 class="font-bold text-2xl text-white">${job.title}</h3>
                             <p class="text-base font-semibold text-[#007bff]">${job.company}</p>
                             <p class="text-sm font-medium text-[#007bff]">${job.dates}</p>
@@ -32,7 +32,7 @@ export function initializeWorkExperience() {
 
                     <!-- Mobile View -->
                     <div class="mb-8 flex flex-col items-center w-full md:hidden relative">
-                        <div class="bg-[var(--color-background-medium)] rounded-lg shadow-xl w-full pl-12 pr-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl relative">
+                        <div class="bg-[var(--color-background-medium)] rounded-lg shadow-xl w-full pl-12 pr-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl relative text-left">
                             <div class="absolute -left-6 top-1/2 transform -translate-y-1/2 z-20 flex items-center bg-[#007bff] shadow-xl w-12 h-12 rounded-full">
                                 <h1 class="mx-auto text-white font-semibold text-lg">${job.id}</h1>
                             </div>
