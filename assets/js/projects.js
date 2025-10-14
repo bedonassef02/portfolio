@@ -12,10 +12,10 @@ export function initializeProjects() {
 
             const renderProjects = (projectsToRender) => {
                 projectsContainer.innerHTML = projectsToRender.map(project => `
-                    <a href="#" class="project-card block bg-gray-800 rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="${project.id}">
+                    <a href="#" class="project-card block bg-[var(--color-background-medium)] rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="${project.id}">
                         <img src="${project.imageUrl}" alt="${project.title}" class="rounded-md mx-auto mb-4 w-full h-48 object-cover">
-                        <h3 class="text-2xl font-bold text-white">${project.title}</h3>
-                        <p class="text-sm font-medium text-blue-600 mt-2">Tech Stack: ${project.techStack.map(tech => tech.name).join(', ')}</p>
+                        <h3 class="text-2xl font-bold text-[var(--color-text-light)]">${project.title}</h3>
+                        <p class="text-sm font-medium text-[#007bff] mt-2">Tech Stack: ${project.techStack.map(tech => tech.name).join(', ')}</p>
                     </a>
                 `).join('');
             };
@@ -27,13 +27,13 @@ export function initializeProjects() {
 
             const projectCountInfo = document.createElement('p');
             projectCountInfo.id = 'project-count-info';
-            projectCountInfo.className = 'text-gray-400 text-lg mb-4';
+            projectCountInfo.className = 'text-[var(--color-text-medium)] text-lg mb-4';
             showMoreBtnContainer.appendChild(projectCountInfo);
 
             if (projectDetailsData.length > INITIAL_PROJECT_DISPLAY_LIMIT) {
                 const showMoreBtn = document.createElement('button');
                 showMoreBtn.id = 'show-more-projects-btn';
-                showMoreBtn.className = 'px-8 py-4 bg-blue-600 text-white font-bold rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50';
+                showMoreBtn.className = 'px-8 py-4 bg-[#007bff] text-[var(--color-text-light)] font-bold rounded-full shadow-lg hover:bg-[#0056b3] transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#007bff] focus:ring-opacity-50';
                 showMoreBtn.textContent = 'Show More Projects';
                 showMoreBtnContainer.appendChild(showMoreBtn);
                 projectsContainer.parentNode.appendChild(showMoreBtnContainer);

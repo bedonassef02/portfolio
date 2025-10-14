@@ -10,9 +10,9 @@ export function initializeSkills() {
             for (const category in allSkillsData) {
                 allSkillsData[category].forEach(skill => {
                     skillsHtml += `
-                        <div class="skill-item bg-gray-800 rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-categories="${category}">
+                        <div class="skill-item bg-[var(--color-background-medium)] rounded-lg shadow-xl p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-categories="${category}">
                             <i class="${skill.iconClass}"></i>
-                            <h4 class="text-xl font-bold text-white">${skill.name}</h4>
+                            <h4 class="text-xl font-bold text-[var(--color-text-light)]">${skill.name}</h4>
                         </div>
                     `;
                 });
@@ -27,11 +27,11 @@ export function initializeSkills() {
                     const selectedCategory = button.dataset.category;
 
                     categoryButtons.forEach(btn => {
-                        btn.classList.remove('active-category', 'bg-blue-600');
-                        btn.classList.add('bg-gray-700');
+                        btn.classList.remove('active-category', 'bg-[#007bff]');
+                        btn.classList.add('bg-[var(--color-background-light)]');
                     });
-                    button.classList.add('active-category', 'bg-blue-600');
-                    button.classList.remove('bg-gray-700');
+                    button.classList.add('active-category', 'bg-[#007bff]');
+                    button.classList.remove('bg-[var(--color-background-light)]');
 
                     skillItems.forEach(item => {
                         const itemCategories = item.dataset.categories.split(' ');
