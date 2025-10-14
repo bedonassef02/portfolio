@@ -8,8 +8,35 @@ export function initializeChatbot() {
     const defaultChatbotIcon = document.getElementById('default-chatbot-icon');
     const thinkingChatbotIcon = document.getElementById('thinking-chatbot-icon');
 
+    const sampleQuestions = [
+        "Tell me about Abdelrahman's experience.",
+        "What are his key skills?",
+        "Can you list his projects?",
+        "What are his achievements?",
+        "How can I contact Abdelrahman?"
+    ];
+
+    function displaySampleQuestions() {
+        chatHistory.innerHTML = ''; // Clear history first
+        appendMessage('bot', 'Hello! I\'m Abdelrahman AI Assistant. Here are some things you can ask me:');
+        sampleQuestions.forEach(q => {
+            const questionElement = document.createElement('div');
+            questionElement.classList.add('mb-2', 'p-2', 'rounded-lg', 'max-w-[80%]', 'bg-[var(--color-background-light)]', 'text-[var(--color-text-light)]', 'cursor-pointer', 'hover:bg-[var(--color-background-medium)]');
+            questionElement.textContent = q;
+            questionElement.addEventListener('click', () => {
+                chatInput.value = q;
+                sendMessage();
+            });
+            chatHistory.appendChild(questionElement);
+        });
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+
     chatbotIcon.addEventListener('click', () => {
         chatbotModal.classList.toggle('hidden');
+        if (!chatbotModal.classList.contains('hidden')) {
+            displaySampleQuestions(); // Display sample questions when modal opens
+        }
     });
 
     closeChatbotModalBtn.addEventListener('click', () => {
@@ -103,6 +130,6 @@ export function initializeChatbot() {
         }
         messageElement.textContent = message;
         messageContainer.appendChild(messageElement); // Add message to container
-        chatHistory.appendChild(messageContainer); // Append container to chat history
+        chatHistory.appendChild(messageContainer);
     }
 }
