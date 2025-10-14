@@ -139,3 +139,30 @@
         transform: rotate(-360deg);
     }
 }
+.animated-card {
+    position: relative;
+}
+
+.animated-card::before,
+.animated-card::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border-radius: 1rem; /* slightly larger than rounded-xl */
+    border: 2px solid transparent;
+}
+
+.animated-card::before {
+    border-top-color: #007bff;
+    border-bottom-color: #007bff;
+    animation: spin-right 6s linear infinite;
+}
+
+.animated-card::after {
+    border-left-color: #007bff;
+    border-right-color: #007bff;
+    animation: spin-left 6s linear infinite;
+}
