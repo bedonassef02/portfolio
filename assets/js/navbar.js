@@ -22,27 +22,5 @@ export function initializeNavbar() {
         });
     }
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5 // Adjust this value as needed
-    };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const navLink = document.querySelector(`a[href="#${entry.target.id}"]`);
-            if (navLink) {
-                if (entry.isIntersecting) {
-                    navLinks.forEach(link => link.classList.remove('text-blue-600', 'font-bold'));
-                    navLink.classList.add('text-blue-600', 'font-bold');
-                } else {
-                    navLink.classList.remove('text-blue-600', 'font-bold');
-                }
-            }
-        });
-    }, observerOptions);
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
 }
