@@ -21,8 +21,8 @@ export function initializeChatbot() {
         appendMessage('bot', 'Hello! I\'m Abdelrahman AI Assistant. Here are some things you can ask me:');
         sampleQuestions.forEach(q => {
             const questionElement = document.createElement('div');
-            questionElement.classList.add('mb-2', 'p-2', 'rounded-lg', 'max-w-[80%]', 'bg-[var(--color-background-light)]', 'text-[var(--color-text-light)]', 'cursor-pointer', 'hover:bg-[var(--color-background-medium)]', 'sample-question-item');
-            questionElement.textContent = q;
+            questionElement.classList.add('mb-2', 'p-3', 'rounded-lg', 'max-w-[80%]', 'bg-[var(--color-background-medium)]', 'text-[var(--color-text-light)]', 'cursor-pointer', 'hover:bg-[#007bff]', 'hover:text-white', 'border', 'border-[var(--color-background-light)]', 'sample-question-item', 'flex', 'items-center');
+            questionElement.innerHTML = `<i class="fas fa-question-circle mr-2 text-[#007bff]"></i><span>${q}</span>`;
             questionElement.addEventListener('click', () => {
                 chatInput.value = q;
                 sendMessage();
