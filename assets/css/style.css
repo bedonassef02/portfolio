@@ -144,20 +144,20 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 8px;
-    height: 8px;
+    width: 4px;
+    height: 4px;
     background-color: white;
     border-radius: 50%;
-    box-shadow: 0 0 10px white, 0 0 20px white;
+    box-shadow: 0 0 5px white, 0 0 10px white;
     transform-origin: 0 0;
     animation: walk-around 4s linear infinite;
 }
 
 @keyframes walk-around {
     from {
-        transform: rotate(0deg) translateX(80px) rotate(0deg);
+        transform: rotate(0deg) translateX(50px) rotate(0deg);
     }
     to {
-        transform: rotate(360deg) translateX(80px) rotate(-360deg);
+        transform: rotate(360deg) translateX(50px) rotate(-360deg);
     }
 }
