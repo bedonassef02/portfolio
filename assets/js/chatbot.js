@@ -79,18 +79,30 @@ export function initializeChatbot() {
     }
 
     function appendMessage(sender, message, isThinking = false) {
+        const messageContainer = document.createElement('div'); // New container for message and icon
+        messageContainer.classList.add('flex', 'items-start', 'mb-2'); // Flex to align icon and message
+
         const messageElement = document.createElement('div');
-        messageElement.classList.add('mb-2', 'p-2', 'rounded-lg');
+        messageElement.classList.add('p-2', 'rounded-lg', 'max-w-[80%]');
 
         if (sender === 'user') {
-            messageElement.classList.add('bg-[#007bff]', 'text-white', 'ml-auto', 'max-w-[80%]');
-        } else {
-            messageElement.classList.add('bg-[var(--color-background-light)]', 'text-[var(--color-text-light)]', 'mr-auto', 'max-w-[80%]');
+            messageContainer.classList.add('justify-end'); // Align user messages to the right
+            messageElement.classList.add('bg-[#007bff]', 'text-white');
+        } else { // bot
+            messageContainer.classList.add('justify-start'); // Align bot messages to the left
+            messageElement.classList.add('bg-[var(--color-background-light)]', 'text-[var(--color-text-light)]');
+            
+            // Add AI icon for bot messages
+            const iconElement = document.createElement('i');
+            iconElement.classList.add('fas', 'fa-robot', 'text-xl', 'mr-2', 'mt-1', 'text-[var(--color-text-medium)]'); // AI icon
+            messageContainer.appendChild(iconElement); // Add icon before the message
+            
             if (isThinking) {
                 messageElement.classList.add('thinking-message');
             }
         }
         messageElement.textContent = message;
-        chatHistory.appendChild(messageElement);
+        messageContainer.appendChild(messageElement); // Add message to container
+        chatHistory.appendChild(messageContainer); // Append container to chat history
     }
 }
