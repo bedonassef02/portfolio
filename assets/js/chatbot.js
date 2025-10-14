@@ -9,11 +9,11 @@ export function initializeChatbot() {
     const thinkingChatbotIcon = document.getElementById('thinking-chatbot-icon');
 
     const sampleQuestions = [
-        "Tell me about Abdelrahman's experience.",
-        "What are his key skills?",
-        "Can you list his projects?",
-        "What are his achievements?",
-        "How can I contact Abdelrahman?"
+        { display: "Experience", send: "Tell me about Abdelrahman's experience." },
+        { display: "Skills", send: "What are his key skills?" },
+        { display: "Projects", send: "Can you list his projects?" },
+        { display: "Achievements", send: "What are his achievements?" },
+        { display: "Contact", send: "How can I contact Abdelrahman?" }
     ];
 
     function displaySampleQuestions() {
@@ -22,9 +22,9 @@ export function initializeChatbot() {
         sampleQuestions.forEach(q => {
             const questionElement = document.createElement('div');
             questionElement.classList.add('mb-2', 'p-3', 'rounded-lg', 'max-w-[80%]', 'bg-[var(--color-background-medium)]', 'text-[var(--color-text-light)]', 'cursor-pointer', 'hover:bg-[#007bff]', 'hover:text-white', 'border', 'border-[var(--color-background-light)]', 'sample-question-item', 'flex', 'items-center');
-            questionElement.innerHTML = `<i class="fas fa-question-circle mr-2 text-[#007bff]"></i><span class="whitespace-nowrap overflow-hidden text-ellipsis">${q}</span>`;
+            questionElement.innerHTML = `<i class="fas fa-question-circle mr-2 text-[#007bff]"></i><span class="whitespace-nowrap overflow-hidden text-ellipsis">${q.display}</span>`;
             questionElement.addEventListener('click', () => {
-                chatInput.value = q;
+                chatInput.value = q.send;
                 sendMessage();
             });
             chatHistory.appendChild(questionElement);
