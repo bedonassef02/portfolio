@@ -3,8 +3,10 @@ export function initializeIntersectionObserver() {
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && !entry.target.classList.contains('animate-slideIn')) {
+            if (entry.isIntersecting) {
                 entry.target.classList.add('animate-slideIn');
+            } else {
+                entry.target.classList.remove('animate-slideIn');
             }
         });
     });
