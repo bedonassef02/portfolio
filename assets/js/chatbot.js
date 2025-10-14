@@ -25,7 +25,7 @@ export function initializeChatbot() {
 
         sampleQuestions.forEach(q => {
             const questionElement = document.createElement('div');
-            questionElement.classList.add('p-2', 'rounded-lg', 'bg-[var(--color-background-medium)]', 'text-[var(--color-text-light)]', 'cursor-pointer', 'hover:bg-[#007bff]', 'hover:text-white', 'border', 'border-[var(--color-background-light)]', 'sample-question-item', 'whitespace-nowrap', 'overflow-hidden', 'text-ellipsis');
+            questionElement.classList.add('p-2', 'rounded-xl', 'bg-[var(--color-background-medium)]', 'text-[var(--color-text-light)]', 'cursor-pointer', 'hover:bg-[#007bff]', 'hover:text-white', 'border', 'border-[var(--color-background-light)]', 'shadow-md', 'ring-1', 'ring-inset', 'ring-[#007bff]', 'sample-question-item', 'whitespace-nowrap', 'overflow-hidden', 'text-ellipsis');
             questionElement.textContent = q.display;
             questionElement.addEventListener('click', () => {
                 chatInput.value = q.send;
