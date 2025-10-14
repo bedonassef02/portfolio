@@ -136,8 +136,8 @@ export function initializeChatbot() {
                 messageElement.classList.add('thinking-message');
             }
         }
-                    message = message.replace(/\*\*/g, '');
-                    messageElement.innerHTML = marked.parse(message);        messageContainer.appendChild(messageElement);
+        messageElement.innerHTML = marked.parse(message);
+        messageContainer.appendChild(messageElement);
         chatHistory.appendChild(messageContainer);
     }
 }
