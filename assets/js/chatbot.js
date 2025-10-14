@@ -19,16 +19,21 @@ export function initializeChatbot() {
     function displaySampleQuestions() {
         chatHistory.innerHTML = ''; // Clear history first
         appendMessage('bot', 'Hello! I\'m Abdelrahman AI Assistant. Here are some things you can ask me:');
+
+        const suggestionsContainer = document.createElement('div');
+        suggestionsContainer.classList.add('flex', 'flex-wrap', 'gap-2', 'mt-2'); // Flex container for horizontal layout
+
         sampleQuestions.forEach(q => {
             const questionElement = document.createElement('div');
-            questionElement.classList.add('mb-2', 'p-3', 'rounded-lg', 'max-w-[80%]', 'bg-[var(--color-background-medium)]', 'text-[var(--color-text-light)]', 'cursor-pointer', 'hover:bg-[#007bff]', 'hover:text-white', 'border', 'border-[var(--color-background-light)]', 'sample-question-item', 'whitespace-nowrap', 'overflow-hidden', 'text-ellipsis');
+            questionElement.classList.add('p-2', 'rounded-lg', 'bg-[var(--color-background-medium)]', 'text-[var(--color-text-light)]', 'cursor-pointer', 'hover:bg-[#007bff]', 'hover:text-white', 'border', 'border-[var(--color-background-light)]', 'sample-question-item', 'whitespace-nowrap', 'overflow-hidden', 'text-ellipsis');
             questionElement.textContent = q.display;
             questionElement.addEventListener('click', () => {
                 chatInput.value = q.send;
                 sendMessage();
             });
-            chatHistory.appendChild(questionElement);
+            suggestionsContainer.appendChild(questionElement);
         });
+        chatHistory.appendChild(suggestionsContainer);
         chatHistory.scrollTop = chatHistory.scrollHeight;
     }
 
