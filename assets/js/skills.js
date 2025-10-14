@@ -27,11 +27,11 @@ export function initializeSkills() {
                     const selectedCategory = button.dataset.category;
 
                     categoryButtons.forEach(btn => {
-                        btn.classList.remove('active-category', 'bg-[#007bff]');
-                        btn.classList.add('bg-[var(--color-background-light)]');
+                        btn.classList.remove('active-category', 'bg-[#007bff]', 'text-white');
+                        btn.classList.add('bg-[var(--color-background-light)]', 'text-[var(--color-text-light)]');
                     });
-                    button.classList.add('active-category', 'bg-[#007bff]');
-                    button.classList.remove('bg-[var(--color-background-light)]');
+                    button.classList.add('active-category', 'bg-[#007bff]', 'text-white');
+                    button.classList.remove('bg-[var(--color-background-light)]', 'text-[var(--color-text-light)]');
 
                     skillItems.forEach(item => {
                         const itemCategories = item.dataset.categories.split(' ');
