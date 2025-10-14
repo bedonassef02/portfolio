@@ -83,7 +83,7 @@ export function initializeChatbot() {
             }
 
             const data = await response.json();
-            const botResponse = data.response;
+            const botResponse = data.candidates[0].content.parts[0].text;
 
             // Remove "Thinking..." message
             const thinkingMessage = chatHistory.querySelector('.thinking-message');
