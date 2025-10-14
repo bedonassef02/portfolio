@@ -5,6 +5,7 @@ import { initializeSkills } from './skills.js';
 import { initializeNavbar } from './navbar.js';
 import { initializeIntersectionObserver } from './intersectionObserver.js';
 import { initializeAbout } from './about.js';
+import { initializeChatbot } from './chatbot.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeSmoothScroll();
@@ -14,4 +15,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeNavbar();
     initializeIntersectionObserver();
     initializeAbout();
+    initializeChatbot();
 });
