@@ -54,8 +54,6 @@ export function initializeChatbot() {
         }
     });
 
-    const GEMINI_API_KEY = 'YOUR_GEMINI_API_KEY'; // Replace with your actual Gemini API key
-
     async function sendMessage() {
         const userMessage = chatInput.value.trim();
         if (userMessage === '') return;
@@ -72,18 +70,12 @@ export function initializeChatbot() {
         appendMessage('bot', 'Thinking...', true); // Show a thinking message
 
         try {
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`, {
+            const response = await fetch('https://x8ki-letl-twmt.n7.xano.io/api:CfCVZiDW/bot', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({
-                    contents: [{
-                        parts: [{
-                            text: userMessage
-                        }]
-                    }]
-                })
+                body: JSON.stringify({ question: userMessage })
             });
 
             if (!response.ok) {
@@ -91,7 +83,7 @@ export function initializeChatbot() {
             }
 
             const data = await response.json();
-            const botResponse = data.candidates[0].content.parts[0].text;
+            const botResponse = data.response;
 
             // Remove "Thinking..." message
             const thinkingMessage = chatHistory.querySelector('.thinking-message');
