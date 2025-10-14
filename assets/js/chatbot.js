@@ -54,7 +54,9 @@ export function initializeChatbot() {
         }
     });
 
-    function sendMessage() {
+    const GEMINI_API_KEY = 'YOUR_GEMINI_API_KEY'; // Replace with your actual Gemini API key
+
+    async function sendMessage() {
         const userMessage = chatInput.value.trim();
         if (userMessage === '') return;
 
@@ -67,31 +69,30 @@ export function initializeChatbot() {
         thinkingChatbotIcon.classList.remove('hidden');
         thinkingChatbotIcon.classList.add('block');
 
-        // Placeholder for API call to Gemini
         appendMessage('bot', 'Thinking...', true); // Show a thinking message
 
-        // Simulate API call
-        setTimeout(() => {
-            // In a real scenario, you'd send userMessage to your backend
-            // fetch('/api/chat', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify({ message: userMessage })
-            // })
-            // .then(response => response.json())
-            // .then(data => {
-            //     appendMessage('bot', data.response);
-            //     chatHistory.scrollTop = chatHistory.scrollHeight;
-            // })
-            // .catch(error => {
-            //     console.error('Chatbot API error:', error);
-            //     appendMessage('bot', 'Oops! Something went wrong. Please try again.');
-            //     chatHistory.scrollTop = chatHistory.scrollHeight;
-            // });
+        try {
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    contents: [{
+                        parts: [{
+                            text: userMessage
+                        }]
+                    }]
+                })
+            });
 
-            // Placeholder response
-            const botResponse = `Hello! You asked: "${userMessage}". I am a chatbot powered by Gemini, designed to answer questions about Abdelrahman Mahmoud. Currently, I'm in development, but soon I'll be able to tell you all about his work experience, skills, projects, and more!`;
-            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            const botResponse = data.candidates[0].content.parts[0].text;
+
             // Remove "Thinking..." message
             const thinkingMessage = chatHistory.querySelector('.thinking-message');
             if (thinkingMessage) {
@@ -101,12 +102,22 @@ export function initializeChatbot() {
             appendMessage('bot', botResponse);
             chatHistory.scrollTop = chatHistory.scrollHeight;
 
+        } catch (error) {
+            console.error('Chatbot API error:', error);
+            // Remove "Thinking..." message
+            const thinkingMessage = chatHistory.querySelector('.thinking-message');
+            if (thinkingMessage) {
+                thinkingMessage.remove();
+            }
+            appendMessage('bot', 'Oops! Something went wrong. Please try again.');
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        } finally {
             // Hide thinking icon, show default icon
             defaultChatbotIcon.classList.remove('hidden');
             defaultChatbotIcon.classList.add('block');
             thinkingChatbotIcon.classList.remove('block');
             thinkingChatbotIcon.classList.add('hidden');
-        }, 1500);
+        }
     }
 
     function appendMessage(sender, message, isThinking = false) {
