@@ -13,14 +13,18 @@ export function initializeWorkExperience() {
                 ${jobDetailsData.map((job, index) => `
                     <!-- Desktop View -->
                     <div class="mb-8 hidden md:flex justify-between ${index % 2 !== 0 ? 'flex-row-reverse' : ''} items-center w-full left-timeline">
-                        <div class="order-1 w-5/12 flex justify-center items-center">
-                            <img src="${job.logo}" alt="${job.company} Logo" class="h-16 w-auto max-w-full max-h-full object-contain"></div>
+                        <div class="order-1 w-5/12"></div>
                         <div class="z-20 flex items-center order-1 bg-[#007bff] shadow-xl w-12 h-12 rounded-full">
                             <h1 class="mx-auto text-white font-semibold text-lg">${job.id}</h1>
                         </div>
-                        <div class="order-1 bg-[var(--color-background-medium)] rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl text-left">
-                            <h3 class="font-bold text-2xl text-white">${job.title} <span class="text-base font-normal text-[var(--color-text-medium)]">(Full Time)</span></h3>
-                            <p class="text-base font-semibold text-[#007bff]">${job.company}</p>
+                        <div class="order-1 bg-[var(--color-background-medium)] rounded-lg shadow-xl w-5/12 px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl text-left relative">
+                            <div class="flex items-center mb-2">
+                                <img src="${job.logo}" alt="${job.company} Logo" class="h-10 w-10 object-contain mr-3">
+                                <div>
+                                    <h3 class="font-bold text-2xl text-white">${job.title} <span class="text-base font-normal text-[var(--color-text-medium)]">(Full Time)</span></h3>
+                                    <p class="text-base font-semibold text-[#007bff]">${job.company}</p>
+                                </div>
+                            </div>
                             <p class="text-sm font-medium text-[#007bff]">${job.dates}</p>
                             <details class="mt-2">
                                 <summary class="text-[#007bff] cursor-pointer flex items-center">
@@ -33,11 +37,17 @@ export function initializeWorkExperience() {
 
                     <!-- Mobile View -->
                     <div class="mb-8 flex flex-col items-center w-full md:hidden relative">
-                        <div class="bg-[var(--color-background-medium)] rounded-lg shadow-xl w-full pl-12 pr-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl relative text-left">
+                        <div class="bg-[var(--color-background-medium)] rounded-lg shadow-xl w-full px-6 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl relative text-left">
                             <div class="absolute -left-6 top-1/2 transform -translate-y-1/2 z-20 flex items-center bg-[#007bff] shadow-xl w-12 h-12 rounded-full">
-                                <img src="${job.logo}" alt="${job.company} Logo" class="h-8 w-8 object-contain mx-auto"></div>
-                            <h3 class="font-bold text-2xl text-white">${job.title} <span class="text-base font-normal text-[var(--color-text-medium)]">(Full Time)</span></h3>
-                            <p class="text-base font-semibold text-[#007bff]">${job.company}</p>
+                                <h1 class="mx-auto text-white font-semibold text-lg">${job.id}</h1>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <img src="${job.logo}" alt="${job.company} Logo" class="h-10 w-10 object-contain mr-3">
+                                <div>
+                                    <h3 class="font-bold text-2xl text-white">${job.title} <span class="text-base font-normal text-[var(--color-text-medium)]">(Full Time)</span></h3>
+                                    <p class="text-base font-semibold text-[#007bff]">${job.company}</p>
+                                </div>
+                            </div>
                             <p class="text-sm font-medium text-[#007bff]">${job.dates}</p>
                             <button class="view-details-btn text-[#007bff] hover:underline cursor-pointer mt-2" data-job-id="${job.id}">View Details</button>
                         </div>
