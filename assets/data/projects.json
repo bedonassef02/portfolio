@@ -41,7 +41,7 @@
         "id": 4,
         "title": "MOBILE-STORE",
         "techStack": [
-            { "name": "Express.js", "iconClass": "devicon-express-plain text-gray-400" },
+            { "name": "Node.js", "iconClass": "devicon-nodejs-plain text-green-500" },
             { "name": "TypeScript", "iconClass": "devicon-typescript-plain text-blue-500" },
             { "name": "MySQL", "iconClass": "devicon-mysql-plain text-blue-500" },
             { "name": "Redis", "iconClass": "devicon-redis-plain text-red-500" },
