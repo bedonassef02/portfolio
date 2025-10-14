@@ -470,7 +470,10 @@
     <!-- Chatbot Modal -->
     <div id="chatbot-modal" class="hidden fixed bottom-20 right-6 w-96 h-1/2 bg-[var(--color-background-medium)] rounded-lg shadow-xl flex flex-col z-50">
         <div class="bg-[#007bff] text-white p-3 rounded-t-lg flex justify-between items-center">
-            <h3 class="font-bold">Abdelrahman AI Assistant</h3>
+            <div class="flex items-center">
+                <img src="./assets/profile_image.png" alt="Abdelrahman" class="w-8 h-8 rounded-full mr-2">
+                <h3 class="font-bold">Abdelrahman AI Assistant</h3>
+            </div>
             <button id="close-chatbot-modal" class="text-white text-xl">&times;</button>
         </div>
         <div id="chat-history" class="flex-1 p-3 overflow-y-auto text-[var(--color-text-light)]">
@@ -478,7 +481,9 @@
         </div>
         <div class="border-t border-[var(--color-background-light)] p-3 flex">
             <input type="text" id="chat-input" placeholder="Ask me anything..." class="flex-1 p-2 rounded-l-lg bg-[var(--color-background-dark)] text-[var(--color-text-light)] border border-[var(--color-background-light)] focus:outline-none">
-            <button id="send-chat-btn" class="bg-[#007bff] text-white p-2 rounded-r-lg hover:bg-[#0056b3] transition-colors duration-300">Send</button>
+            <button id="send-chat-btn" class="bg-[#007bff] text-white p-2 rounded-r-lg hover:bg-[#0056b3] transition-colors duration-300">
+                <i class="fas fa-paper-plane"></i>
+            </button>
         </div>
     </div>
 </body>

@@ -35,12 +35,16 @@ export function initializeChatbot() {
     chatbotIcon.addEventListener('click', () => {
         chatbotModal.classList.toggle('hidden');
         if (!chatbotModal.classList.contains('hidden')) {
-            displaySampleQuestions(); // Display sample questions when modal opens
+            displaySampleQuestions();
+            chatbotIcon.classList.add('hidden'); // Hide floating icon
+        } else {
+            chatbotIcon.classList.remove('hidden'); // Show floating icon
         }
     });
 
     closeChatbotModalBtn.addEventListener('click', () => {
         chatbotModal.classList.add('hidden');
+        chatbotIcon.classList.remove('hidden'); // Show floating icon when closed
     });
 
     sendChatBtn.addEventListener('click', sendMessage);
@@ -106,30 +110,31 @@ export function initializeChatbot() {
     }
 
     function appendMessage(sender, message, isThinking = false) {
-        const messageContainer = document.createElement('div'); // New container for message and icon
-        messageContainer.classList.add('flex', 'items-start', 'mb-2'); // Flex to align icon and message
+        const messageContainer = document.createElement('div');
+        messageContainer.classList.add('flex', 'items-start', 'mb-2');
 
         const messageElement = document.createElement('div');
         messageElement.classList.add('p-2', 'rounded-lg', 'max-w-[80%]');
 
         if (sender === 'user') {
-            messageContainer.classList.add('justify-end'); // Align user messages to the right
+            messageContainer.classList.add('justify-end');
             messageElement.classList.add('bg-[#007bff]', 'text-white');
         } else { // bot
-            messageContainer.classList.add('justify-start'); // Align bot messages to the left
+            messageContainer.classList.add('justify-start');
             messageElement.classList.add('bg-[var(--color-background-light)]', 'text-[var(--color-text-light)]');
             
-            // Add AI icon for bot messages
-            const iconElement = document.createElement('i');
-            iconElement.classList.add('fas', 'fa-robot', 'text-xl', 'mr-2', 'mt-1', 'text-[var(--color-text-medium)]'); // AI icon
-            messageContainer.appendChild(iconElement); // Add icon before the message
+            if (!isThinking) { // Only add icon if not a thinking message
+                const iconElement = document.createElement('i');
+                iconElement.classList.add('fas', 'fa-robot', 'text-xl', 'mr-2', 'mt-1', 'text-[var(--color-text-medium)]');
+                messageContainer.appendChild(iconElement);
+            }
             
             if (isThinking) {
                 messageElement.classList.add('thinking-message');
             }
         }
         messageElement.textContent = message;
-        messageContainer.appendChild(messageElement); // Add message to container
+        messageContainer.appendChild(messageElement);
         chatHistory.appendChild(messageContainer);
     }
 }
