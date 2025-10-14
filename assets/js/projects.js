@@ -33,7 +33,7 @@ export function initializeProjects() {
             if (projectDetailsData.length > INITIAL_PROJECT_DISPLAY_LIMIT) {
                 const showMoreBtn = document.createElement('button');
                 showMoreBtn.id = 'show-more-projects-btn';
-                showMoreBtn.className = 'px-8 py-4 bg-[#007bff] text-[var(--color-text-light)] font-bold rounded-full shadow-lg hover:bg-[#0056b3] transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#007bff] focus:ring-opacity-50';
+                showMoreBtn.className = 'px-8 py-4 bg-[#007bff] text-white font-bold rounded-full shadow-lg hover:bg-[#0056b3] transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#007bff] focus:ring-opacity-50';
                 showMoreBtn.textContent = 'Show More Projects';
                 showMoreBtnContainer.appendChild(showMoreBtn);
                 projectsContainer.parentNode.appendChild(showMoreBtnContainer);
