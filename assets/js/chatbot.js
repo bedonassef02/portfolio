@@ -46,14 +46,17 @@ export function initializeChatbot() {
         if (!chatbotModal.classList.contains('hidden')) {
             displaySampleQuestions();
             chatbotIcon.classList.add('hidden'); // Hide floating icon
+            chatbotModal.classList.add('shadow-xl'); // Add shadow when opened
         } else {
             chatbotIcon.classList.remove('hidden'); // Show floating icon
+            chatbotModal.classList.remove('shadow-xl'); // Remove shadow when closed
         }
     });
 
     closeChatbotModalBtn.addEventListener('click', () => {
         chatbotModal.classList.add('hidden');
         chatbotIcon.classList.remove('hidden'); // Show floating icon when closed
+        chatbotModal.classList.remove('shadow-xl'); // Remove shadow when closed
     });
 
     sendChatBtn.addEventListener('click', sendMessage);
