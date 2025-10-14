@@ -23,7 +23,7 @@ export function initializeChatbot() {
             appendMessage('bot', 'Hello! I\'m Abdelrahman AI Assistant. Here are some things you can ask me:');
 
             const suggestionsContainer = document.createElement('div');
-            suggestionsContainer.classList.add('flex', 'flex-wrap', 'gap-2', 'mt-2'); // Flex container for horizontal layout
+            suggestionsContainer.classList.add('flex', 'flex-wrap', 'justify-center', 'gap-2', 'mt-2', 'w-full'); // Flex container for horizontal layout, centered, with wrapping, full width
 
             sampleQuestions.forEach(q => {
                 const questionElement = document.createElement('div');
