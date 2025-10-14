@@ -66,6 +66,15 @@
         .nav-link-active {
             border-bottom: 2px solid #007bff;
         }
+
+        /* Light Mode Variables */
+        .light-mode {
+            --color-background-dark: #F0F0F0;
+            --color-background-medium: #FFFFFF;
+            --color-background-light: #E0E0E0;
+            --color-text-light: #333333;
+            --color-text-medium: #666666;
+        }
     </style>
 </head>
 <body id="top" class="bg-[var(--color-background-dark)] text-[var(--color-text-light)] font-sans bg-gradient-dark">
@@ -181,36 +190,42 @@
             <a href="#top" id="logo-link" class="text-2xl font-bold text-[#007bff]"><img src="./assets/logo.svg" alt="My Portfolio Logo" class="h-8 w-auto inline-block"></a>
 
             <!-- Hamburger menu button for small screens -->
-            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+            <button id="menu-button" class="md:hidden text-[var(--color-text-light)] focus:outline-none">
                 <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle" class="p-2 rounded-full bg-[var(--color-background-light)] text-[var(--color-text-light)] hover:bg-[var(--color-background-medium)] focus:outline-none transition-colors duration-300">
+                <i class="fas fa-sun block dark-mode:hidden"></i>
+                <i class="fas fa-moon block light-mode:hidden"></i>
             </button>
 
             <!-- Navigation links -->
             <ul id="nav-links" class="hidden md:flex space-x-8 items-center ml-auto">
-                <li><a href="#about" class="relative text-white hover:text-[#007bff] py-2 transition-colors duration-300">About</a></li>
+                <li><a href="#about" class="relative text-[var(--color-text-light)] hover:text-[#007bff] py-2 transition-colors duration-300">About</a></li>
 
-                <li><a href="#work-experience" class="relative text-white hover:text-[#007bff] py-2 transition-colors duration-300">Work Experience</a></li>
-                <li><a href="#skills" class="relative text-white hover:text-[#007bff] py-2 transition-colors duration-300">Skills</a></li>
+                <li><a href="#work-experience" class="relative text-[var(--color-text-light)] hover:text-[#007bff] py-2 transition-colors duration-300">Work Experience</a></li>
+                <li><a href="#skills" class="relative text-[var(--color-text-light)] hover:text-[#007bff] py-2 transition-colors duration-300">Skills</a></li>
 
-                <li><a href="#projects" class="relative text-white hover:text-[#007bff] py-2 transition-colors duration-300">Projects</a></li>
+                <li><a href="#projects" class="relative text-[var(--color-text-light)] hover:text-[#007bff] py-2 transition-colors duration-300">Projects</a></li>
 
-                <li><a href="#contact" class="relative text-white hover:text-[#007bff] py-2 transition-colors duration-300">Contact</a></li>
+                <li><a href="#contact" class="relative text-[var(--color-text-light)] hover:text-[#007bff] py-2 transition-colors duration-300">Contact</a></li>
             </ul>
         </nav>
 
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[90] hidden"></div>
         <!-- Mobile menu (hidden by default) -->
         <div id="mobile-menu" class="fixed inset-y-0 right-0 w-64 bg-[var(--color-background-medium)] z-[100] transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto p-6">
-            <button id="close-menu-button" class="absolute top-4 right-4 text-white focus:outline-none text-3xl">&times;</button>
+            <button id="close-menu-button" class="absolute top-4 right-4 text-[var(--color-text-light)] focus:outline-none text-3xl">&times;</button>
             <ul class="flex flex-col items-start space-y-4 text-lg pt-10 w-full">
-                <li><a href="#about" class="block text-white hover:text-[#007bff] relative py-2 transition-colors duration-300">About</a></li>
+                <li><a href="#about" class="block text-[var(--color-text-light)] hover:text-[#007bff] relative py-2 transition-colors duration-300">About</a></li>
 
-                <li><a href="#work-experience" class="block text-white hover:text-[#007bff] relative py-2 transition-colors duration-300">Work Experience</a></li>
-                <li><a href="#skills" class="block text-white hover:text-[#007bff] relative py-2 transition-colors duration-300">Skills</a></li>
+                <li><a href="#work-experience" class="block text-[var(--color-text-light)] hover:text-[#007bff] relative py-2 transition-colors duration-300">Work Experience</a></li>
+                <li><a href="#skills" class="block text-[var(--color-text-light)] hover:text-[#007bff] relative py-2 transition-colors duration-300">Skills</a></li>
 
-                <li><a href="#projects" class="block text-white hover:text-[#007bff] relative py-2 transition-colors duration-300">Projects</a></li>
+                <li><a href="#projects" class="block text-[var(--color-text-light)] hover:text-[#007bff] relative py-2 transition-colors duration-300">Projects</a></li>
 
-                <li><a href="#contact" class="block text-white hover:text-[#007bff] relative py-2 transition-colors duration-300">Contact</a></li>
+                <li><a href="#contact" class="block text-[var(--color-text-light)] hover:text-[#007bff] relative py-2 transition-colors duration-300">Contact</a></li>
             </ul>
         </div>
     </header>
@@ -222,9 +237,9 @@
                 <img src="./assets/profile_image.png" alt="Profile Picture" class="rounded-full w-48 h-48 sm:w-64 sm:h-64 object-cover shadow-lg animate-breathe border-4 border-[#007bff] p-1">
             </div>
             <div class="md:w-2/3 text-center md:text-left">
-                <h1 class="text-5xl font-bold text-white mb-2 animate-fade-in-up">Abdelrahman Mahmoud</h1>
+                <h1 class="text-5xl font-bold text-[var(--color-text-light)] mb-2 animate-fade-in-up">Abdelrahman Mahmoud</h1>
                 <p class="text-2xl text-[#007bff] mb-4 animate-fade-in-up delay-100">Backend Developer</p>
-                <p class="max-w-3xl md:max-w-full mx-auto md:mx-0 mt-4 text-base md:text-lg text-gray-300 leading-relaxed animate-fade-in-up delay-200">
+                <p class="max-w-3xl md:max-w-full mx-auto md:mx-0 mt-4 text-base md:text-lg text-[var(--color-text-medium)] leading-relaxed animate-fade-in-up delay-200">
                     <span id="short-about-text">
                         Passionate Backend Developer with 1+ years of experience building scalable SaaS platforms and enterprise applications. 
                         I specialize in designing robust REST APIs, implementing efficient microservices, and optimizing database performance. 
@@ -236,8 +251,8 @@
                     <button id="toggle-about-text" class="text-[#007bff] hover:underline cursor-pointer block mt-2 mx-auto md:hidden">Show More</button>
                 </p>
                 <div class="mt-8 flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-x-4 md:space-y-0 animate-fade-in-up delay-300">
-                    <a href="#contact" class="bg-[#007bff] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#0056b3] transition-colors duration-300 shadow-lg w-full md:w-auto text-center">Let's Connect</a>
-                    <a href="./assets/Abdelrahman_Mahmoud.pdf" download class="bg-gray-700 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-600 transition-colors duration-300 shadow-lg w-full md:w-auto text-center">Download CV</a>
+                    <a href="#contact" class="bg-[#007bff] text-[var(--color-text-light)] px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#0056b3] transition-colors duration-300 shadow-lg w-full md:w-auto text-center">Let's Connect</a>
+                    <a href="./assets/Abdelrahman_Mahmoud.pdf" download class="bg-[var(--color-background-light)] text-[var(--color-text-light)] px-8 py-3 rounded-full text-lg font-semibold hover:bg-[var(--color-background-medium)] transition-colors duration-300 shadow-lg w-full md:w-auto text-center">Download CV</a>
                 </div>
             </div>
 
@@ -246,7 +261,7 @@
 
     <section id="upwork-success" class="py-20 bg-[var(--color-background-dark)] animate-slideIn">
         <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white"><span class="text-[#007bff]">Upwork</span> Success Story</h2>
+            <h2 class="text-4xl font-bold text-[var(--color-text-light)] mb-12"><span class="text-[#007bff]">Upwork</span> Success Story</h2>
             <div class="max-w-3xl mx-auto bg-[var(--color-background-medium)] rounded-xl shadow-lg overflow-hidden md:max-w-2xl border border-[#007bff] border-opacity-50">
                 <div class="p-8 relative">
                     <div class="mb-4 text-sm flex flex-wrap justify-center gap-4">
@@ -266,7 +281,7 @@
                     </div>
                     <p class="text-lg leading-relaxed text-[var(--color-text-medium)] pl-10">“One of the best backend devs I’ve worked with. Benefits from clear instructions and guidelines but an exceptional developer. You\'ll be fortunate to have him on your team!”</p>
                     <div class="flex justify-between items-center mt-4">
-                        <p class="text-[var(--color-text-medium)]">— Upwork Client</p>
+                        <p class="text-[var(--color-text-medium)]">— <span class="text-[#007bff]">Upwork</span> Client</p>
                         <a href="https://www.upwork.com/freelancers/~015f9fa637fe776013" target="_blank" class="text-[#007bff] hover:underline">View on Upwork</a>
                 </div>
             </div>
@@ -275,7 +290,7 @@
 
     <section id="work-experience" class="py-20 bg-[var(--color-background-dark)] animate-slideIn">
             <div class="container mx-auto px-8 md:px-8">
-                <h2 class="text-4xl font-bold text-center mb-12 text-white">Work Experience</h2>
+                <h2 class="text-4xl font-bold text-[var(--color-text-light)] mb-12">Work Experience</h2>
                 <div id="work-experience-container" class="relative"></div>
             </div>    </section>
 
@@ -283,12 +298,12 @@
 
     <section id="skills" class="py-20 animate-slideIn">
         <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">Skills</h2>
+            <h2 class="text-4xl font-bold text-[var(--color-text-light)] mb-12">Skills</h2>
 
             <div class="flex flex-wrap justify-center mb-8 gap-2 px-4">
-                <button class="skill-category-btn px-6 py-2 rounded-full bg-[#007bff] text-white font-semibold hover:bg-[#0056b3] focus:outline-none active-category" data-category="backend-development">Backend Development</button>
-                <button class="skill-category-btn px-6 py-2 rounded-full bg-[var(--color-background-light)] text-white font-semibold hover:bg-[#0056b3] focus:outline-none" data-category="databases-caching">Databases & Caching</button>
-                <button class="skill-category-btn px-6 py-2 rounded-full bg-[var(--color-background-light)] text-white font-semibold hover:bg-[#0056b3] focus:outline-none" data-category="devops-architecture">DevOps & Architecture</button>
+                <button class="skill-category-btn px-6 py-2 rounded-full bg-[#007bff] text-[var(--color-text-light)] font-semibold hover:bg-[#0056b3] focus:outline-none active-category" data-category="backend-development">Backend Development</button>
+                <button class="skill-category-btn px-6 py-2 rounded-full bg-[var(--color-background-light)] text-[var(--color-text-light)] font-semibold hover:bg-[#0056b3] focus:outline-none" data-category="databases-caching">Databases & Caching</button>
+                <button class="skill-category-btn px-6 py-2 rounded-full bg-[var(--color-background-light)] text-[var(--color-text-light)] font-semibold hover:bg-[#0056b3] focus:outline-none" data-category="devops-architecture">DevOps & Architecture</button>
             </div>
 
             <div id="skills-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center"></div>
@@ -297,14 +312,14 @@
 
     <section id="projects" class="py-20 animate-slideIn">
         <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">Projects</h2>
+            <h2 class="text-4xl font-bold text-[var(--color-text-light)] mb-12">Projects</h2>
             <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </div>
     </section>
 
     <section id="contact" class="py-20 bg-[var(--color-background-dark)] animate-slideIn">
         <div class="container mx-auto px-4 md:px-8 text-center">
-            <h2 class="text-4xl font-bold mb-4 text-white">Contact Me</h2>
+            <h2 class="text-4xl font-bold mb-4 text-[var(--color-text-light)]">Contact Me</h2>
             <p class="text-lg text-[var(--color-text-medium)]">Feel free to reach out to me on any of the following platforms:</p>
             <div class="flex justify-center space-x-8 mt-8">
                 <a href="tel:+201122662426" class="text-[#007bff] hover:text-[#0056b3] text-4xl">
@@ -324,17 +339,45 @@
         </div>
     </section>
 
-    <footer class="bg-dark text-white text-center p-4">
+    <footer class="bg-[var(--color-background-dark)] text-[var(--color-text-light)] text-center p-4">
         <p>&copy; 2025 ABDELRAHMAN MAHMOUD</p>
     </footer>
     <script type="module" src="./assets/js/main.js"></script>
     <script src="./assets/js/activeNavLink.js"></script>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Apply saved theme on load
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.classList.add(savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            // Default to light mode if system prefers it and no theme is saved
+            body.classList.add('light-mode');
+        } else {
+            // Default to dark mode
+            body.classList.add('dark-mode'); // Add dark-mode class for consistency
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light-mode');
+            }
+        });
+    </script>
 
     <!-- Mobile Job Details Modal -->
     <div id="job-details-modal" class="hidden fixed inset-0 bg-[var(--color-background-dark)] bg-opacity-75 flex items-center justify-center z-50">
         <div class="bg-[var(--color-background-medium)] rounded-lg shadow-xl p-6 m-4 max-w-md w-full relative">
-            <button id="close-modal-btn" class="absolute top-3 right-3 text-[var(--color-text-medium)] hover:text-white text-2xl">&times;</button>
-            <h3 id="modal-job-title" class="font-bold text-2xl text-white mb-2"></h3>
+            <button id="close-modal-btn" class="absolute top-3 right-3 text-[var(--color-text-medium)] hover:text-[var(--color-text-light)] text-2xl">&times;</button>
+            <h3 id="modal-job-title" class="font-bold text-2xl text-[var(--color-text-light)] mb-2"></h3>
             <p id="modal-company-name" class="text-base font-semibold text-[#007bff] mb-1"></p>
             <p id="modal-job-dates" class="text-sm font-medium text-[#007bff] mb-4"></p>
             <div id="modal-job-details" class="text-[var(--color-text-medium)] text-base">
@@ -346,12 +389,12 @@
     <!-- Project Details Modal -->
     <div id="project-details-modal" class="hidden fixed inset-0 bg-[var(--color-background-dark)] bg-opacity-75 flex items-center justify-center z-50 max-h-screen">
         <div class="bg-[var(--color-background-medium)] rounded-lg shadow-xl p-6 m-4 max-w-5xl w-full relative flex flex-col md:flex-row overflow-y-auto max-h-full">
-            <button id="close-project-modal-btn" class="absolute top-3 right-3 text-[var(--color-text-medium)] hover:text-white text-2xl">&times;</button>
+            <button id="close-project-modal-btn" class="absolute top-3 right-3 text-[var(--color-text-medium)] hover:text-[var(--color-text-light)] text-2xl">&times;</button>
             <div class="md:w-1/2 md:pr-4 mb-4 md:mb-0">
                 <img id="modal-project-image" src="https://placehold.co/600x400" alt="Project Image" class="rounded-lg shadow-md w-full">
             </div>
             <div class="md:w-1/2">
-                <h3 id="modal-project-title" class="font-bold text-2xl text-white mb-2"></h3>
+                <h3 id="modal-project-title" class="font-bold text-2xl text-[var(--color-text-light)] mb-2"></h3>
                 <div id="modal-project-tech-stack" class="flex space-x-4 mb-4">
                     <!-- Tech stack icons will be loaded here -->
                 </div>
