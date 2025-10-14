@@ -126,6 +126,9 @@ export function initializeChatbot() {
             messageContainer.classList.add('justify-start');
             messageElement.classList.add('bg-[var(--color-background-light)]', 'text-[var(--color-text-light)]');
             
+            // Remove bold markdown formatting (double asterisks)
+            message = message.replace(/\*\*/g, '');
+
             if (!isThinking) { // Only add icon if not a thinking message
                 const iconElement = document.createElement('i');
                 iconElement.classList.add('fas', 'fa-robot', 'text-xl', 'mr-2', 'mt-1', 'text-[var(--color-text-medium)]');
