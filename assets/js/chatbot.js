@@ -42,21 +42,21 @@ export function initializeChatbot() {
     }
 
     chatbotIcon.addEventListener('click', () => {
-        chatbotModal.classList.toggle('hidden');
-        if (!chatbotModal.classList.contains('hidden')) {
+        const isClosed = chatbotModal.classList.toggle('is-closed');
+        if (!isClosed) { // if it's not closed, it's open
             displaySampleQuestions();
-            chatbotIcon.classList.add('hidden'); // Hide floating icon
-            chatbotModal.classList.add('shadow-xl'); // Add shadow when opened
+            chatbotIcon.classList.add('hidden');
+            chatbotModal.classList.add('shadow-xl');
         } else {
-            chatbotIcon.classList.remove('hidden'); // Show floating icon
-            chatbotModal.classList.remove('shadow-xl'); // Remove shadow when closed
+            chatbotIcon.classList.remove('hidden');
+            chatbotModal.classList.remove('shadow-xl');
         }
     });
 
     closeChatbotModalBtn.addEventListener('click', () => {
-        chatbotModal.classList.add('hidden');
-        chatbotIcon.classList.remove('hidden'); // Show floating icon when closed
-        chatbotModal.classList.remove('shadow-xl'); // Remove shadow when closed
+        chatbotModal.classList.add('is-closed');
+        chatbotIcon.classList.remove('hidden');
+        chatbotModal.classList.remove('shadow-xl');
     });
 
     sendChatBtn.addEventListener('click', sendMessage);
