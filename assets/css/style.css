@@ -102,30 +102,24 @@
 .profile-image-wrapper::after {
     content: '';
     position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
     border-radius: 50%;
     border: 2px solid transparent;
+    border-top-color: #007bff;
+    border-bottom-color: #007bff;
 }
 
 .profile-image-wrapper::before {
-    top: -10px;
-    left: -10px;
-    width: calc(100% + 20px);
-    height: calc(100% + 20px);
-    border-top-color: #007bff;
-    border-bottom-color: #007bff;
     z-index: 1;
     animation: spin-right 4s linear infinite;
 }
 
 .profile-image-wrapper::after {
-    top: -5px;
-    left: -5px;
-    width: calc(100% + 10px);
-    height: calc(100% + 10px);
-    border-left-color: #007bff;
-    border-right-color: #007bff;
     z-index: 1;
-    animation: spin-left 3s linear infinite;
+    animation: spin-left 4s linear infinite;
 }
 
 @keyframes spin-right {
