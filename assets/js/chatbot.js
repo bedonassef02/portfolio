@@ -8,33 +8,37 @@ export function initializeChatbot() {
     const defaultChatbotIcon = document.getElementById('default-chatbot-icon');
     const thinkingChatbotIcon = document.getElementById('thinking-chatbot-icon');
 
+    let sampleQuestionsDisplayed = false; // Flag to track if sample questions have been displayed
+
     const sampleQuestions = [
         { display: "Experience", send: "Tell me about Abdelrahman's experience." },
         { display: "Skills", send: "What are his key skills?" },
         { display: "Projects", send: "Can you list his projects?" },
-        { display: "Achievements", send: "What are his achievements?" },
         { display: "Contact", send: "How can I contact Abdelrahman?" }
     ];
 
     function displaySampleQuestions() {
-        chatHistory.innerHTML = ''; // Clear history first
-        appendMessage('bot', 'Hello! I\'m Abdelrahman AI Assistant. Here are some things you can ask me:');
+        if (!sampleQuestionsDisplayed) {
+            chatHistory.innerHTML = ''; // Clear history only if not displayed before
+            appendMessage('bot', 'Hello! I\'m Abdelrahman AI Assistant. Here are some things you can ask me:');
 
-        const suggestionsContainer = document.createElement('div');
-        suggestionsContainer.classList.add('flex', 'flex-wrap', 'gap-2', 'mt-2'); // Flex container for horizontal layout
+            const suggestionsContainer = document.createElement('div');
+            suggestionsContainer.classList.add('flex', 'flex-wrap', 'gap-2', 'mt-2'); // Flex container for horizontal layout
 
-        sampleQuestions.forEach(q => {
-            const questionElement = document.createElement('div');
-            questionElement.classList.add('px-3', 'py-1', 'rounded-full', 'bg-[var(--color-background-medium)]', 'text-sm', 'text-[var(--color-text-light)]', 'cursor-pointer', 'hover:bg-[#007bff]', 'hover:text-white', 'border', 'border-[var(--color-background-light)]', 'shadow-md', 'ring-1', 'ring-inset', 'ring-[#007bff]', 'sample-question-item', 'whitespace-nowrap', 'overflow-hidden', 'text-ellipsis');
-            questionElement.textContent = q.display;
-            questionElement.addEventListener('click', () => {
-                chatInput.value = q.send;
-                sendMessage();
+            sampleQuestions.forEach(q => {
+                const questionElement = document.createElement('div');
+                questionElement.classList.add('px-3', 'py-1', 'rounded-full', 'bg-[var(--color-background-medium)]', 'text-sm', 'text-[var(--color-text-light)]', 'cursor-pointer', 'hover:bg-[#007bff]', 'hover:text-white', 'border', 'border-[var(--color-background-light)]', 'shadow-md', 'ring-1', 'ring-inset', 'ring-[#007bff]', 'sample-question-item', 'whitespace-nowrap', 'overflow-hidden', 'text-ellipsis');
+                questionElement.textContent = q.display;
+                questionElement.addEventListener('click', () => {
+                    chatInput.value = q.send;
+                    sendMessage();
+                });
+                suggestionsContainer.appendChild(questionElement);
             });
-            suggestionsContainer.appendChild(questionElement);
-        });
-        chatHistory.appendChild(suggestionsContainer);
-        chatHistory.scrollTop = chatHistory.scrollHeight;
+            chatHistory.appendChild(suggestionsContainer);
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+            sampleQuestionsDisplayed = true; // Set flag to true after displaying
+        }
     }
 
     chatbotIcon.addEventListener('click', () => {
