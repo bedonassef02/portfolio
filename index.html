@@ -207,8 +207,8 @@
                 <li>
                     <!-- Theme Toggle Button -->
                     <button id="theme-toggle" class="p-2 rounded-full bg-[var(--color-background-light)] text-[var(--color-text-light)] hover:bg-[var(--color-background-medium)] focus:outline-none transition-colors duration-300">
-                        <i class="fas fa-sun hidden light-mode:block"></i>
-                        <i class="fas fa-moon block light-mode:hidden"></i>
+                        <i id="sun-icon" class="fas fa-sun hidden"></i>
+                        <i id="moon-icon" class="fas fa-moon block"></i>
                     </button>
                 </li>
             </ul>
@@ -348,25 +348,43 @@
     <script>
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+
+        // Function to apply theme and update icon visibility
+        function applyTheme(theme) {
+            if (theme === 'light-mode') {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                sunIcon.classList.remove('hidden');
+                sunIcon.classList.add('block');
+                moonIcon.classList.remove('block');
+                moonIcon.classList.add('hidden');
+            } else { // dark-mode
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                sunIcon.classList.remove('block');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                moonIcon.classList.add('block');
+            }
+            localStorage.setItem('theme', theme);
+        }
 
         // Apply saved theme on load
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
-            body.classList.add(savedTheme);
+            applyTheme(savedTheme);
         } else {
             // Default to dark mode if no theme is saved
-            body.classList.add('dark-mode');
+            applyTheme('dark-mode');
         }
 
         themeToggle.addEventListener('click', () => {
             if (body.classList.contains('light-mode')) {
-                body.classList.remove('light-mode');
-                body.classList.add('dark-mode');
-                localStorage.setItem('theme', 'dark-mode');
+                applyTheme('dark-mode');
             } else {
-                body.classList.remove('dark-mode');
-                body.classList.add('light-mode');
-                localStorage.setItem('theme', 'light-mode');
+                applyTheme('light-mode');
             }
         });
     </script>
