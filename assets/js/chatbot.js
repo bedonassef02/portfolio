@@ -5,6 +5,8 @@ export function initializeChatbot() {
     const chatHistory = document.getElementById('chat-history');
     const chatInput = document.getElementById('chat-input');
     const sendChatBtn = document.getElementById('send-chat-btn');
+    const defaultChatbotIcon = document.getElementById('default-chatbot-icon');
+    const thinkingChatbotIcon = document.getElementById('thinking-chatbot-icon');
 
     chatbotIcon.addEventListener('click', () => {
         chatbotModal.classList.toggle('hidden');
@@ -29,8 +31,13 @@ export function initializeChatbot() {
         chatInput.value = '';
         chatHistory.scrollTop = chatHistory.scrollHeight; // Scroll to bottom
 
+        // Show thinking icon
+        defaultChatbotIcon.classList.add('hidden');
+        thinkingChatbotIcon.classList.remove('hidden');
+        thinkingChatbotIcon.classList.add('block');
+
         // Placeholder for API call to Gemini
-        appendMessage('bot', 'Thinking...'); // Show a thinking message
+        appendMessage('bot', 'Thinking...', true); // Show a thinking message
 
         // Simulate API call
         setTimeout(() => {
@@ -62,19 +69,25 @@ export function initializeChatbot() {
 
             appendMessage('bot', botResponse);
             chatHistory.scrollTop = chatHistory.scrollHeight;
+
+            // Hide thinking icon, show default icon
+            defaultChatbotIcon.classList.remove('hidden');
+            defaultChatbotIcon.classList.add('block');
+            thinkingChatbotIcon.classList.remove('block');
+            thinkingChatbotIcon.classList.add('hidden');
         }, 1500);
     }
 
-    function appendMessage(sender, message) {
+    function appendMessage(sender, message, isThinking = false) {
         const messageElement = document.createElement('div');
-        messageElement.classList.add('mb-2', 'p-2', 'rounded-lg', 'max-w-[80%]');
+        messageElement.classList.add('mb-2', 'p-2', 'rounded-lg');
 
         if (sender === 'user') {
-            messageElement.classList.add('bg-[#007bff]', 'text-white', 'ml-auto');
+            messageElement.classList.add('bg-[#007bff]', 'text-white', 'ml-auto', 'max-w-[80%]');
         } else {
-            messageElement.classList.add('bg-[var(--color-background-light)]', 'text-[var(--color-text-light)]', 'mr-auto');
-            if (message === 'Thinking...') {
-                messageElement.classList.add('thinking-message'); // Add a class to easily remove it later
+            messageElement.classList.add('bg-[var(--color-background-light)]', 'text-[var(--color-text-light)]', 'mr-auto', 'max-w-[80%]');
+            if (isThinking) {
+                messageElement.classList.add('thinking-message');
             }
         }
         messageElement.textContent = message;
