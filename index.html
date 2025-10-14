@@ -194,12 +194,6 @@
                 <i class="fas fa-bars text-2xl"></i>
             </button>
 
-            <!-- Theme Toggle Button -->
-            <button id="theme-toggle" class="p-2 rounded-full bg-[var(--color-background-light)] text-[var(--color-text-light)] hover:bg-[var(--color-background-medium)] focus:outline-none transition-colors duration-300">
-                <i class="fas fa-sun block dark-mode:hidden"></i>
-                <i class="fas fa-moon block light-mode:hidden"></i>
-            </button>
-
             <!-- Navigation links -->
             <ul id="nav-links" class="hidden md:flex space-x-8 items-center ml-auto">
                 <li><a href="#about" class="relative text-[var(--color-text-light)] hover:text-[#007bff] py-2 transition-colors duration-300">About</a></li>
@@ -210,6 +204,13 @@
                 <li><a href="#projects" class="relative text-[var(--color-text-light)] hover:text-[#007bff] py-2 transition-colors duration-300">Projects</a></li>
 
                 <li><a href="#contact" class="relative text-[var(--color-text-light)] hover:text-[#007bff] py-2 transition-colors duration-300">Contact</a></li>
+                <li>
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" class="p-2 rounded-full bg-[var(--color-background-light)] text-[var(--color-text-light)] hover:bg-[var(--color-background-medium)] focus:outline-none transition-colors duration-300">
+                        <i class="fas fa-sun block dark-mode:hidden"></i>
+                        <i class="fas fa-moon block light-mode:hidden"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
 
@@ -352,12 +353,9 @@
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             body.classList.add(savedTheme);
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-            // Default to light mode if system prefers it and no theme is saved
-            body.classList.add('light-mode');
         } else {
-            // Default to dark mode
-            body.classList.add('dark-mode'); // Add dark-mode class for consistency
+            // Default to dark mode if no theme is saved
+            body.classList.add('dark-mode');
         }
 
         themeToggle.addEventListener('click', () => {
