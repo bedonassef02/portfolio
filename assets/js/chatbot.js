@@ -23,11 +23,11 @@ export function initializeChatbot() {
             appendMessage('bot', 'Hello! I\'m Abdelrahman AI Assistant. Here are some things you can ask me:');
 
             const suggestionsContainer = document.createElement('div');
-            suggestionsContainer.classList.add('flex', 'flex-wrap', 'gap-2', 'mt-2'); // Flex container for horizontal layout
+            suggestionsContainer.classList.add('flex', 'justify-center', 'gap-2', 'mt-2', 'overflow-x-auto', 'pb-2'); // Flex container for horizontal layout, centered, with horizontal scroll
 
             sampleQuestions.forEach(q => {
                 const questionElement = document.createElement('div');
-                questionElement.classList.add('px-3', 'py-1', 'rounded-full', 'bg-[var(--color-background-medium)]', 'text-sm', 'text-[var(--color-text-light)]', 'cursor-pointer', 'hover:bg-[#007bff]', 'hover:text-white', 'border', 'border-[var(--color-background-light)]', 'shadow-md', 'ring-1', 'ring-inset', 'ring-[#007bff]', 'sample-question-item', 'whitespace-nowrap', 'overflow-hidden', 'text-ellipsis');
+                questionElement.classList.add('flex-shrink-0', 'px-3', 'py-1', 'rounded-full', 'bg-[var(--color-background-medium)]', 'text-sm', 'text-[var(--color-text-light)]', 'cursor-pointer', 'hover:bg-[#007bff]', 'hover:text-white', 'border', 'border-[var(--color-background-light)]', 'shadow-md', 'ring-1', 'ring-inset', 'ring-[#007bff]', 'sample-question-item', 'whitespace-nowrap', 'overflow-hidden', 'text-ellipsis');
                 questionElement.textContent = q.display;
                 questionElement.addEventListener('click', () => {
                     chatInput.value = q.send;
