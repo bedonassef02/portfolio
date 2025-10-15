@@ -6,6 +6,7 @@ import { initializeNavbar } from './navbar.js';
 import { initializeIntersectionObserver } from './intersectionObserver.js';
 import { initializeAbout } from './about.js';
 import { initializeChatbot } from './chatbot.js';
+import { initializeContactForm } from './contact.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeSmoothScroll();
@@ -16,4 +17,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeIntersectionObserver();
     initializeAbout();
     initializeChatbot();
+    initializeContactForm();
 });
