@@ -47,9 +47,11 @@ export function initializeChatbot() {
             displaySampleQuestions();
             chatbotIcon.classList.add('hidden');
             chatbotModal.classList.add('shadow-xl');
+            chatbotIcon.classList.remove('animate-pulse'); // Remove animation when opening
         } else {
             chatbotIcon.classList.remove('hidden');
             chatbotModal.classList.remove('shadow-xl');
+            chatbotIcon.classList.add('animate-pulse'); // Add animation when closing
         }
     });
 
@@ -57,6 +59,7 @@ export function initializeChatbot() {
         chatbotModal.classList.add('is-closed');
         chatbotIcon.classList.remove('hidden');
         chatbotModal.classList.remove('shadow-xl');
+        chatbotIcon.classList.add('animate-pulse'); // Add animation when closing via close button
     });
 
     sendChatBtn.addEventListener('click', sendMessage);
