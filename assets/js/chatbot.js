@@ -98,7 +98,7 @@ export function initializeChatbot() {
             hasChatbotBeenOpenedThisSession = true; // Mark as opened in this session
             hideNotificationBadge(); // Hide notification when chatbot is opened
         } else {
-            chatbotIcon.classList.add('hidden'); // Keep icon hidden after first open
+            chatbotIcon.classList.remove('hidden'); // Icon remains visible
             chatbotModal.classList.remove('shadow-xl');
             stopWiggleAnimation(); // Ensure animation is stopped
         }
@@ -106,7 +106,7 @@ export function initializeChatbot() {
 
     closeChatbotModalBtn.addEventListener('click', () => {
         chatbotModal.classList.add('is-closed');
-        chatbotIcon.classList.add('hidden'); // Keep icon hidden after first open
+        chatbotIcon.classList.remove('hidden'); // Icon remains visible
         chatbotModal.classList.remove('shadow-xl');
         stopWiggleAnimation(); // Ensure animation is stopped
     });
