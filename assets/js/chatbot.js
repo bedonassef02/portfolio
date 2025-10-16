@@ -11,6 +11,7 @@ export function initializeChatbot() {
     let sampleQuestionsDisplayed = false; // Flag to track if sample questions have been displayed
     let hasChatbotBeenOpenedThisSession = false; // New flag to track if chatbot has been opened
     let oneMinuteMessageSent = false; // Flag to track if the 1-minute message has been sent
+    let hasUserSentMessage = false; // New flag to track if the user has sent any message
     let notificationBadge = document.getElementById('chatbot-notification-badge');
 
     const sampleQuestions = [
@@ -78,8 +79,8 @@ export function initializeChatbot() {
 
     // 1-minute message logic
     setTimeout(() => {
-        if (!oneMinuteMessageSent) {
-            appendMessage('bot', 'It looks like you've been here for a minute! Do you have any questions about Abdelrahman's portfolio?');
+        if (!oneMinuteMessageSent && !hasUserSentMessage) {
+            appendMessage('bot', 'It looks like you\'ve been here for a minute! Do you have any questions about Abdelrahman\'s portfolio?');
             oneMinuteMessageSent = true;
             if (chatbotModal.classList.contains('is-closed')) {
                 showNotificationBadge();
@@ -96,7 +97,8 @@ export function initializeChatbot() {
             stopWiggleAnimation(); // Stop animation when opening
             hasChatbotBeenOpenedThisSession = true; // Mark as opened in this session
             hideNotificationBadge(); // Hide notification when chatbot is opened
-        } else {
+        }
+        else {
             chatbotIcon.classList.remove('hidden');
             chatbotModal.classList.remove('shadow-xl');
             if (!hasChatbotBeenOpenedThisSession) {
@@ -117,7 +119,7 @@ export function initializeChatbot() {
             stopWiggleAnimation(); // Ensure animation is stopped if already opened
         }
         // If a 1-minute message was sent and chatbot is closed, show notification
-        if (oneMinuteMessageSent) {
+        if (oneMinuteMessageSent && !hasUserSentMessage) {
             showNotificationBadge();
         }
     });
@@ -132,6 +134,9 @@ export function initializeChatbot() {
     async function sendMessage() {
         const userMessage = chatInput.value.trim();
         if (userMessage === '') return;
+
+        hasUserSentMessage = true; // User has sent a message
+        hideNotificationBadge(); // Hide notification if user sends a message
 
         appendMessage('user', userMessage);
         chatInput.value = '';
