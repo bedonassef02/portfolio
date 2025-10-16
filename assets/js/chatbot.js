@@ -9,7 +9,7 @@ export function initializeChatbot() {
     const thinkingChatbotIcon = document.getElementById('thinking-chatbot-icon');
 
     let sampleQuestionsDisplayed = false; // Flag to track if sample questions have been displayed
-    const CHATBOT_OPENED_SESSION_KEY = 'chatbotOpenedThisSession';
+    let hasChatbotBeenOpenedThisSession = false; // New flag to track if chatbot has been opened
 
     const sampleQuestions = [
         { display: "Experience", send: "Tell me about Abdelrahman's experience." },
@@ -61,15 +61,9 @@ export function initializeChatbot() {
         chatbotIcon.classList.remove('animate-wiggle');
     }
 
-    // Check session storage on load
-    if (sessionStorage.getItem(CHATBOT_OPENED_SESSION_KEY)) {
-        chatbotIcon.classList.add('hidden');
-        stopWiggleAnimation();
-    } else {
-        // Initial state: start wiggle if chatbot is closed and not opened this session
-        if (chatbotModal.classList.contains('is-closed')) {
-            startWiggleAnimation();
-        }
+    // Initial state: start wiggle if chatbot is closed
+    if (chatbotModal.classList.contains('is-closed')) {
+        startWiggleAnimation();
     }
 
     chatbotIcon.addEventListener('click', () => {
@@ -79,33 +73,27 @@ export function initializeChatbot() {
             chatbotIcon.classList.add('hidden');
             chatbotModal.classList.add('shadow-xl');
             stopWiggleAnimation(); // Stop animation when opening
-            sessionStorage.setItem(CHATBOT_OPENED_SESSION_KEY, 'true'); // Mark as opened in this session
+            hasChatbotBeenOpenedThisSession = true; // Mark as opened in this session
         } else {
-            // If chatbot is closed, and it hasn't been opened this session, start wiggle
-            // Otherwise, keep it hidden and stopped
-            if (!sessionStorage.getItem(CHATBOT_OPENED_SESSION_KEY)) {
-                chatbotIcon.classList.remove('hidden');
-                startWiggleAnimation();
-            } else {
-                chatbotIcon.classList.add('hidden');
-                stopWiggleAnimation();
-            }
+            chatbotIcon.classList.remove('hidden');
             chatbotModal.classList.remove('shadow-xl');
+            if (!hasChatbotBeenOpenedThisSession) {
+                startWiggleAnimation(); // Start animation only if not opened before
+            } else {
+                stopWiggleAnimation(); // Ensure animation is stopped if already opened
+            }
         }
     });
 
     closeChatbotModalBtn.addEventListener('click', () => {
         chatbotModal.classList.add('is-closed');
-        // If chatbot is closed, and it hasn't been opened this session, start wiggle
-        // Otherwise, keep it hidden and stopped
-        if (!sessionStorage.getItem(CHATBOT_OPENED_SESSION_KEY)) {
-            chatbotIcon.classList.remove('hidden');
-            startWiggleAnimation();
-        } else {
-            chatbotIcon.classList.add('hidden');
-            stopWiggleAnimation();
-        }
+        chatbotIcon.classList.remove('hidden');
         chatbotModal.classList.remove('shadow-xl');
+        if (!hasChatbotBeenOpenedThisSession) {
+            startWiggleAnimation(); // Start animation only if not opened before
+        } else {
+            stopWiggleAnimation(); // Ensure animation is stopped if already opened
+        }
     });
 
     sendChatBtn.addEventListener('click', sendMessage);
