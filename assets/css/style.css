@@ -149,3 +149,12 @@
     opacity: 0;
     pointer-events: none;
 }
+
+.online-indicator {
+    bottom: 0px;
+    right: 0px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #28a745; /* Green color for online */
+}
