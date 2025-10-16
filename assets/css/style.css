@@ -84,6 +84,19 @@
             --color-text-light: #000000;
             --color-text-medium: #1A1A1A;
         }
+        @keyframes fadeOutScaleDown {
+            from { opacity: 1; transform: scale(1); }
+            to { opacity: 0; transform: scale(0); }
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        .animate-wiggle {
+            animation: wiggle 0.2s ease-in-out infinite;
+        }
 
 .profile-image-wrapper {
     position: relative;

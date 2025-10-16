@@ -41,17 +41,41 @@ export function initializeChatbot() {
         }
     }
 
+    let wiggleInterval;
+
+    function startWiggleAnimation() {
+        if (!wiggleInterval) {
+            wiggleInterval = setInterval(() => {
+                chatbotIcon.classList.add('animate-wiggle');
+                setTimeout(() => {
+                    chatbotIcon.classList.remove('animate-wiggle');
+                }, 500); // Wiggle for 0.5 seconds
+            }, 5000); // Repeat every 5 seconds
+        }
+    }
+
+    function stopWiggleAnimation() {
+        clearInterval(wiggleInterval);
+        wiggleInterval = null;
+        chatbotIcon.classList.remove('animate-wiggle');
+    }
+
+    // Initial state: start wiggle if chatbot is closed
+    if (chatbotModal.classList.contains('is-closed')) {
+        startWiggleAnimation();
+    }
+
     chatbotIcon.addEventListener('click', () => {
         const isClosed = chatbotModal.classList.toggle('is-closed');
         if (!isClosed) { // if it's not closed, it's open
             displaySampleQuestions();
             chatbotIcon.classList.add('hidden');
             chatbotModal.classList.add('shadow-xl');
-            chatbotIcon.classList.remove('animate-pulse'); // Remove animation when opening
+            stopWiggleAnimation(); // Stop animation when opening
         } else {
             chatbotIcon.classList.remove('hidden');
             chatbotModal.classList.remove('shadow-xl');
-            chatbotIcon.classList.add('animate-pulse'); // Add animation when closing
+            startWiggleAnimation(); // Start animation when closing
         }
     });
 
@@ -59,7 +83,7 @@ export function initializeChatbot() {
         chatbotModal.classList.add('is-closed');
         chatbotIcon.classList.remove('hidden');
         chatbotModal.classList.remove('shadow-xl');
-        chatbotIcon.classList.add('animate-pulse'); // Add animation when closing via close button
+        startWiggleAnimation(); // Start animation when closing via close button
     });
 
     sendChatBtn.addEventListener('click', sendMessage);
