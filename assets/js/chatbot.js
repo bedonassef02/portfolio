@@ -97,31 +97,18 @@ export function initializeChatbot() {
             stopWiggleAnimation(); // Stop animation when opening
             hasChatbotBeenOpenedThisSession = true; // Mark as opened in this session
             hideNotificationBadge(); // Hide notification when chatbot is opened
-        }
-        else {
-            chatbotIcon.classList.remove('hidden');
+        } else {
+            chatbotIcon.classList.add('hidden'); // Keep icon hidden after first open
             chatbotModal.classList.remove('shadow-xl');
-            if (!hasChatbotBeenOpenedThisSession) {
-                startWiggleAnimation(); // Start animation only if not opened before
-            } else {
-                stopWiggleAnimation(); // Ensure animation is stopped if already opened
-            }
+            stopWiggleAnimation(); // Ensure animation is stopped
         }
     });
 
     closeChatbotModalBtn.addEventListener('click', () => {
         chatbotModal.classList.add('is-closed');
-        chatbotIcon.classList.remove('hidden');
+        chatbotIcon.classList.add('hidden'); // Keep icon hidden after first open
         chatbotModal.classList.remove('shadow-xl');
-        if (!hasChatbotBeenOpenedThisSession) {
-            startWiggleAnimation(); // Start animation only if not opened before
-        } else {
-            stopWiggleAnimation(); // Ensure animation is stopped if already opened
-        }
-        // If a 1-minute message was sent and chatbot is closed, show notification
-        if (oneMinuteMessageSent && !hasUserSentMessage) {
-            showNotificationBadge();
-        }
+        stopWiggleAnimation(); // Ensure animation is stopped
     });
 
     sendChatBtn.addEventListener('click', sendMessage);
