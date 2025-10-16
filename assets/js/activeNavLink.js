@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.7 // Adjust this value: 0.5 means 50% of the section must be visible
+        threshold: 0.2 // Adjust this value: 0.5 means 50% of the section must be visible
     };
 
     const observer = new IntersectionObserver((entries) => {
