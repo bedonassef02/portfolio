@@ -10,6 +10,8 @@ export function initializeChatbot() {
 
     let sampleQuestionsDisplayed = false; // Flag to track if sample questions have been displayed
     let hasChatbotBeenOpenedThisSession = false; // New flag to track if chatbot has been opened
+    let oneMinuteMessageSent = false; // Flag to track if the 1-minute message has been sent
+    let notificationBadge = document.getElementById('chatbot-notification-badge');
 
     const sampleQuestions = [
         { display: "Experience", send: "Tell me about Abdelrahman's experience." },
@@ -61,10 +63,29 @@ export function initializeChatbot() {
         chatbotIcon.classList.remove('animate-wiggle');
     }
 
+    function showNotificationBadge() {
+        notificationBadge.classList.remove('hidden');
+    }
+
+    function hideNotificationBadge() {
+        notificationBadge.classList.add('hidden');
+    }
+
     // Initial state: start wiggle if chatbot is closed
     if (chatbotModal.classList.contains('is-closed')) {
         startWiggleAnimation();
     }
+
+    // 1-minute message logic
+    setTimeout(() => {
+        if (!oneMinuteMessageSent) {
+            appendMessage('bot', 'It looks like you've been here for a minute! Do you have any questions about Abdelrahman's portfolio?');
+            oneMinuteMessageSent = true;
+            if (chatbotModal.classList.contains('is-closed')) {
+                showNotificationBadge();
+            }
+        }
+    }, 60000); // 1 minute
 
     chatbotIcon.addEventListener('click', () => {
         const isClosed = chatbotModal.classList.toggle('is-closed');
@@ -74,6 +95,7 @@ export function initializeChatbot() {
             chatbotModal.classList.add('shadow-xl');
             stopWiggleAnimation(); // Stop animation when opening
             hasChatbotBeenOpenedThisSession = true; // Mark as opened in this session
+            hideNotificationBadge(); // Hide notification when chatbot is opened
         } else {
             chatbotIcon.classList.remove('hidden');
             chatbotModal.classList.remove('shadow-xl');
@@ -93,6 +115,10 @@ export function initializeChatbot() {
             startWiggleAnimation(); // Start animation only if not opened before
         } else {
             stopWiggleAnimation(); // Ensure animation is stopped if already opened
+        }
+        // If a 1-minute message was sent and chatbot is closed, show notification
+        if (oneMinuteMessageSent) {
+            showNotificationBadge();
         }
     });
 
