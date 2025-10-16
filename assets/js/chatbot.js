@@ -80,11 +80,16 @@ export function initializeChatbot() {
     // 1-minute message logic
     setTimeout(() => {
         if (!oneMinuteMessageSent && !hasUserSentMessage) {
+            // Remove existing sample questions before adding the new message
+            document.querySelectorAll('.sample-question-item').forEach(item => item.remove());
+
             appendMessage('bot', 'It looks like you\'ve been here for a minute! Do you have any questions about Abdelrahman\'s portfolio?');
             oneMinuteMessageSent = true;
             if (chatbotModal.classList.contains('is-closed')) {
                 showNotificationBadge();
             }
+            // Re-add sample questions after the 1-minute message
+            displaySampleQuestions();
         }
     }, 60000); // 1 minute
 
