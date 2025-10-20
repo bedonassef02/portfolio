@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+export function initializeContactForm() {
     const contactForm = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
 
@@ -45,4 +45,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-});
+}

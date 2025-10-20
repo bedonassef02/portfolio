@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+export function initializeThemeToggle() {
     const themeToggle = document.getElementById('theme-toggle');
     const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
     const body = document.body;
@@ -59,4 +59,4 @@ document.addEventListener('DOMContentLoaded', function() {
             applyTheme('light-mode');
         }
     });
-});
+}

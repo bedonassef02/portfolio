@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+export function initializeActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('#nav-links a');
     const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
@@ -48,4 +48,4 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     initialActiveLink();
-});
+}
