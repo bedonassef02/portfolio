@@ -5,6 +5,9 @@
             --color-text-light: #E0E0E0;
             --color-text-medium: #B0B0B0;
         }
+body {
+    overflow-x: clip;
+}
 #navbar {
 
 }
