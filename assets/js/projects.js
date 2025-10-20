@@ -10,17 +10,19 @@ export function initializeProjects() {
             const projectsContainer = document.getElementById('projects-container');
             const INITIAL_PROJECT_DISPLAY_LIMIT = 3;
 
-            const renderProjects = (projectsToRender) => {
-                projectsContainer.innerHTML = projectsToRender.map(project => `
-                    <a href="#" class="project-card block bg-[var(--color-background-medium)] rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="${project.id}">
-                        <img src="${project.imageUrl}" alt="${project.title}" class="rounded-md mx-auto mb-4 w-full h-48 object-cover">
-                        <h3 class="text-2xl font-bold text-[var(--color-text-light)]">${project.title}</h3>
-                        <p class="text-sm font-medium text-[#007bff] mt-2">Tech Stack: ${project.techStack.map(tech => tech.name).join(', ')}</p>
-                    </a>
-                `).join('');
+            const createProjectCardHtml = (project) => `
+                <a href="#" class="project-card block bg-[var(--color-background-medium)] rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="${project.id}">
+                    <img src="${project.imageUrl}" alt="${project.title}" class="rounded-md mx-auto mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-bold text-[var(--color-text-light)]">${project.title}</h3>
+                    <p class="text-sm font-medium text-[#007bff] mt-2">Tech Stack: ${project.techStack.map(tech => tech.name).join(', ')}</p>
+                </a>
+            `;
+
+            const renderInitialProjects = (projectsToRender) => {
+                projectsContainer.innerHTML = projectsToRender.map(createProjectCardHtml).join('');
             };
 
-            renderProjects(projectDetailsData.slice(0, INITIAL_PROJECT_DISPLAY_LIMIT));
+            renderInitialProjects(projectDetailsData.slice(0, INITIAL_PROJECT_DISPLAY_LIMIT));
 
             const showMoreBtnContainer = document.createElement('div');
             showMoreBtnContainer.className = 'flex flex-col items-center mt-8';
@@ -48,14 +50,28 @@ export function initializeProjects() {
                 projectCountInfo.textContent = `Showing ${INITIAL_PROJECT_DISPLAY_LIMIT} of ${projectDetailsData.length} projects`;
 
                 showMoreBtn.addEventListener('click', () => {
-                    renderProjects(projectDetailsData);
+                    const currentlyDisplayed = projectsContainer.children.length;
+                    const projectsToAdd = projectDetailsData.slice(currentlyDisplayed);
+
+                    projectsToAdd.forEach(project => {
+                        const projectHtml = createProjectCardHtml(project);
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = projectHtml;
+                        const newProjectCard = tempDiv.firstElementChild;
+                        newProjectCard.classList.add('animate-fade-in-up'); // Add animation class
+                        projectsContainer.appendChild(newProjectCard);
+                    });
+
                     showMoreBtn.classList.add('hidden');
                     showLessBtn.classList.remove('hidden');
                     projectCountInfo.textContent = `Showing ${projectDetailsData.length} of ${projectDetailsData.length} projects`;
                 });
 
                 showLessBtn.addEventListener('click', () => {
-                    renderProjects(projectDetailsData.slice(0, INITIAL_PROJECT_DISPLAY_LIMIT));
+                    // Remove projects beyond the initial limit
+                    while (projectsContainer.children.length > INITIAL_PROJECT_DISPLAY_LIMIT) {
+                        projectsContainer.removeChild(projectsContainer.lastChild);
+                    }
                     showLessBtn.classList.add('hidden');
                     showMoreBtn.classList.remove('hidden');
                     projectCountInfo.textContent = `Showing ${INITIAL_PROJECT_DISPLAY_LIMIT} of ${projectDetailsData.length} projects`;
