@@ -144,8 +144,7 @@ body {
         width: 256px; /* sm:w-64 */
         height: 256px; /* sm:h-64 */
     }
-}
-
+}
 .profile-image-wrapper::before,
 .profile-image-wrapper::after {
     content: '';
@@ -233,9 +232,7 @@ body {
 #chat-input:focus {
     outline: none; /* Remove default outline */
     border-color: #007bff; /* Primary blue border */
-    box-shadow: 0 0 0 0.5px rgba(0, 123, 255, 0.5); /* Initial glow */
     transition: all 0.3s ease-in-out; /* Smooth transition for focus effects */
-    animation: focus-glow-pulse 1.5s infinite alternate; /* Apply the pulsating animation */
 }
 
 #send-chat-btn {
@@ -250,4 +247,19 @@ body {
 #send-chat-btn:active {
     transform: translateY(0); /* "Press down" effect */
     box-shadow: 0 1px 3px rgba(0, 123, 255, 0.3); /* Reduced shadow on active */
+}
+
+/* Improved placeholder style */
+#contact-form input::placeholder,
+#contact-form textarea::placeholder,
+#chat-input::placeholder {
+    color: var(--color-text-medium); /* Use the medium text color */
+    opacity: 0.7; /* Make it slightly transparent */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition */
+}
+
+#contact-form input:focus::placeholder,
+#contact-form textarea:focus::placeholder,
+#chat-input:focus::placeholder {
+    opacity: 0.4; /* Fade out slightly more on focus */
 }
