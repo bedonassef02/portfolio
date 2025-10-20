@@ -12,17 +12,29 @@ export function initializeActiveNavLink() {
     };
 
     const observer = new IntersectionObserver((entries) => {
+        let anySectionIntersecting = false;
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                anySectionIntersecting = true;
                 const currentSectionId = entry.target.id;
                 allNavLinks.forEach(link => {
-                    link.classList.remove('nav-link-active');
                     if (link.getAttribute('href') === `#${currentSectionId}`) {
                         link.classList.add('nav-link-active');
+                    } else {
+                        link.classList.remove('nav-link-active');
                     }
                 });
             }
         });
+
+        if (!anySectionIntersecting) {
+            // If no section is intersecting, ensure 'About' is active
+            const aboutLink = document.querySelector('a[href="#about"]');
+            if (aboutLink) {
+                allNavLinks.forEach(link => link.classList.remove('nav-link-active')); // Remove all active classes first
+                aboutLink.classList.add('nav-link-active');
+            }
+        }
     }, observerOptions);
 
     sections.forEach(section => {
@@ -40,9 +52,11 @@ export function initializeActiveNavLink() {
                 }
             });
         } else {
-            // If no hash, activate the first link (e.g., 'About')
-            if (allNavLinks.length > 0) {
-                allNavLinks[0].classList.add('nav-link-active');
+            // If no hash, activate the 'About' link by default
+            const aboutLink = document.querySelector('a[href="#about"]');
+            if (aboutLink) {
+                allNavLinks.forEach(link => link.classList.remove('nav-link-active')); // Clear all active classes
+                aboutLink.classList.add('nav-link-active');
             }
         }
     };

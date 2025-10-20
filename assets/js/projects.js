@@ -36,14 +36,29 @@ export function initializeProjects() {
                 showMoreBtn.className = 'px-8 py-4 bg-[#007bff] text-white font-bold rounded-full shadow-lg hover:bg-[#0056b3] transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#007bff] focus:ring-opacity-50';
                 showMoreBtn.textContent = 'Show More Projects';
                 showMoreBtnContainer.appendChild(showMoreBtn);
+
+                const showLessBtn = document.createElement('button');
+                showLessBtn.id = 'show-less-projects-btn';
+                showLessBtn.className = 'px-8 py-4 bg-[var(--color-background-light)] text-[var(--color-text-light)] font-bold rounded-full shadow-lg hover:bg-[var(--color-background-medium)] transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-background-light)] focus:ring-opacity-50 hidden';
+                showLessBtn.textContent = 'Show Less Projects';
+                showMoreBtnContainer.appendChild(showLessBtn);
+
                 projectsContainer.parentNode.appendChild(showMoreBtnContainer);
 
                 projectCountInfo.textContent = `Showing ${INITIAL_PROJECT_DISPLAY_LIMIT} of ${projectDetailsData.length} projects`;
 
                 showMoreBtn.addEventListener('click', () => {
                     renderProjects(projectDetailsData);
-                    showMoreBtnContainer.style.display = 'none';
+                    showMoreBtn.classList.add('hidden');
+                    showLessBtn.classList.remove('hidden');
                     projectCountInfo.textContent = `Showing ${projectDetailsData.length} of ${projectDetailsData.length} projects`;
+                });
+
+                showLessBtn.addEventListener('click', () => {
+                    renderProjects(projectDetailsData.slice(0, INITIAL_PROJECT_DISPLAY_LIMIT));
+                    showLessBtn.classList.add('hidden');
+                    showMoreBtn.classList.remove('hidden');
+                    projectCountInfo.textContent = `Showing ${INITIAL_PROJECT_DISPLAY_LIMIT} of ${projectDetailsData.length} projects`;
                 });
             } else {
                 projectCountInfo.textContent = `Showing ${projectDetailsData.length} of ${projectDetailsData.length} projects`;
