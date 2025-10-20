@@ -6,8 +6,7 @@
             --color-text-medium: #B0B0B0;
         }
 #navbar {
-    position: relative;
-    overflow: hidden;
+
 }
 
 #navbar::before {
