@@ -228,3 +228,26 @@ body {
     transition: all 0.3s ease-in-out; /* Smooth transition for focus effects */
     animation: focus-glow-pulse 1.5s infinite alternate; /* Apply the pulsating animation */
 }
+
+/* Chatbot input and send button styles */
+#chat-input:focus {
+    outline: none; /* Remove default outline */
+    border-color: #007bff; /* Primary blue border */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Initial glow */
+    transition: all 0.3s ease-in-out; /* Smooth transition for focus effects */
+    animation: focus-glow-pulse 1.5s infinite alternate; /* Apply the pulsating animation */
+}
+
+#send-chat-btn {
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.4); /* Subtle shadow */
+}
+
+#send-chat-btn:hover {
+    transform: translateY(-1px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.6); /* More pronounced shadow on hover */
+}
+
+#send-chat-btn:active {
+    transform: translateY(0); /* "Press down" effect */
+    box-shadow: 0 1px 3px rgba(0, 123, 255, 0.3); /* Reduced shadow on active */
+}
