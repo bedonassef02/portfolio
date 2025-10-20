@@ -83,10 +83,31 @@ body {
         .modal-open {
             overflow: hidden;
         }
-        .nav-link-active {
-            border-bottom-color: #007bff;
-            color: #007bff !important;
-        }
+        #nav-links a {
+    position: relative;
+}
+
+#nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+
+#nav-links a:hover::after, #nav-links a.nav-link-active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-link-active {
+    color: #007bff !important;
+}
 
         /* Custom Scrollbar for Webkit browsers */
         body::-webkit-scrollbar,
