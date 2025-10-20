@@ -210,13 +210,13 @@ body {
 /* Enhanced focus styles for form inputs */
 @keyframes focus-glow-pulse {
     0% {
-        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+        box-shadow: 0 0 0 0.5px rgba(0, 123, 255, 0.5);
     }
     50% {
-        box-shadow: 0 0 0 6px rgba(0, 123, 255, 0.8);
+        box-shadow: 0 0 0 1.5px rgba(0, 123, 255, 0.8);
     }
     100% {
-        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+        box-shadow: 0 0 0 0.5px rgba(0, 123, 255, 0.5);
     }
 }
 
@@ -224,7 +224,7 @@ body {
 #contact-form textarea:focus {
     outline: none; /* Remove default outline */
     border-color: #007bff; /* Primary blue border */
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Initial glow */
+    box-shadow: 0 0 0 0.5px rgba(0, 123, 255, 0.5); /* Initial glow */
     transition: all 0.3s ease-in-out; /* Smooth transition for focus effects */
     animation: focus-glow-pulse 1.5s infinite alternate; /* Apply the pulsating animation */
 }
@@ -233,7 +233,7 @@ body {
 #chat-input:focus {
     outline: none; /* Remove default outline */
     border-color: #007bff; /* Primary blue border */
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Initial glow */
+    box-shadow: 0 0 0 0.5px rgba(0, 123, 255, 0.5); /* Initial glow */
     transition: all 0.3s ease-in-out; /* Smooth transition for focus effects */
     animation: focus-glow-pulse 1.5s infinite alternate; /* Apply the pulsating animation */
 }
