@@ -5,34 +5,48 @@ export function initializeActiveNavLink() {
 
     const allNavLinks = [...navLinks, ...mobileNavLinks];
 
+    // Centralized function to set the active link
+    const setActiveLink = (href) => {
+        allNavLinks.forEach(link => {
+            link.classList.remove('nav-link-active');
+        });
+        const targetLink = document.querySelector(`a[href="${href}"]`);
+        if (targetLink) {
+            targetLink.classList.add('nav-link-active');
+        }
+    };
+
+    // Intersection Observer options
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.2 // Adjust this value: 0.5 means 50% of the section must be visible
+        threshold: 0.75 // Increased threshold for more stable active state
     };
 
+    let lastActiveSectionHref = '#about'; // Initialize with '#about'
+
     const observer = new IntersectionObserver((entries) => {
-        let anySectionIntersecting = false;
+        let activeSectionId = null;
+        let maxRatio = 0;
+
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                anySectionIntersecting = true;
-                const currentSectionId = entry.target.id;
-                allNavLinks.forEach(link => {
-                    if (link.getAttribute('href') === `#${currentSectionId}`) {
-                        link.classList.add('nav-link-active');
-                    } else {
-                        link.classList.remove('nav-link-active');
-                    }
-                });
+            if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+                maxRatio = entry.intersectionRatio;
+                activeSectionId = entry.target.id;
             }
         });
 
-        if (!anySectionIntersecting) {
-            // If no section is intersecting, ensure 'About' is active
-            const aboutLink = document.querySelector('a[href="#about"]');
-            if (aboutLink) {
-                allNavLinks.forEach(link => link.classList.remove('nav-link-active')); // Remove all active classes first
-                aboutLink.classList.add('nav-link-active');
+        if (activeSectionId) {
+            lastActiveSectionHref = `#${activeSectionId}`;
+            setActiveLink(lastActiveSectionHref);
+        } else {
+            // If no section is significantly intersecting, check scroll position
+            if (window.scrollY === 0) {
+                setActiveLink('#about');
+                lastActiveSectionHref = '#about';
+            } else if (lastActiveSectionHref) {
+                // Keep the last active section highlighted if not at the top
+                setActiveLink(lastActiveSectionHref);
             }
         }
     }, observerOptions);
@@ -41,25 +55,31 @@ export function initializeActiveNavLink() {
         observer.observe(section);
     });
 
-    // Handle initial active link on page load
-    const initialActiveLink = () => {
+    // Handle initial active link on page load and hash changes
+    const handleInitialAndHashChange = () => {
         const currentHash = window.location.hash;
         if (currentHash) {
-            allNavLinks.forEach(link => {
-                link.classList.remove('nav-link-active');
-                if (link.getAttribute('href') === currentHash) {
-                    link.classList.add('nav-link-active');
-                }
-            });
+            setActiveLink(currentHash);
         } else {
-            // If no hash, activate the 'About' link by default
-            const aboutLink = document.querySelector('a[href="#about"]');
-            if (aboutLink) {
-                allNavLinks.forEach(link => link.classList.remove('nav-link-active')); // Clear all active classes
-                aboutLink.classList.add('nav-link-active');
-            }
+            setActiveLink('#about');
         }
     };
 
-    initialActiveLink();
+    // Set initial active link
+    handleInitialAndHashChange();
+
+    // Listen for hash changes (e.g., from smooth scroll or direct URL modification)
+    window.addEventListener('hashchange', handleInitialAndHashChange);
+
+    // Add click listeners to all nav links for immediate feedback
+    allNavLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            // The smoothScroll.js will handle the actual scrolling and hash update.
+            // We just need to ensure the active class is set immediately.
+            const href = link.getAttribute('href');
+            if (href) {
+                setActiveLink(href);
+            }
+        });
+    });
 }
