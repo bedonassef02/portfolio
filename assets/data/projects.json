@@ -8,8 +8,7 @@
             { "name": "Next.js", "iconClass": "devicon-nextjs-plain text-white" },
             { "name": "MongoDB", "iconClass": "devicon-mongodb-plain text-green-500" },
             { "name": "TensorFlow", "iconClass": "fas fa-brain text-orange-500" },
-            { "name": "Python", "iconClass": "devicon-python-plain text-blue-500" },
-            { "name": "Flask", "iconClass": "devicon-flask-plain text-black" },
+            { "name": "Flask", "iconClass": "devicon-flask-plain text-gray-500" },
             { "name": "Redis", "iconClass": "devicon-redis-plain text-red-500" },
             { "name": "LLM", "iconClass": "fas fa-robot text-blue-500" },
             { "name": "Vector DB", "iconClass": "fas fa-database text-green-500" }
