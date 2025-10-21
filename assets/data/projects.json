@@ -74,5 +74,21 @@
         "imageUrl": "https://placehold.co/600x400",
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Designed a music streaming application with a focus on performance and security, using Nest.js and MongoDB.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated Google OAuth and email notifications for enhanced user interactio</span></li></ul>",
         "projectLink": "https://github.com/bedonassef/MI-MUSIC"
+    },
+    {
+        "id": 7,
+        "title": "Corporate Synergy Solutions API Integration Packages",
+        "techStack": [
+            { "name": "Xano", "iconClass": "fas fa-cubes text-blue-500" },
+            { "name": "HubSpot", "iconClass": "fab fa-hubspot text-orange-500" },
+            { "name": "Salesforce", "iconClass": "fab fa-salesforce text-blue-500" },
+            { "name": "Quickbooks", "iconClass": "fas fa-file-invoice-dollar text-green-500" },
+            { "name": "Google Drive", "iconClass": "fab fa-google-drive text-yellow-500" },
+            { "name": "Gmail", "iconClass": "fas fa-envelope text-red-500" },
+            { "name": "LinkedIn", "iconClass": "fab fa-linkedin text-blue-500" }
+        ],
+        "imageUrl": "assets/projects/4/packages.png",
+        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>A large-scale backend project focused on developing a comprehensive, standardized library of over 230 API integration actions for various critical business platforms, utilizing the Xano platform.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>The project's guiding principle was to ensure high consistency, security, and maintainability across all third-party integrations.</span></li></ul>",
+        "projectLink": "#"
     }
 ]
