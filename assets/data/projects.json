@@ -13,8 +13,6 @@
             { "name": "LLM", "iconClass": "fas fa-robot text-blue-500" },
             { "name": "Vector DB", "iconClass": "fas fa-database text-green-500" }
         ],
-        "imageUrl": "assets/projects/1/base.png",
-        "hasThumbnail": true,
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented AI-powered image recognition for landmark identification</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built comprehensive admin dashboard with content management</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated intelligent chatbot using LLM for interactive user engagement</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Remotly /bedonassef02</span></li></ul>",
         "projectLink": "https://github.com/bedonassef/EGYPTIAN-LANDMARKS-APP"
     },
@@ -28,8 +26,6 @@
             { "name": "AI", "iconClass": "fas fa-brain text-orange-500" },
             { "name": "Stripe", "iconClass": "fab fa-stripe text-purple-500" }
         ],
-        "imageUrl": "https://placehold.co/600x400",
-        "hasThumbnail": false,
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Architected and implemented a multi-tenant SaaS backend for auto detailing shops, streamlining bookings, employee management, and payments.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented AI-driven photo quoting, improving job estimation accuracy</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Developed a scheduling and calendar system with real-time bay availability, task checklists, and self-service customer booking.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented secure payment workflows with Stripe subscriptions, token-based authentication, and Google Secret Manager.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Developed role-based portals with secure authentication and permission systems.</span></li></ul>",
         "projectLink": "#"
     },
@@ -41,8 +37,6 @@
             { "name": "Xano", "iconClass": "fas fa-cubes text-blue-500" },
             { "name": "API Integrations", "iconClass": "fas fa-cogs text-gray-500" }
         ],
-        "imageUrl": "assets/projects/3/base.png",
-        "hasThumbnail": true,
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>A large-scale backend project focused on developing a comprehensive, standardized library of over 230 API integration actions for various critical business platforms, utilizing the Xano platform.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>The project's guiding principle was to ensure high consistency, security, and maintainability across all third-party integrations.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Packages include: HubSpot, Salesforce, Quickbooks, Google Drive, Gmail, LinkedIn, Zendesk, Calendly, Azure OpenAI, Microsoft Teams, Posthog, Sentry, and Google Docs.</span></li></ul>",
         "projectLink": "#"
     },
@@ -55,8 +49,6 @@
             { "name": "JavaScript", "iconClass": "devicon-javascript-plain text-yellow-500" },
             { "name": "Google Maps API", "iconClass": "fas fa-map-marked-alt text-red-500" }
         ],
-        "imageUrl": "assets/projects/4/base.png",
-        "hasThumbnail": true,
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built real-time asset processing system for dynamic delivery of JavaScript and CSS files</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated Google Maps API for advanced direction services and route visualization</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented intelligent caching strategies for optimized performance</span></li></ul>",
         "projectLink": "#"
     },
@@ -70,8 +62,6 @@
             { "name": "Redis", "iconClass": "devicon-redis-plain text-red-500" },
             { "name": "Docker", "iconClass": "devicon-docker-plain text-blue-400" }
         ],
-        "imageUrl": "https://placehold.co/600x400",
-        "hasThumbnail": false,
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Designed and implemented distributed microservices architecture</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built event-driven communication system using RabbitMQ for inter-service messaging</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented CQRS pattern improving query performance</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Developed comprehensive authentication service with 2FA and OAuth2 integration</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Created automated backup system ensuring data availability</span></li></ul>",
         "projectLink": "https://github.com/bedonassef/e-commerce-microservice"
     },
@@ -87,8 +77,6 @@
             { "name": "Stripe API", "iconClass": "fab fa-stripe text-purple-500" },
             { "name": "Docker", "iconClass": "devicon-docker-plain text-blue-400" }
         ],
-        "imageUrl": "https://placehold.co/600x400",
-        "hasThumbnail": false,
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Created an e-commerce platform for mobile devices with a focus on security and user experience.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built high-performance REST API</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated Stripe payment gateway</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented Redis caching layer improving performance</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Developed OAuth authentication supporting Google and GitHub</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Created comprehensive cart and wishlist system</span></li></ul>",
         "projectLink": "https://github.com/bedonassef/mobile-store"
     },
@@ -100,8 +88,6 @@
             { "name": "Laravel", "iconClass": "devicon-laravel-plain text-red-500" },
             { "name": "MySQL", "iconClass": "devicon-mysql-plain text-blue-500" }
         ],
-        "imageUrl": "https://placehold.co/600x400",
-        "hasThumbnail": false,
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Engineered the Panel Misr website, delivering a robust and scalable solution</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Delivered full-stack solution for enterprise client</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Optimized database queries reducing load time</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built responsive admin panel with advanced reporting features</span></li></ul>",
         "projectLink": "#"
     },
@@ -114,8 +100,6 @@
             { "name": "MongoDB", "iconClass": "devicon-mongodb-plain text-green-500" },
             { "name": "Google OAuth", "iconClass": "fab fa-google text-blue-500" }
         ],
-        "imageUrl": "https://placehold.co/600x400",
-        "hasThumbnail": false,
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Designed a music streaming application with a focus on performance and security, using Nest.js and MongoDB.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated Google OAuth and email notifications for enhanced user interactio</span></li></ul>",
         "projectLink": "https://github.com/bedonassef/MI-MUSIC"
     }
