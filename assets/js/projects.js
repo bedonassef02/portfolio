@@ -7,12 +7,17 @@ export function initializeProjects() {
         .then(response => response.json())
         .then(data => {
             projectDetailsData = data.filter(project => project.published);
+
+            projectDetailsData.forEach(project => {
+                project.previewImageUrl = `assets/projects/${project.id}/thumbnail.png`;
+                project.modalImageUrl = `assets/projects/${project.id}/base.png`;
+            });
             const projectsContainer = document.getElementById('projects-container');
             const INITIAL_PROJECT_DISPLAY_LIMIT = 3;
 
             const createProjectCardHtml = (project) => `
                 <a href="#" class="project-card block bg-[var(--color-background-medium)] rounded-lg shadow-xl p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl" data-project-id="${project.id}">
-                    <img src="${project.imageUrl}" alt="${project.title}" class="rounded-md mx-auto mb-4 w-full h-48 object-cover">
+                    <img src="${project.previewImageUrl}" alt="${project.title}" class="rounded-md mx-auto mb-4 w-full h-48 object-cover">
                     <h3 class="text-2xl font-bold text-[var(--color-text-light)]">${project.title}</h3>
                     <p class="text-sm font-medium text-[#007bff] mt-2">Tech Stack: ${project.techStack.map(tech => tech.name).join(', ')}</p>
                 </a>
@@ -115,7 +120,7 @@ export function initializeProjects() {
                             `;
                         }).join('');
                         modalProjectDescription.innerHTML = project.description;
-                        modalProjectImage.src = project.imageUrl;
+                        modalProjectImage.src = project.modalImageUrl;
                         modalProjectImage.alt = project.title;
                         modalProjectLink.href = project.projectLink;
                         openModal(projectDetailsModal);
