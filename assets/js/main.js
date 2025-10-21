@@ -9,6 +9,7 @@ import { initializeChatbot } from './chatbot.js';
 import { initializeActiveNavLink } from './activeNavLink.js';
 import { initializeThemeToggle } from './theme-toggle.js';
 import { initializeContactForm } from './contactForm.js';
+import { initializeVisitorTracking } from './track-visitor.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeSmoothScroll();
@@ -22,4 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeActiveNavLink();
     initializeThemeToggle();
     initializeContactForm();
+    initializeVisitorTracking();
 });
