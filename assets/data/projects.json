@@ -7,7 +7,12 @@
             { "name": "Nest.js", "iconClass": "devicon-nestjs-plain text-red-500" },
             { "name": "Next.js", "iconClass": "devicon-nextjs-plain text-white" },
             { "name": "MongoDB", "iconClass": "devicon-mongodb-plain text-green-500" },
-            { "name": "TensorFlow", "iconClass": "fas fa-brain text-orange-500" }
+            { "name": "TensorFlow", "iconClass": "fas fa-brain text-orange-500" },
+            { "name": "Python", "iconClass": "devicon-python-plain text-blue-500" },
+            { "name": "Flask", "iconClass": "devicon-flask-plain text-black" },
+            { "name": "Redis", "iconClass": "devicon-redis-plain text-red-500" },
+            { "name": "LLM", "iconClass": "fas fa-robot text-blue-500" },
+            { "name": "Vector DB", "iconClass": "fas fa-database text-green-500" }
         ],
         "imageUrl": "assets/projects/1/bg.png",
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented AI-powered image recognition for landmark identification</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built comprehensive admin dashboard with content management</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated intelligent chatbot using LLM for interactive user engagement</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Remotly /bedonassef02</span></li></ul>",
