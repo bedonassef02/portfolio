@@ -15,7 +15,6 @@ export function initializeVisitorTracking() {
     },
     body: JSON.stringify({
       page_url: window.location.href,
-      referrer: document.referrer,
       query_params: getQueryParams(),
       user_agent: navigator.userAgent,
     }),
