@@ -1,0 +1,21 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "This is a personal portfolio website showcasing Abdelrahman Mahmoud's work experience, skills, and projects. It also includes a Gemini-powered AI chatbot to answer questions about Abdelrahman.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rd /s /q build",
+    "build:css": "cleancss -o build/assets/css/style.min.css assets/css/style.css",
+    "build:js": "uglifyjs assets/js/*.js -m -o build/assets/js/main.min.js",
+    "copy:assets": "if not exist build\assets\fonts mkdir build\assets\fonts && if not exist build\assets\data mkdir build\assets\data && if not exist build\assets\projects mkdir build\assets\projects && xcopy /y assets\logo.svg build\assets\ && xcopy /y assets\profile_image.png build\assets\ && xcopy /y assets\Abdelrahman_Mahmoud.pdf build\assets\ && xcopy /s /i /y assets\fonts build\assets\fonts\ && xcopy /s /i /y assets\data build\assets\data\ && xcopy /s /i /y assets\projects build\assets\projects\",
+    "build": "npm run clean && if not exist build mkdir build && if not exist build\assets\css mkdir build\assets\css && if not exist build\assets\js mkdir build\assets\js && npm run build:css && npm run build:js && npm run copy:assets"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "uglify-js": "^3.19.3"
+  }
+}
