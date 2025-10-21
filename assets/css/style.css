@@ -30,7 +30,7 @@ body {
     overflow-x: clip;
 }
 #navbar {
-
+    overflow: hidden;
 }
 
 #navbar::before {
