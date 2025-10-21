@@ -8,9 +8,6 @@ export function initializeVisitorTracking() {
     return params;
   }
 
-  // Calculate load time using Navigation Timing API
-  const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
-
   fetch('https://x8ki-letl-twmt.n7.xano.io/api:CfCVZiDW/capture_visitor_data', {
     method: 'POST',
     headers: {
@@ -21,7 +18,6 @@ export function initializeVisitorTracking() {
       referrer: document.referrer,
       query_params: getQueryParams(),
       user_agent: navigator.userAgent,
-      load_time_ms: loadTime > 0 ? loadTime : 0, // Ensure loadTime is not negative
     }),
   })
   .then(response => {

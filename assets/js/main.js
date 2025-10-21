@@ -23,5 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeActiveNavLink();
     initializeThemeToggle();
     initializeContactForm();
+});
+
+window.addEventListener('load', () => {
     initializeVisitorTracking();
 });
