@@ -6,7 +6,7 @@ export function initializeProjects() {
     fetch('./assets/data/projects.json')
         .then(response => response.json())
         .then(data => {
-            projectDetailsData = data;
+            projectDetailsData = data.filter(project => project.published);
             const projectsContainer = document.getElementById('projects-container');
             const INITIAL_PROJECT_DISPLAY_LIMIT = 3;
 
