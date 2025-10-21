@@ -12,7 +12,10 @@ export function initializeNavbar() {
     };
 
     if (menuButton && mobileMenu && mobileMenuOverlay && closeMenuButton) {
-        menuButton.addEventListener('click', toggleMobileMenu);
+        menuButton.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent click from bubbling up to overlay and closing immediately
+            toggleMobileMenu();
+        });
         closeMenuButton.addEventListener('click', toggleMobileMenu);
         mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
 

@@ -93,7 +93,8 @@ export function initializeChatbot() {
         }
     }, 60000); // 1 minute
 
-    chatbotIcon.addEventListener('click', () => {
+    chatbotIcon.addEventListener('click', (event) => {
+        event.stopPropagation(); // Prevent click from bubbling up to document and closing immediately
         const isClosed = chatbotModal.classList.toggle('is-closed');
         if (!isClosed) { // if it's not closed, it's open
             displaySampleQuestions();
