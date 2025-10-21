@@ -104,18 +104,10 @@ export function initializeProjects() {
                     if (project) {
                         modalProjectTitle.textContent = project.title;
                         modalProjectTechStack.innerHTML = project.techStack.map(tech => {
-                            let displayName = tech.name;
-                            if (tech.name.startsWith('PHP')) {
-                                displayName = 'PHP';
-                            } else if (tech.name === 'JavaScript') {
-                                displayName = 'JS';
-                            } else if (tech.name === 'TypeScript') {
-                                displayName = 'TS';
-                            }
                             return `
                                 <span class="inline-flex items-center mr-2 mb-1">
                                     <i class="${tech.iconClass} text-xl mr-1"></i>
-                                    <span>${displayName}</span>
+                                    <span>${tech.name}</span>
                                 </span>
                             `;
                         }).join('');
