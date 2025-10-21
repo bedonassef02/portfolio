@@ -85,7 +85,11 @@
             { "name": "Quickbooks", "iconClass": "fas fa-file-invoice-dollar text-green-500" },
             { "name": "Google Drive", "iconClass": "fab fa-google-drive text-yellow-500" },
             { "name": "Gmail", "iconClass": "fas fa-envelope text-red-500" },
-            { "name": "LinkedIn", "iconClass": "fab fa-linkedin text-blue-500" }
+            { "name": "LinkedIn", "iconClass": "fab fa-linkedin text-blue-500" },
+            { "name": "Zendesk", "iconClass": "fab fa-zendesk text-black" },
+            { "name": "Calendly", "iconClass": "fas fa-calendar-alt text-blue-500" },
+            { "name": "Google Slides", "iconClass": "fas fa-file-powerpoint text-yellow-500" },
+            { "name": "Google Sheets", "iconClass": "fas fa-file-excel text-green-500" }
         ],
         "imageUrl": "assets/projects/4/packages.png",
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>A large-scale backend project focused on developing a comprehensive, standardized library of over 230 API integration actions for various critical business platforms, utilizing the Xano platform.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>The project's guiding principle was to ensure high consistency, security, and maintainability across all third-party integrations.</span></li></ul>",
