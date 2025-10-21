@@ -14,7 +14,7 @@
             { "name": "Vector DB", "iconClass": "fas fa-database text-green-500" }
         ],
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented AI-powered image recognition for landmark identification</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built comprehensive admin dashboard with content management</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated intelligent chatbot using LLM for interactive user engagement</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Remotly /bedonassef02</span></li></ul>",
-        "projectLink": "https://github.com/bedonassef/EGYPTIAN-LANDMARKS-APP"
+        "projectLink": "https://github.com/bedonassef02/EGYPTIAN-LANDMARKS-APP"
     },
     {
         "id": 2,
@@ -63,7 +63,7 @@
             { "name": "Docker", "iconClass": "devicon-docker-plain text-blue-400" }
         ],
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Designed and implemented distributed microservices architecture</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built event-driven communication system using RabbitMQ for inter-service messaging</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented CQRS pattern improving query performance</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Developed comprehensive authentication service with 2FA and OAuth2 integration</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Created automated backup system ensuring data availability</span></li></ul>",
-        "projectLink": "https://github.com/bedonassef/e-commerce-microservice"
+        "projectLink": "https://github.com/bedonassef02/e-commerce-microservice"
     },
     {
         "id": 6,
@@ -78,7 +78,7 @@
             { "name": "Docker", "iconClass": "devicon-docker-plain text-blue-400" }
         ],
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Created an e-commerce platform for mobile devices with a focus on security and user experience.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built high-performance REST API</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated Stripe payment gateway</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented Redis caching layer improving performance</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Developed OAuth authentication supporting Google and GitHub</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Created comprehensive cart and wishlist system</span></li></ul>",
-        "projectLink": "https://github.com/bedonassef/mobile-store"
+        "projectLink": "https://github.com/bedonassef02/mobile-store"
     },
     {
         "id": 7,
@@ -101,6 +101,6 @@
             { "name": "Google OAuth", "iconClass": "fab fa-google text-blue-500" }
         ],
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Designed a music streaming application with a focus on performance and security, using Nest.js and MongoDB.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated Google OAuth and email notifications for enhanced user interactio</span></li></ul>",
-        "projectLink": "https://github.com/bedonassef/MI-MUSIC"
+        "projectLink": "https://github.com/bedonassef02/MI-MUSIC"
     }
 ]
