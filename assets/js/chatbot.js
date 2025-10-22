@@ -117,19 +117,6 @@ export function initializeChatbot() {
         stopWiggleAnimation(); // Ensure animation is stopped
     });
 
-    document.addEventListener('click', (event) => {
-        const isChatbotOpen = !chatbotModal.classList.contains('is-closed');
-        const isClickInsideChatbot = chatbotModal.contains(event.target);
-        const isClickOnChatbotIcon = chatbotIcon.contains(event.target);
-
-        if (isChatbotOpen && !isClickInsideChatbot && !isClickOnChatbotIcon) {
-            chatbotModal.classList.add('is-closed');
-            chatbotIcon.classList.remove('hidden');
-            chatbotModal.classList.remove('shadow-xl');
-            stopWiggleAnimation();
-        }
-    });
-
     sendChatBtn.addEventListener('click', sendMessage);
     chatInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
