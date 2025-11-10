@@ -102,5 +102,25 @@
         ],
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Designed a music streaming application with a focus on performance and security, using Nest.js and MongoDB.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated Google OAuth and email notifications for enhanced user interactio</span></li></ul>",
         "projectLink": "https://github.com/bedonassef02/MI-MUSIC"
+    },
+    {
+        "id": 9,
+        "title": "Autopilot OS",
+        "published": false,
+        "techStack": [
+            { "name": "Firebase Studio", "iconClass": "devicon-firebase-plain text-yellow-500" },
+            { "name": "Xano", "iconClass": "fas fa-cubes text-blue-500" },
+            { "name": "Eleven Labs", "iconClass": "fas fa-robot text-purple-500" },
+            { "name": "OpenAI", "iconClass": "fas fa-brain text-green-500" },
+            { "name": "Anthropic", "iconClass": "fas fa-brain text-red-500" },
+            { "name": "Google Gemini", "iconClass": "fab fa-google text-blue-500" },
+            { "name": "Vertex AI RAG", "iconClass": "fas fa-database text-orange-500" },
+            { "name": "Twilio", "iconClass": "fas fa-phone text-red-500" },
+            { "name": "Google Calendar", "iconClass": "fas fa-calendar-alt text-blue-500" },
+            { "name": "Outlook", "iconClass": "fab fa-microsoft text-blue-500" },
+            { "name": "Pipedream", "iconClass": "fas fa-stream text-blue-500" }
+        ],
+        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Autopilot OS is a multi-tenant SaaS platform for field service businesses, aiming to compete with major platforms by deeply integrating AI agents.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Key AI agents include an AI Receptionist (24/7 voice-based phone system for appointments) and an AI Foreman (chat-based expert assistant for technicians).</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>The platform features a three-tier architecture with System Admin, Company Admin, and Technician roles, ensuring data isolation for each company.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>The project involves an aggressive 2-week timeline for initial build, focusing on authentication, admin functionalities, and AI agent implementation.</span></li></ul>",
+        "projectLink": "#"
     }
 ]
