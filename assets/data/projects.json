@@ -58,209 +58,9 @@
         "projectLink": "#"
     },
     {
-        "id": 1,
-        "title": "EGYPTIAN LANDMARKS APP | GRADUATION PROJECT",
-        "published": true,
-        "techStack": [
-            {
-                "name": "Nest.js",
-                "iconClass": "devicon-nestjs-plain text-red-500"
-            },
-            {
-                "name": "Next.js",
-                "iconClass": "devicon-nextjs-plain text-white"
-            },
-            {
-                "name": "MongoDB",
-                "iconClass": "devicon-mongodb-plain text-green-500"
-            },
-            {
-                "name": "TensorFlow",
-                "iconClass": "fas fa-brain text-orange-500"
-            },
-            {
-                "name": "Flask",
-                "iconClass": "devicon-flask-plain text-gray-500"
-            },
-            {
-                "name": "Redis",
-                "iconClass": "devicon-redis-plain text-red-500"
-            },
-            {
-                "name": "LLM",
-                "iconClass": "fas fa-robot text-blue-500"
-            },
-            {
-                "name": "Vector DB",
-                "iconClass": "fas fa-database text-green-500"
-            }
-        ],
-        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented AI-powered image recognition for landmark identification</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built comprehensive admin dashboard with content management</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated intelligent chatbot using LLM for interactive user engagement</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Remotly /bedonassef02</span></li></ul>",
-        "projectLink": "https://github.com/bedonassef02/EGYPTIAN-LANDMARKS-APP"
-    },
-    {
-        "id": 2,
-        "title": "Auto Detailing SaaS Platform",
-        "published": true,
-        "techStack": [
-            {
-                "name": "Xano",
-                "iconClass": "fas fa-cubes text-blue-500"
-            },
-            {
-                "name": "Google Cloud",
-                "iconClass": "devicon-googlecloud-plain text-blue-500"
-            },
-            {
-                "name": "AI",
-                "iconClass": "fas fa-brain text-orange-500"
-            },
-            {
-                "name": "Stripe",
-                "iconClass": "fab fa-stripe text-purple-500"
-            }
-        ],
-        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Architected and implemented a multi-tenant SaaS backend for auto detailing shops, streamlining bookings, employee management, and payments.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented AI-driven photo quoting, improving job estimation accuracy</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Developed a scheduling and calendar system with real-time bay availability, task checklists, and self-service customer booking.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented secure payment workflows with Stripe subscriptions, token-based authentication, and Google Secret Manager.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Developed role-based portals with secure authentication and permission systems.</span></li></ul>",
-        "projectLink": "#"
-    },
-    {
-        "id": 3,
-        "title": "Corporate Synergy Solutions API Integration Packages",
-        "published": true,
-        "techStack": [
-            {
-                "name": "Xano",
-                "iconClass": "fas fa-cubes text-blue-500"
-            },
-            {
-                "name": "API Integrations",
-                "iconClass": "fas fa-cogs text-gray-500"
-            }
-        ],
-        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>A large-scale backend project focused on developing a comprehensive, standardized library of over 230 API integration actions for various critical business platforms, utilizing the Xano platform.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>The project's guiding principle was to ensure high consistency, security, and maintainability across all third-party integrations.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Packages include: HubSpot, Salesforce, Quickbooks, Google Drive, Gmail, LinkedIn, Zendesk, Calendly, Azure OpenAI, Microsoft Teams, Posthog, Sentry, and Google Docs.</span></li></ul>",
-        "projectLink": "#"
-    },
-    {
-        "id": 4,
-        "title": "DYNAMIC ASSET SERVING SYSTEM",
-        "published": false,
-        "techStack": [
-            {
-                "name": "PHP 8.4+",
-                "iconClass": "devicon-php-plain text-blue-600"
-            },
-            {
-                "name": "JavaScript",
-                "iconClass": "devicon-javascript-plain text-yellow-500"
-            },
-            {
-                "name": "Google Maps API",
-                "iconClass": "fas fa-map-marked-alt text-red-500"
-            }
-        ],
-        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built real-time asset processing system for dynamic delivery of JavaScript and CSS files</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated Google Maps API for advanced direction services and route visualization</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented intelligent caching strategies for optimized performance</span></li></ul>",
-        "projectLink": "#"
-    },
-    {
-        "id": 5,
-        "title": "MICROSERVICE E-COMMERCE PLATFORM",
-        "published": false,
-        "techStack": [
-            {
-                "name": "Nest.js",
-                "iconClass": "devicon-nestjs-plain text-red-500"
-            },
-            {
-                "name": "RabbitMQ",
-                "iconClass": "fas fa-exchange-alt text-orange-500"
-            },
-            {
-                "name": "Redis",
-                "iconClass": "devicon-redis-plain text-red-500"
-            },
-            {
-                "name": "Docker",
-                "iconClass": "devicon-docker-plain text-blue-400"
-            }
-        ],
-        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Designed and implemented distributed microservices architecture</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built event-driven communication system using RabbitMQ for inter-service messaging</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented CQRS pattern improving query performance</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Developed comprehensive authentication service with 2FA and OAuth2 integration</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Created automated backup system ensuring data availability</span></li></ul>",
-        "projectLink": "https://github.com/bedonassef02/e-commerce-microservice"
-    },
-    {
-        "id": 6,
-        "title": "MOBILE-STORE",
-        "published": false,
-        "techStack": [
-            {
-                "name": "Node.js",
-                "iconClass": "devicon-nodejs-plain text-green-500"
-            },
-            {
-                "name": "TypeScript",
-                "iconClass": "devicon-typescript-plain text-blue-500"
-            },
-            {
-                "name": "MySQL",
-                "iconClass": "devicon-mysql-plain text-blue-500"
-            },
-            {
-                "name": "Redis",
-                "iconClass": "devicon-redis-plain text-red-500"
-            },
-            {
-                "name": "Stripe API",
-                "iconClass": "fab fa-stripe text-purple-500"
-            },
-            {
-                "name": "Docker",
-                "iconClass": "devicon-docker-plain text-blue-400"
-            }
-        ],
-        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Created an e-commerce platform for mobile devices with a focus on security and user experience.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built high-performance REST API</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated Stripe payment gateway</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented Redis caching layer improving performance</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Developed OAuth authentication supporting Google and GitHub</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Created comprehensive cart and wishlist system</span></li></ul>",
-        "projectLink": "https://github.com/bedonassef02/mobile-store"
-    },
-    {
-        "id": 7,
-        "title": "PANEL MISR",
-        "published": false,
-        "techStack": [
-            {
-                "name": "Laravel",
-                "iconClass": "devicon-laravel-plain text-red-500"
-            },
-            {
-                "name": "MySQL",
-                "iconClass": "devicon-mysql-plain text-blue-500"
-            }
-        ],
-        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Engineered the Panel Misr website, delivering a robust and scalable solution</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Delivered full-stack solution for enterprise client</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Optimized database queries reducing load time</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built responsive admin panel with advanced reporting features</span></li></ul>",
-        "projectLink": "#"
-    },
-    {
-        "id": 8,
-        "title": "MI-MUSIC",
-        "published": false,
-        "techStack": [
-            {
-                "name": "Nest.js",
-                "iconClass": "devicon-nestjs-plain text-red-500"
-            },
-            {
-                "name": "MongoDB",
-                "iconClass": "devicon-mongodb-plain text-green-500"
-            },
-            {
-                "name": "Google OAuth",
-                "iconClass": "fab fa-google text-blue-500"
-            }
-        ],
-        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Designed a music streaming application with a focus on performance and security, using Nest.js and MongoDB.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated Google OAuth and email notifications for enhanced user interactio</span></li></ul>",
-        "projectLink": "https://github.com/bedonassef02/MI-MUSIC"
-    },
-    {
         "id": 9,
         "title": "Autopilot OS",
-        "published": false,
+        "published": true,
         "techStack": [
             {
                 "name": "Firebase Studio",
@@ -308,6 +108,206 @@
             }
         ],
         "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Autopilot OS is a multi-tenant SaaS platform for field service businesses, aiming to compete with major platforms by deeply integrating AI agents.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Key AI agents include an AI Receptionist (24/7 voice-based phone system for appointments) and an AI Foreman (chat-based expert assistant for technicians).</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>The platform features a three-tier architecture with System Admin, Company Admin, and Technician roles, ensuring data isolation for each company.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>The project involves an aggressive 2-week timeline for initial build, focusing on authentication, admin functionalities, and AI agent implementation.</span></li></ul>",
+        "projectLink": "#"
+    },
+    {
+        "id": 2,
+        "title": "Auto Detailing SaaS Platform",
+        "published": true,
+        "techStack": [
+            {
+                "name": "Xano",
+                "iconClass": "fas fa-cubes text-blue-500"
+            },
+            {
+                "name": "Google Cloud",
+                "iconClass": "devicon-googlecloud-plain text-blue-500"
+            },
+            {
+                "name": "AI",
+                "iconClass": "fas fa-brain text-orange-500"
+            },
+            {
+                "name": "Stripe",
+                "iconClass": "fab fa-stripe text-purple-500"
+            }
+        ],
+        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Architected and implemented a multi-tenant SaaS backend for auto detailing shops, streamlining bookings, employee management, and payments.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented AI-driven photo quoting, improving job estimation accuracy</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Developed a scheduling and calendar system with real-time bay availability, task checklists, and self-service customer booking.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented secure payment workflows with Stripe subscriptions, token-based authentication, and Google Secret Manager.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Developed role-based portals with secure authentication and permission systems.</span></li></ul>",
+        "projectLink": "#"
+    },
+    {
+        "id": 5,
+        "title": "MICROSERVICE E-COMMERCE PLATFORM",
+        "published": true,
+        "techStack": [
+            {
+                "name": "Nest.js",
+                "iconClass": "devicon-nestjs-plain text-red-500"
+            },
+            {
+                "name": "RabbitMQ",
+                "iconClass": "fas fa-exchange-alt text-orange-500"
+            },
+            {
+                "name": "Redis",
+                "iconClass": "devicon-redis-plain text-red-500"
+            },
+            {
+                "name": "Docker",
+                "iconClass": "devicon-docker-plain text-blue-400"
+            }
+        ],
+        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Designed and implemented distributed microservices architecture</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built event-driven communication system using RabbitMQ for inter-service messaging</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented CQRS pattern improving query performance</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Developed comprehensive authentication service with 2FA and OAuth2 integration</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Created automated backup system ensuring data availability</span></li></ul>",
+        "projectLink": "https://github.com/bedonassef02/e-commerce-microservice"
+    },
+    {
+        "id": 1,
+        "title": "EGYPTIAN LANDMARKS APP | GRADUATION PROJECT",
+        "published": true,
+        "techStack": [
+            {
+                "name": "Nest.js",
+                "iconClass": "devicon-nestjs-plain text-red-500"
+            },
+            {
+                "name": "Next.js",
+                "iconClass": "devicon-nextjs-plain text-white"
+            },
+            {
+                "name": "MongoDB",
+                "iconClass": "devicon-mongodb-plain text-green-500"
+            },
+            {
+                "name": "TensorFlow",
+                "iconClass": "fas fa-brain text-orange-500"
+            },
+            {
+                "name": "Flask",
+                "iconClass": "devicon-flask-plain text-gray-500"
+            },
+            {
+                "name": "Redis",
+                "iconClass": "devicon-redis-plain text-red-500"
+            },
+            {
+                "name": "LLM",
+                "iconClass": "fas fa-robot text-blue-500"
+            },
+            {
+                "name": "Vector DB",
+                "iconClass": "fas fa-database text-green-500"
+            }
+        ],
+        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented AI-powered image recognition for landmark identification</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built comprehensive admin dashboard with content management</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated intelligent chatbot using LLM for interactive user engagement</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Remotly /bedonassef02</span></li></ul>",
+        "projectLink": "https://github.com/bedonassef02/EGYPTIAN-LANDMARKS-APP"
+    },
+    {
+        "id": 3,
+        "title": "Corporate Synergy Solutions API Integration Packages",
+        "published": true,
+        "techStack": [
+            {
+                "name": "Xano",
+                "iconClass": "fas fa-cubes text-blue-500"
+            },
+            {
+                "name": "API Integrations",
+                "iconClass": "fas fa-cogs text-gray-500"
+            }
+        ],
+        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>A large-scale backend project focused on developing a comprehensive, standardized library of over 230 API integration actions for various critical business platforms, utilizing the Xano platform.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>The project's guiding principle was to ensure high consistency, security, and maintainability across all third-party integrations.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Packages include: HubSpot, Salesforce, Quickbooks, Google Drive, Gmail, LinkedIn, Zendesk, Calendly, Azure OpenAI, Microsoft Teams, Posthog, Sentry, and Google Docs.</span></li></ul>",
+        "projectLink": "#"
+    },
+    {
+        "id": 6,
+        "title": "MOBILE-STORE",
+        "published": true,
+        "techStack": [
+            {
+                "name": "Node.js",
+                "iconClass": "devicon-nodejs-plain text-green-500"
+            },
+            {
+                "name": "TypeScript",
+                "iconClass": "devicon-typescript-plain text-blue-500"
+            },
+            {
+                "name": "MySQL",
+                "iconClass": "devicon-mysql-plain text-blue-500"
+            },
+            {
+                "name": "Redis",
+                "iconClass": "devicon-redis-plain text-red-500"
+            },
+            {
+                "name": "Stripe API",
+                "iconClass": "fab fa-stripe text-purple-500"
+            },
+            {
+                "name": "Docker",
+                "iconClass": "devicon-docker-plain text-blue-400"
+            }
+        ],
+        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Created an e-commerce platform for mobile devices with a focus on security and user experience.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built high-performance REST API</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated Stripe payment gateway</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented Redis caching layer improving performance</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Developed OAuth authentication supporting Google and GitHub</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Created comprehensive cart and wishlist system</span></li></ul>",
+        "projectLink": "https://github.com/bedonassef02/mobile-store"
+    },
+    {
+        "id": 8,
+        "title": "MI-MUSIC",
+        "published": true,
+        "techStack": [
+            {
+                "name": "Nest.js",
+                "iconClass": "devicon-nestjs-plain text-red-500"
+            },
+            {
+                "name": "MongoDB",
+                "iconClass": "devicon-mongodb-plain text-green-500"
+            },
+            {
+                "name": "Google OAuth",
+                "iconClass": "fab fa-google text-blue-500"
+            }
+        ],
+        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Designed a music streaming application with a focus on performance and security, using Nest.js and MongoDB.</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated Google OAuth and email notifications for enhanced user interactio</span></li></ul>",
+        "projectLink": "https://github.com/bedonassef02/MI-MUSIC"
+    },
+    {
+        "id": 7,
+        "title": "PANEL MISR",
+        "published": true,
+        "techStack": [
+            {
+                "name": "Laravel",
+                "iconClass": "devicon-laravel-plain text-red-500"
+            },
+            {
+                "name": "MySQL",
+                "iconClass": "devicon-mysql-plain text-blue-500"
+            }
+        ],
+        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Engineered the Panel Misr website, delivering a robust and scalable solution</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Delivered full-stack solution for enterprise client</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Optimized database queries reducing load time</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built responsive admin panel with advanced reporting features</span></li></ul>",
+        "projectLink": "#"
+    },
+    {
+        "id": 4,
+        "title": "DYNAMIC ASSET SERVING SYSTEM",
+        "published": true,
+        "techStack": [
+            {
+                "name": "PHP 8.4+",
+                "iconClass": "devicon-php-plain text-blue-600"
+            },
+            {
+                "name": "JavaScript",
+                "iconClass": "devicon-javascript-plain text-yellow-500"
+            },
+            {
+                "name": "Google Maps API",
+                "iconClass": "fas fa-map-marked-alt text-red-500"
+            }
+        ],
+        "description": "<ul class=\"list-none text-[var(--color-text-medium)] mt-2 space-y-2\"><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Built real-time asset processing system for dynamic delivery of JavaScript and CSS files</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Integrated Google Maps API for advanced direction services and route visualization</span></li><li class=\"flex items-baseline relative pl-6\"><i class=\"fas fa-check-circle text-[#007bff] mr-2 flex-shrink-0\"></i><span>Implemented intelligent caching strategies for optimized performance</span></li></ul>",
         "projectLink": "#"
     }
 ]
