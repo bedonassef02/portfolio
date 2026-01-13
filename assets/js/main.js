@@ -292,6 +292,65 @@ if (statsSection) {
 }
 
 // ========================================
+// VISITOR TRACKING
+// ========================================
+function initializeVisitorTracking() {
+    // Helper to get or create a persistent Visitor ID
+    function getVisitorId() {
+        let vid = localStorage.getItem('visitor_id');
+        if (!vid) {
+            // Generate a random ID: timestamp + random string
+            vid = 'v_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+            localStorage.setItem('visitor_id', vid);
+        }
+        return vid;
+    }
+
+    // Helper to get query params
+    function getQueryParams() {
+        const params = {};
+        new URLSearchParams(window.location.search).forEach((value, key) => {
+            params[key] = value;
+        });
+        return params;
+    }
+
+    const visitorData = {
+        page_url: window.location.href,
+        visitor_id: getVisitorId(),
+        referrer: document.referrer || 'Direct',
+        query_params: getQueryParams(),
+        user_agent: navigator.userAgent,
+        screen_resolution: `${window.screen.width}x${window.screen.height}`,
+        language: navigator.language || navigator.userLanguage || 'en',
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        timestamp: new Date().toISOString()
+    };
+
+    // Send data to Xano
+    fetch('https://x8ki-letl-twmt.n7.xano.io/api:CfCVZiDW/capture_visitor_data', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(visitorData),
+    })
+        .then(response => {
+            if (!response.ok) {
+                // Silently log error to avoid console clutter for user
+                console.warn('Analytics: Failed to capture data');
+            }
+        })
+        .catch(error => {
+            // Silently handle network errors
+            console.warn('Analytics: Network error');
+        });
+}
+
+// Initialize tracking when DOM is ready
+document.addEventListener('DOMContentLoaded', initializeVisitorTracking);
+
+// ========================================
 // CONSOLE EASTER EGG
 // ========================================
 console.log('%c👋 Hey there, curious developer!', 'font-size: 24px; font-weight: bold; color: #3b82f6;');
