@@ -7,7 +7,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             target.scrollIntoView({
-                behavior: 'smooth'
+                behavior: 'smooth',
+                block: 'start'
             });
         }
     });
@@ -21,26 +22,50 @@ const mobileMenu = document.getElementById('mobile-menu');
 const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
 const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
 
-if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
+function openMobileMenu() {
+    if (mobileMenu) {
         mobileMenu.classList.remove('translate-x-full');
-        if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-    });
+        mobileMenu.classList.add('translate-x-0');
+    }
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.classList.remove('hidden');
+        mobileMenuOverlay.classList.add('opacity-100');
+    }
+    document.body.style.overflow = 'hidden';
 }
 
 function closeMobileMenu() {
-    if (mobileMenu) mobileMenu.classList.add('translate-x-full');
-    if (mobileMenuOverlay) mobileMenuOverlay.classList.add('hidden');
+    if (mobileMenu) {
+        mobileMenu.classList.add('translate-x-full');
+        mobileMenu.classList.remove('translate-x-0');
+    }
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.classList.add('hidden');
+        mobileMenuOverlay.classList.remove('opacity-100');
+    }
     document.body.style.overflow = '';
 }
 
-if (closeMobileMenuBtn) closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
-if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openMobileMenu();
+    });
+}
+
+if (closeMobileMenuBtn) {
+    closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+}
+
+if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+}
 
 if (mobileMenu) {
     mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
+        link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
     });
 }
 
@@ -154,33 +179,74 @@ if (typingText) {
 }
 
 // ========================================
-// FORM SUBMISSION
+// CONTACT FORM SUBMISSION
 // ========================================
-const contactForm = document.querySelector('form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+const contactForm = document.getElementById('contact-form');
+const formMessage = document.getElementById('form-message');
 
-        const submitBtn = this.querySelector('button[type="submit"]');
+const displayMessage = (message, isSuccess) => {
+    if (formMessage) {
+        formMessage.textContent = message;
+        formMessage.className = 'mt-4 text-center text-lg font-semibold ';
+        if (isSuccess) {
+            formMessage.classList.add('text-green-400');
+        } else {
+            formMessage.classList.add('text-red-400');
+        }
+        setTimeout(() => {
+            formMessage.textContent = '';
+            formMessage.className = 'mt-4 text-center text-lg font-semibold';
+        }, 5000);
+    }
+};
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
 
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
         submitBtn.disabled = true;
 
-        // Simulate form submission
-        setTimeout(() => {
-            submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Message Sent!';
-            submitBtn.classList.remove('from-blue-500', 'to-purple-500');
-            submitBtn.classList.add('from-green-500', 'to-teal-500');
+        const formData = new FormData(contactForm);
+        const data = {};
+        formData.forEach((value, key) => (data[key] = value));
 
-            setTimeout(() => {
+        try {
+            const response = await fetch('https://x8ki-letl-twmt.n7.xano.io/api:CfCVZiDW/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Message Sent!';
+                submitBtn.classList.remove('from-blue-500', 'to-purple-500');
+                submitBtn.classList.add('from-green-500', 'to-teal-500');
+                displayMessage('Message sent successfully! I\'ll get back to you soon.', true);
+                contactForm.reset();
+
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.classList.add('from-blue-500', 'to-purple-500');
+                    submitBtn.classList.remove('from-green-500', 'to-teal-500');
+                }, 3000);
+            } else {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-                submitBtn.classList.add('from-blue-500', 'to-purple-500');
-                submitBtn.classList.remove('from-green-500', 'to-teal-500');
-                contactForm.reset();
-            }, 3000);
-        }, 1500);
+                displayMessage('Failed to send message. Please try again later.', false);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            displayMessage('An error occurred. Please try again later.', false);
+        }
     });
 }
 
