@@ -1,10 +1,11 @@
 {
-    "name": "Abdelrahman Mahmoud - Backend Developer",
-    "short_name": "Abdelrahman M.",
-    "start_url": "/",
+    "name": "Abdelrahman Mahmoud — Full-Stack Developer & AI Automation",
+    "short_name": "AM Portfolio",
+    "start_url": "/portfolio/",
     "display": "standalone",
-    "background_color": "#1a202c",
-    "theme_color": "#007bff",
+    "background_color": "#080812",
+    "theme_color": "#3b82f6",
+    "description": "Full-Stack Developer & AI Automation Specialist — Next.js, NestJS, Xano, n8n",
     "icons": [
         {
             "src": "/assets/logo.svg",

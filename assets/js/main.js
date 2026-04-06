@@ -1,358 +1,266 @@
-// ========================================
-// SMOOTH SCROLL
-// ========================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+/* =====================================================
+   PORTFOLIO — main.js  |  Complete Refactor 2026
+   ===================================================== */
 
-// ========================================
-// MOBILE MENU
-// ========================================
-const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+const html = document.documentElement;
+
+// ── THEME ─────────────────────────────────────────────
+const themeToggle       = document.getElementById('theme-toggle');
+const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+const themeIcon         = document.getElementById('theme-icon');
+const themeIconMobile   = document.getElementById('theme-icon-mobile');
+
+function applyTheme(theme) {
+  if (theme === 'light') {
+    html.setAttribute('data-theme', 'light');
+  } else {
+    html.removeAttribute('data-theme');
+  }
+  const isDark = theme === 'dark';
+  const iconClass = isDark ? 'fas fa-sun' : 'fas fa-moon';
+  const tip       = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+  if (themeIcon)        { themeIcon.className = iconClass; }
+  if (themeIconMobile)  { themeIconMobile.className = iconClass; }
+  if (themeToggle)      { themeToggle.setAttribute('aria-label', tip); themeToggle.title = tip; }
+  if (themeToggleMobile){ themeToggleMobile.setAttribute('aria-label', tip); themeToggleMobile.title = tip; }
+  localStorage.setItem('pf-theme', theme);
+}
+
+function toggleTheme() {
+  html.classList.add('theme-transitioning');
+  const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  applyTheme(next);
+  setTimeout(() => html.classList.remove('theme-transitioning'), 350);
+}
+
+// Init from localStorage, default to dark
+applyTheme(localStorage.getItem('pf-theme') || 'dark');
+
+themeToggle?.addEventListener('click', toggleTheme);
+themeToggleMobile?.addEventListener('click', toggleTheme);
+
+
+// ── MOBILE MENU ────────────────────────────────────────
+const mobileMenuBtn     = document.getElementById('mobile-menu-btn');
+const mobileMenu        = document.getElementById('mobile-menu');
+const mobileOverlay     = document.getElementById('mobile-menu-overlay');
+const closeMobileBtn    = document.getElementById('close-mobile-menu');
 
 function openMobileMenu() {
-    if (mobileMenu) {
-        mobileMenu.classList.remove('translate-x-full');
-        mobileMenu.classList.add('translate-x-0');
-    }
-    if (mobileMenuOverlay) {
-        mobileMenuOverlay.classList.remove('hidden');
-        mobileMenuOverlay.classList.add('opacity-100');
-    }
-    document.body.style.overflow = 'hidden';
+  mobileMenu?.classList.remove('translate-x-full');
+  mobileMenu?.classList.add('translate-x-0');
+  mobileOverlay?.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
 }
-
 function closeMobileMenu() {
-    if (mobileMenu) {
-        mobileMenu.classList.add('translate-x-full');
-        mobileMenu.classList.remove('translate-x-0');
+  mobileMenu?.classList.add('translate-x-full');
+  mobileMenu?.classList.remove('translate-x-0');
+  mobileOverlay?.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+mobileMenuBtn?.addEventListener('click', e => { e.stopPropagation(); openMobileMenu(); });
+closeMobileBtn?.addEventListener('click', closeMobileMenu);
+mobileOverlay?.addEventListener('click', closeMobileMenu);
+mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
+
+
+// ── SMOOTH SCROLL ──────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const id = this.getAttribute('href');
+    if (id === '#') return;
+    const target = document.querySelector(id);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-    if (mobileMenuOverlay) {
-        mobileMenuOverlay.classList.add('hidden');
-        mobileMenuOverlay.classList.remove('opacity-100');
-    }
-    document.body.style.overflow = '';
-}
+  });
+});
 
-if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        openMobileMenu();
-    });
-}
 
-if (closeMobileMenuBtn) {
-    closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
-}
-
-if (mobileMenuOverlay) {
-    mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-}
-
-if (mobileMenu) {
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            closeMobileMenu();
-        });
-    });
-}
-
-// ========================================
-// SCROLL REVEAL ANIMATIONS
-// ========================================
-const revealElements = document.querySelectorAll('.reveal');
-const staggerElements = document.querySelectorAll('.stagger-children');
-
-function checkReveal() {
-    const windowHeight = window.innerHeight;
-    const revealPoint = 150;
-
-    revealElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        if (elementTop < windowHeight - revealPoint) {
-            element.classList.add('active');
-        }
-    });
-
-    staggerElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        if (elementTop < windowHeight - revealPoint) {
-            element.classList.add('active');
-        }
-    });
-}
-
-window.addEventListener('scroll', checkReveal);
-window.addEventListener('load', checkReveal);
-
-// ========================================
-// ACTIVE NAV LINK HIGHLIGHT
-// ========================================
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
-function highlightNav() {
-    const scrollY = window.scrollY;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('text-white');
-                link.classList.add('text-gray-400');
-                if (link.getAttribute('href') === '#' + sectionId) {
-                    link.classList.remove('text-gray-400');
-                    link.classList.add('text-white');
-                }
-            });
-        }
-    });
-}
-
-window.addEventListener('scroll', highlightNav);
-
-// ========================================
-// NAVBAR BACKGROUND ON SCROLL
-// ========================================
-const navbar = document.querySelector('nav');
-
+// ── NAVBAR ON SCROLL ───────────────────────────────────
+const navbar = document.getElementById('navbar');
 function updateNavbar() {
-    if (window.scrollY > 50) {
-        navbar.classList.add('bg-dark-900/95', 'shadow-lg');
-        navbar.classList.remove('bg-dark-900/80');
+  navbar?.classList.toggle('scrolled', window.scrollY > 60);
+}
+window.addEventListener('scroll', updateNavbar, { passive: true });
+updateNavbar();
+
+
+// ── ACTIVE NAV LINK ────────────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks  = document.querySelectorAll('nav .nav-link');
+
+function updateActiveNav() {
+  const y = window.scrollY + 130;
+  let found = false;
+  sections.forEach(sec => {
+    const top    = sec.offsetTop;
+    const bottom = top + sec.offsetHeight;
+    if (!found && y >= top && y < bottom) {
+      found = true;
+      const id = sec.getAttribute('id');
+      navLinks.forEach(link => {
+        const active = link.getAttribute('href') === `#${id}`;
+        link.classList.toggle('active', active);
+      });
+    }
+  });
+}
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+
+// ── SCROLL REVEAL (IntersectionObserver) ───────────────
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      revealObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal, .stagger').forEach(el => revealObs.observe(el));
+
+
+// ── COUNTER ANIMATION ──────────────────────────────────
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      runCounter(entry.target);
+      counterObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.6 });
+
+document.querySelectorAll('.stat-counter').forEach(el => counterObs.observe(el));
+
+function runCounter(el) {
+  const target   = parseInt(el.dataset.target, 10);
+  const suffix   = el.dataset.suffix || '';
+  const duration = 1800;
+  const start    = performance.now();
+
+  function tick(now) {
+    const pct     = Math.min((now - start) / duration, 1);
+    const eased   = 1 - Math.pow(1 - pct, 3);
+    el.textContent = Math.round(eased * target).toLocaleString() + suffix;
+    if (pct < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+
+// ── TYPING EFFECT ──────────────────────────────────────
+const typingEl = document.getElementById('typing-text');
+if (typingEl) {
+  const phrases = ['Scalable Apps', 'SaaS Platforms', 'AI Agents', 'Smart Workflows'];
+  let pi = 0, ci = 0, deleting = false;
+
+  function type() {
+    const phrase = phrases[pi];
+    if (deleting) {
+      typingEl.textContent = phrase.slice(0, --ci);
+      if (ci === 0) {
+        deleting = false;
+        pi = (pi + 1) % phrases.length;
+        setTimeout(type, 380);
+        return;
+      }
     } else {
-        navbar.classList.remove('bg-dark-900/95', 'shadow-lg');
-        navbar.classList.add('bg-dark-900/80');
+      typingEl.textContent = phrase.slice(0, ++ci);
+      if (ci === phrase.length) {
+        setTimeout(() => { deleting = true; type(); }, 2200);
+        return;
+      }
     }
+    setTimeout(type, deleting ? 42 : 88);
+  }
+  setTimeout(type, 1400);
 }
 
-window.addEventListener('scroll', updateNavbar);
 
-// ========================================
-// TYPING EFFECT FOR HERO (Optional)
-// ========================================
-const typingText = document.getElementById('typing-text');
-if (typingText) {
-    const words = ['scalable SaaS platforms', 'enterprise solutions', 'AI-powered systems', 'robust APIs'];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+// ── PROJECT FILTER ─────────────────────────────────────
+const filterBtns   = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('#projects-grid .project-card');
 
-    function type() {
-        const currentWord = words[wordIndex];
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 
-        if (isDeleting) {
-            typingText.textContent = currentWord.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            typingText.textContent = currentWord.substring(0, charIndex + 1);
-            charIndex++;
-        }
+    const filter = btn.dataset.filter;
 
-        if (!isDeleting && charIndex === currentWord.length) {
-            setTimeout(() => isDeleting = true, 2000);
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
-        }
+    projectCards.forEach(card => {
+      const cats    = (card.dataset.category || '').split(' ');
+      const visible = filter === 'all' || cats.includes(filter);
 
-        const speed = isDeleting ? 50 : 100;
-        setTimeout(type, speed);
-    }
+      if (visible) {
+        card.classList.remove('is-hidden');
+        // fade-in animation on re-show
+        card.style.opacity   = '0';
+        card.style.transform = 'translateY(18px)';
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            card.style.opacity    = '1';
+            card.style.transform  = '';
+          });
+        });
+        setTimeout(() => { card.style.transition = ''; }, 450);
+      } else {
+        card.classList.add('is-hidden');
+      }
+    });
+  });
+});
 
-    setTimeout(type, 1000);
-}
 
-// ========================================
-// CONTACT FORM SUBMISSION
-// ========================================
+// ── CONTACT FORM ───────────────────────────────────────
 const contactForm = document.getElementById('contact-form');
-const formMessage = document.getElementById('form-message');
+const formMsg     = document.getElementById('form-message');
 
-const displayMessage = (message, isSuccess) => {
-    if (formMessage) {
-        formMessage.textContent = message;
-        formMessage.className = 'mt-4 text-center text-lg font-semibold ';
-        if (isSuccess) {
-            formMessage.classList.add('text-green-400');
-        } else {
-            formMessage.classList.add('text-red-400');
-        }
-        setTimeout(() => {
-            formMessage.textContent = '';
-            formMessage.className = 'mt-4 text-center text-lg font-semibold';
-        }, 5000);
-    }
-};
+function showMsg(text, ok) {
+  if (!formMsg) return;
+  formMsg.textContent = text;
+  formMsg.style.color = ok ? 'var(--ok-fg)' : '#f87171';
+  setTimeout(() => { formMsg.textContent = ''; }, 5000);
+}
 
-if (contactForm) {
-    contactForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
+contactForm?.addEventListener('submit', async e => {
+  e.preventDefault();
+  const submitBtn   = contactForm.querySelector('button[type="submit"]');
+  const origHtml    = submitBtn.innerHTML;
 
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin text-sm"></i> Sending…';
+  submitBtn.disabled  = true;
 
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
-        submitBtn.disabled = true;
+  const data = {};
+  new FormData(contactForm).forEach((v, k) => { data[k] = v; });
 
-        const formData = new FormData(contactForm);
-        const data = {};
-        formData.forEach((value, key) => (data[key] = value));
-
-        try {
-            const response = await fetch('https://x8ki-letl-twmt.n7.xano.io/api:CfCVZiDW/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
-
-            if (response.ok) {
-                submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Message Sent!';
-                submitBtn.classList.remove('from-blue-500', 'to-purple-500');
-                submitBtn.classList.add('from-green-500', 'to-teal-500');
-                displayMessage('Message sent successfully! I\'ll get back to you soon.', true);
-                contactForm.reset();
-
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.classList.add('from-blue-500', 'to-purple-500');
-                    submitBtn.classList.remove('from-green-500', 'to-teal-500');
-                }, 3000);
-            } else {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                displayMessage('Failed to send message. Please try again later.', false);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            displayMessage('An error occurred. Please try again later.', false);
-        }
+  try {
+    const res = await fetch('https://x8ki-letl-twmt.n7.xano.io/api:CfCVZiDW/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
     });
-}
 
-// ========================================
-// COUNTER ANIMATION FOR STATS
-// ========================================
-const statNumbers = document.querySelectorAll('.stat-number');
+    if (!res.ok) throw new Error('server');
 
-function animateCounters() {
-    statNumbers.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-target'));
-        const suffix = stat.getAttribute('data-suffix') || '';
-        let current = 0;
-        const increment = target / 50;
-        const duration = 2000;
-        const stepTime = duration / 50;
+    submitBtn.innerHTML = '<i class="fas fa-check text-sm"></i> Message Sent!';
+    submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #14b8a6)';
+    showMsg("Message sent! I'll get back to you within 24 hours.", true);
+    contactForm.reset();
 
-        const counter = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                stat.textContent = target + suffix;
-                clearInterval(counter);
-            } else {
-                stat.textContent = Math.floor(current) + suffix;
-            }
-        }, stepTime);
-    });
-}
-
-// Trigger counter animation when stats section is visible
-const statsSection = document.querySelector('.stats-section');
-if (statsSection) {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounters();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    observer.observe(statsSection);
-}
-
-// ========================================
-// VISITOR TRACKING
-// ========================================
-function initializeVisitorTracking() {
-    // Helper to get or create a persistent Visitor ID
-    function getVisitorId() {
-        let vid = localStorage.getItem('visitor_id');
-        if (!vid) {
-            // Generate a random ID: timestamp + random string
-            vid = 'v_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
-            localStorage.setItem('visitor_id', vid);
-        }
-        return vid;
-    }
-
-    // Helper to get query params
-    function getQueryParams() {
-        const params = {};
-        new URLSearchParams(window.location.search).forEach((value, key) => {
-            params[key] = value;
-        });
-        return params;
-    }
-
-    const visitorData = {
-        page_url: window.location.href,
-        visitor_id: getVisitorId(),
-        referrer: document.referrer || 'Direct',
-        query_params: getQueryParams(),
-        user_agent: navigator.userAgent,
-        screen_resolution: `${window.screen.width}x${window.screen.height}`,
-        language: navigator.language || navigator.userLanguage || 'en',
-        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-        timestamp: new Date().toISOString()
-    };
-
-    // Send data to Xano
-    fetch('https://x8ki-letl-twmt.n7.xano.io/api:CfCVZiDW/capture_visitor_data', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(visitorData),
-    })
-        .then(response => {
-            if (!response.ok) {
-                // Silently log error to avoid console clutter for user
-                console.warn('Analytics: Failed to capture data');
-            }
-        })
-        .catch(error => {
-            // Silently handle network errors
-            console.warn('Analytics: Network error');
-        });
-}
-
-// Initialize tracking when DOM is ready
-document.addEventListener('DOMContentLoaded', initializeVisitorTracking);
-
-// ========================================
-// CONSOLE EASTER EGG
-// ========================================
-console.log('%c👋 Hey there, curious developer!', 'font-size: 24px; font-weight: bold; color: #3b82f6;');
-console.log('%cLooking for source code? Feel free to reach out!', 'font-size: 14px; color: #8b5cf6;');
-console.log('%c📧 bedonassef71@gmail.com', 'font-size: 12px; color: #a1a1aa;');
+    setTimeout(() => {
+      submitBtn.innerHTML  = origHtml;
+      submitBtn.style.background = '';
+      submitBtn.disabled   = false;
+    }, 3200);
+  } catch {
+    submitBtn.innerHTML = origHtml;
+    submitBtn.disabled  = false;
+    showMsg('Something went wrong. Email me directly at bedonassef71@gmail.com', false);
+  }
+});
