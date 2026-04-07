@@ -264,3 +264,50 @@ contactForm?.addEventListener('submit', async e => {
     showMsg('Something went wrong. Email me directly at bedonassef71@gmail.com', false);
   }
 });
+
+// ── VISITOR TRACKING ───────────────────────────────────
+async function trackVisitor() {
+  try {
+    // Only track once per session
+    if (sessionStorage.getItem('pf_visitor_tracked')) return;
+
+    // Wait slightly to get accurate load time
+    setTimeout(async () => {
+      let load_time_ms = 0;
+      if (window.performance && window.performance.timing) {
+        load_time_ms = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
+      }
+
+      const ua = navigator.userAgent;
+      let device = 'Desktop';
+      if (/mobi/i.test(ua)) device = 'Tablet/Mobile';
+      
+      const botPattern = /bot|googlebot|crawler|spider|robot|crawling/i;
+      const is_bot = botPattern.test(ua) || navigator.webdriver;
+
+      const payload = {
+        page_url: window.location.href,
+        hostname: window.location.hostname,
+        user_agent: ua,
+        referrer: document.referrer || 'Direct',
+        device: device,
+        is_bot: !!is_bot,
+        load_time_ms: Math.max(0, load_time_ms)
+      };
+
+      const res = await fetch('https://x8ki-letl-twmt.n7.xano.io/api:CfCVZiDW/capture_visitor_data', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (res.ok) {
+        sessionStorage.setItem('pf_visitor_tracked', 'true');
+      }
+    }, 1000);
+  } catch (error) {
+    console.error('Visitor tracking error:', error);
+  }
+}
+
+window.addEventListener('load', trackVisitor);
