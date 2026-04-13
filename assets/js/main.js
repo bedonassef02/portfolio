@@ -266,10 +266,11 @@ contactForm?.addEventListener('submit', async e => {
 });
 
 // ── VISITOR TRACKING ───────────────────────────────────
+// Generate unique session ID for this specific page load
+const currentSessionUUID = (window.crypto && window.crypto.randomUUID && window.crypto.randomUUID()) || Math.random().toString(36).substring(2, 15);
+
 async function trackVisitor() {
   try {
-    // Only track once per session
-    if (sessionStorage.getItem('pf_visitor_tracked')) return;
 
     // Wait slightly to get accurate load time
     setTimeout(async () => {
@@ -286,6 +287,7 @@ async function trackVisitor() {
       const is_bot = botPattern.test(ua) || navigator.webdriver;
 
       const payload = {
+        session_uuid: currentSessionUUID,
         page_url: window.location.href,
         hostname: window.location.hostname,
         user_agent: ua,
@@ -306,7 +308,6 @@ async function trackVisitor() {
         if (data.visitor_id) {
           localStorage.setItem('pf_visitor_id', data.visitor_id);
         }
-        sessionStorage.setItem('pf_visitor_tracked', 'true');
       }
     }, 1000);
   } catch (error) {
@@ -321,7 +322,8 @@ async function trackAction(actionType, eventData = null) {
     if (!visitor_id) return; // Silent fail if not tracked yet
 
     const payload = {
-      visitor_id: parseInt(visitor_id, 10),
+      visitor_id: visitor_id ? parseInt(visitor_id, 10) : 0,
+      session_uuid: currentSessionUUID,
       action_type: actionType,
       page_url: window.location.href,
       event_data: eventData
@@ -345,17 +347,6 @@ document.addEventListener('click', (e) => {
   if (target) {
     trackAction(target.getAttribute('data-action'));
   }
-});
-
-// Time on page ping (Visibility or Unload)
-let pageEntryTime = Date.now();
-window.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'hidden') {
-        const timeSpent = Math.max(0, Math.round((Date.now() - pageEntryTime) / 1000));
-        if (timeSpent > 2) {
-            trackAction('time_on_page_update', { time_spent_seconds: timeSpent });
-        }
-    }
 });
 
 window.addEventListener('load', trackVisitor);
