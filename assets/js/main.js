@@ -302,6 +302,10 @@ async function trackVisitor() {
       });
 
       if (res.ok) {
+        const data = await res.json();
+        if (data.visitor_id) {
+          localStorage.setItem('pf_visitor_id', data.visitor_id);
+        }
         sessionStorage.setItem('pf_visitor_tracked', 'true');
       }
     }, 1000);
@@ -309,5 +313,49 @@ async function trackVisitor() {
     console.error('Visitor tracking error:', error);
   }
 }
+
+// ── ACTION TRACKING ────────────────────────────────────
+async function trackAction(actionType, eventData = null) {
+  try {
+    const visitor_id = localStorage.getItem('pf_visitor_id');
+    if (!visitor_id) return; // Silent fail if not tracked yet
+
+    const payload = {
+      visitor_id: parseInt(visitor_id, 10),
+      action_type: actionType,
+      page_url: window.location.href,
+      event_data: eventData
+    };
+
+    // Use keepalive for page unload events
+    fetch('https://x8ki-letl-twmt.n7.xano.io/api:CfCVZiDW/capture_action', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify(payload)
+    }).catch(e => console.error(e));
+  } catch (error) {
+    console.error('Action tracking error:', error);
+  }
+}
+
+// Global click delegation for data-action
+document.addEventListener('click', (e) => {
+  const target = e.target.closest('[data-action]');
+  if (target) {
+    trackAction(target.getAttribute('data-action'));
+  }
+});
+
+// Time on page ping (Visibility or Unload)
+let pageEntryTime = Date.now();
+window.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+        const timeSpent = Math.max(0, Math.round((Date.now() - pageEntryTime) / 1000));
+        if (timeSpent > 2) {
+            trackAction('time_on_page_update', { time_spent_seconds: timeSpent });
+        }
+    }
+});
 
 window.addEventListener('load', trackVisitor);
